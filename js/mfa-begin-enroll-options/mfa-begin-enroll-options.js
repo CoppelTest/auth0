@@ -175,7 +175,32 @@ document.addEventListener("DOMContentLoaded", function() {
                         
                         if (originalButton) {
                             console.log('Ejecutando acción nativa del botón original');
-                            originalButton.click();
+                            
+                            // Intentar diferentes métodos de click
+                            try {
+                                // Método 1: Click directo
+                                originalButton.click();
+                                
+                                // Método 2: Si es un botón submit, enviar el formulario
+                                if (originalButton.type === 'submit') {
+                                    const form = originalButton.closest('form');
+                                    if (form) {
+                                        console.log('Enviando formulario:', form);
+                                        form.submit();
+                                    }
+                                }
+                                
+                                // Método 3: Disparar evento submit si es necesario
+                                setTimeout(() => {
+                                    if (originalButton.type === 'submit') {
+                                        const event = new Event('submit', { bubbles: true });
+                                        originalButton.dispatchEvent(event);
+                                    }
+                                }, 100);
+                                
+                            } catch (error) {
+                                console.error('Error al ejecutar click:', error);
+                            }
                         } else {
                             console.log('No se encontró el botón original para:', text);
                         }
@@ -194,30 +219,50 @@ document.addEventListener("DOMContentLoaded", function() {
                     return null;
                 }
                 
-                // Buscar en diferentes formatos de botones dentro de main
-                const selectors = [
-                    'button span',
-                    'span[class*="button-text"]',
-                    'span.c182328cf.c9f0ba6a4',
-                    'span[class*="c182328cf"]',
-                    'span[class*="c9f0ba6a4"]'
-                ];
+                console.log('Buscando botón original para texto:', text);
                 
-                for (const selector of selectors) {
-                    const elements = mainElement.querySelectorAll(selector);
-                    for (const element of elements) {
-                        const elementText = element.textContent.trim();
-                        if (elementText.toLowerCase().includes(text.toLowerCase()) ||
-                            text.toLowerCase().includes(elementText.toLowerCase())) {
-                            // Encontrar el botón padre
-                            const button = element.closest('button');
-                            if (button) {
-                                return button;
-                            }
+                // Buscar todos los botones dentro de main
+                const allButtons = mainElement.querySelectorAll('button');
+                console.log('Botones encontrados en main:', allButtons.length);
+                
+                for (const button of allButtons) {
+                    // Buscar todos los spans dentro del botón
+                    const spans = button.querySelectorAll('span');
+                    
+                    for (const span of spans) {
+                        const spanText = span.textContent.trim();
+                        console.log('Texto en span:', spanText, 'vs texto buscado:', text);
+                        
+                        // Comparación más flexible
+                        if (spanText.toLowerCase() === text.toLowerCase() ||
+                            spanText.toLowerCase().includes(text.toLowerCase()) ||
+                            text.toLowerCase().includes(spanText.toLowerCase())) {
+                            
+                            console.log('¡Botón encontrado!', button);
+                            console.log('Botón HTML:', button.outerHTML);
+                            return button;
                         }
                     }
                 }
                 
+                // Si no se encuentra, buscar por atributos específicos
+                const specificButtons = mainElement.querySelectorAll('button[type="submit"]');
+                for (const button of specificButtons) {
+                    const actionValue = button.getAttribute('value');
+                    console.log('Botón con action:', actionValue);
+                    
+                    // Buscar por el valor del action
+                    if (actionValue && (
+                        (text.toLowerCase().includes('guardian') && actionValue.includes('push-notification')) ||
+                        (text.toLowerCase().includes('authenticator') && actionValue.includes('otp')) ||
+                        (text.toLowerCase().includes('mensaje') && actionValue.includes('sms'))
+                    )) {
+                        console.log('¡Botón encontrado por action!', button);
+                        return button;
+                    }
+                }
+                
+                console.log('No se encontró botón original para:', text);
                 return null;
             }
             
