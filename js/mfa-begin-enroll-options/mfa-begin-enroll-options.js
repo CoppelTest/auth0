@@ -84,10 +84,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     button.style.color = '#1B1A16';
                     button.style.cursor = 'pointer';
                     button.style.border = '1px solid #E0E0E0';
-                    button.style.borderRadius = '8px';
+                    button.style.borderRadius = '999px';
                     button.style.padding = '16px 20px';
                     button.style.fontFamily = "'Helvetica Neue', sans-serif";
-                    button.style.fontWeight = '400';
+                    button.style.fontWeight = '600';
                     button.style.fontSize = '16px';
                     button.style.lineHeight = '24px';
                     button.style.width = '100%';
@@ -155,8 +155,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     const span = document.createElement('span');
                     span.className = 'button-text';
                     span.textContent = text;
-                    span.style.color = '#1B1A16';
-                    span.style.fontWeight = '400';
+                    span.style.color = '#081754';
+                    span.style.fontWeight = '600';
                     
                     textContainer.appendChild(span);
                     
