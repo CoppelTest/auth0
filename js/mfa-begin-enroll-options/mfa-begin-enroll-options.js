@@ -174,33 +174,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         const originalButton = findOriginalButton(text);
                         
                         if (originalButton) {
-                            console.log('Ejecutando acción nativa del botón original');
-                            
-                            // Intentar diferentes métodos de click
-                            try {
-                                // Método 1: Click directo
-                                originalButton.click();
-                                
-                                // Método 2: Si es un botón submit, enviar el formulario
-                                if (originalButton.type === 'submit') {
-                                    const form = originalButton.closest('form');
-                                    if (form) {
-                                        console.log('Enviando formulario:', form);
-                                        form.submit();
-                                    }
-                                }
-                                
-                                // Método 3: Disparar evento submit si es necesario
-                                setTimeout(() => {
-                                    if (originalButton.type === 'submit') {
-                                        const event = new Event('submit', { bubbles: true });
-                                        originalButton.dispatchEvent(event);
-                                    }
-                                }, 100);
-                                
-                            } catch (error) {
-                                console.error('Error al ejecutar click:', error);
-                            }
+                            originalButton.click();
                         } else {
                             console.log('No se encontró el botón original para:', text);
                         }
