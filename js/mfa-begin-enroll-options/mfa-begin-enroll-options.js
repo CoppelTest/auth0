@@ -3,8 +3,15 @@ document.addEventListener("DOMContentLoaded", function() {
             function extractButtonTexts() {
                 const buttonTexts = [];
                 
-                // Buscar todos los elementos span con clase button-text (formato original)
-                const buttonTextElements = document.querySelectorAll('span[class*="button-text"]');
+                // Buscar el elemento main
+                const mainElement = document.querySelector('main');
+                if (!mainElement) {
+                    console.log('No se encontró el elemento main');
+                    return buttonTexts;
+                }
+                
+                // Buscar todos los elementos span con clase button-text (formato original) dentro de main
+                const buttonTextElements = mainElement.querySelectorAll('span[class*="button-text"]');
                 
                 buttonTextElements.forEach(element => {
                     const text = element.textContent.trim();
@@ -13,8 +20,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 });
                 
-                // Buscar elementos span con clases específicas del nuevo formato (c182328cf c9f0ba6a4)
-                const newFormatElements = document.querySelectorAll('span.c182328cf.c9f0ba6a4');
+                // Buscar elementos span con clases específicas del nuevo formato (c182328cf c9f0ba6a4) dentro de main
+                const newFormatElements = mainElement.querySelectorAll('span.c182328cf.c9f0ba6a4');
                 
                 newFormatElements.forEach(element => {
                     const text = element.textContent.trim();
@@ -23,8 +30,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 });
                 
-                // Buscar también elementos span que contengan estas clases de manera más flexible
-                const flexibleElements = document.querySelectorAll('span[class*="c182328cf"], span[class*="c9f0ba6a4"]');
+                // Buscar también elementos span que contengan estas clases de manera más flexible dentro de main
+                const flexibleElements = mainElement.querySelectorAll('span[class*="c182328cf"], span[class*="c9f0ba6a4"]');
                 
                 flexibleElements.forEach(element => {
                     const text = element.textContent.trim();
@@ -33,8 +40,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 });
                 
-                // Buscar elementos span dentro de botones que contengan texto
-                const buttonSpans = document.querySelectorAll('button span');
+                // Buscar elementos span dentro de botones que contengan texto dentro de main
+                const buttonSpans = mainElement.querySelectorAll('button span');
                 
                 buttonSpans.forEach(element => {
                     const text = element.textContent.trim();
@@ -44,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 });
                 
+                console.log('Búsqueda realizada dentro del elemento main');
                 return buttonTexts;
             }
             
@@ -86,7 +94,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     button.style.height = 'auto';
                     button.style.display = 'flex';
                     button.style.alignItems = 'center';
-                    button.style.justifyContent = 'space-between';
+                    button.style.justifyContent = 'flex-start';
+                    button.style.gap = '12px';
                     button.style.transition = 'all 0.2s ease';
                     button.style.boxShadow = 'none';
                     
@@ -178,7 +187,14 @@ document.addEventListener("DOMContentLoaded", function() {
             
             // Función para encontrar el botón original
             function findOriginalButton(text) {
-                // Buscar en diferentes formatos de botones
+                // Buscar el elemento main
+                const mainElement = document.querySelector('main');
+                if (!mainElement) {
+                    console.log('No se encontró el elemento main para buscar botón original');
+                    return null;
+                }
+                
+                // Buscar en diferentes formatos de botones dentro de main
                 const selectors = [
                     'button span',
                     'span[class*="button-text"]',
@@ -188,7 +204,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 ];
                 
                 for (const selector of selectors) {
-                    const elements = document.querySelectorAll(selector);
+                    const elements = mainElement.querySelectorAll(selector);
                     for (const element of elements) {
                         const elementText = element.textContent.trim();
                         if (elementText.toLowerCase().includes(text.toLowerCase()) ||
