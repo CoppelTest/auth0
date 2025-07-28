@@ -51,6 +51,25 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 });
                 
+                // Buscar también por el texto completo de cada botón (concatenando todos los spans)
+                const allButtons = mainElement.querySelectorAll('button');
+                allButtons.forEach(button => {
+                    const spans = button.querySelectorAll('span');
+                    let fullButtonText = '';
+                    
+                    spans.forEach(span => {
+                        const spanText = span.textContent.trim();
+                        if (spanText && !span.classList.contains('ca247b1a9')) {
+                            fullButtonText += spanText + ' ';
+                        }
+                    });
+                    
+                    fullButtonText = fullButtonText.trim();
+                    if (fullButtonText && !buttonTexts.includes(fullButtonText)) {
+                        buttonTexts.push(fullButtonText);
+                    }
+                });
+                
                 console.log('Búsqueda realizada dentro del elemento main');
                 return buttonTexts;
             }
@@ -194,30 +213,69 @@ document.addEventListener("DOMContentLoaded", function() {
                     return null;
                 }
                 
-                // Buscar en diferentes formatos de botones dentro de main
-                const selectors = [
-                    'button span',
-                    'span[class*="button-text"]',
-                    'span.c182328cf.c9f0ba6a4',
-                    'span[class*="c182328cf"]',
-                    'span[class*="c9f0ba6a4"]'
-                ];
+                console.log('Buscando botón original para texto:', text);
                 
-                for (const selector of selectors) {
-                    const elements = mainElement.querySelectorAll(selector);
-                    for (const element of elements) {
-                        const elementText = element.textContent.trim();
-                        if (elementText.toLowerCase().includes(text.toLowerCase()) ||
-                            text.toLowerCase().includes(elementText.toLowerCase())) {
-                            // Encontrar el botón padre
-                            const button = element.closest('button');
-                            if (button) {
-                                return button;
-                            }
+                // Buscar todos los botones dentro de main
+                const allButtons = mainElement.querySelectorAll('button');
+                console.log('Total de botones encontrados:', allButtons.length);
+                
+                // Buscar por texto exacto en todos los botones
+                for (const button of allButtons) {
+                    const spans = button.querySelectorAll('span');
+                    
+                    for (const span of spans) {
+                        const spanText = span.textContent.trim();
+                        console.log('Comparando:', `"${spanText}"` + ' vs ' + `"${text}"`);
+                        
+                        // Comparación exacta (case insensitive)
+                        if (spanText.toLowerCase() === text.toLowerCase()) {
+                            console.log('¡Match exacto encontrado!', button);
+                            return button;
                         }
                     }
                 }
                 
+                // Si no se encuentra por action, buscar por texto exacto
+                for (const button of allButtons) {
+                    const spans = button.querySelectorAll('span');
+                    
+                    for (const span of spans) {
+                        const spanText = span.textContent.trim();
+                        console.log('Comparando:', `"${spanText}"` + ' vs ' + `"${text}"`);
+                        
+                        // Comparación exacta (case insensitive)
+                        if (spanText.toLowerCase() === text.toLowerCase()) {
+                            console.log('¡Match exacto encontrado!', button);
+                            return button;
+                        }
+                    }
+                }
+                
+                // Si no hay match exacto, buscar por contenido parcial pero más específico
+                for (const button of allButtons) {
+                    const spans = button.querySelectorAll('span');
+                    let buttonText = '';
+                    
+                    // Concatenar todos los textos del botón
+                    spans.forEach(span => {
+                        const spanText = span.textContent.trim();
+                        if (spanText && !span.classList.contains('ca247b1a9')) { // Excluir iconos
+                            buttonText += spanText + ' ';
+                        }
+                    });
+                    
+                    buttonText = buttonText.trim();
+                    console.log('Texto completo del botón:', `"${buttonText}"`);
+                    
+                    // Comparación más específica
+                    if (buttonText.toLowerCase().includes(text.toLowerCase()) && 
+                        text.toLowerCase().includes(buttonText.toLowerCase())) {
+                        console.log('¡Match por contenido completo!', button);
+                        return button;
+                    }
+                }
+                
+                console.log('No se encontró botón original para:', text);
                 return null;
             }
             
