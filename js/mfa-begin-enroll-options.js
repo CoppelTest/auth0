@@ -1,284 +1,142 @@
-document.addEventListener("DOMContentLoaded", function() {
-            // Función para extraer dinámicamente los textos de los botones
-            function extractButtonTexts() {
-                const buttonTexts = [];
-                
-                // Buscar el elemento main
-                const mainElement = document.querySelector('main');
-                if (!mainElement) {
-                    console.log('No se encontró el elemento main');
-                    return buttonTexts;
-                }
-                
-                // Buscar todos los elementos span con clase button-text (formato original) dentro de main
-                const buttonTextElements = mainElement.querySelectorAll('span[class*="button-text"]');
-                
-                buttonTextElements.forEach(element => {
-                    const text = element.textContent.trim();
-                    if (text && !buttonTexts.includes(text)) {
-                        buttonTexts.push(text);
-                    }
-                });
-                
-                // Buscar elementos span con clases específicas del nuevo formato (c182328cf c9f0ba6a4) dentro de main
-                const newFormatElements = mainElement.querySelectorAll('span.c182328cf.c9f0ba6a4');
-                
-                newFormatElements.forEach(element => {
-                    const text = element.textContent.trim();
-                    if (text && !buttonTexts.includes(text)) {
-                        buttonTexts.push(text);
-                    }
-                });
-                
-                // Buscar también elementos span que contengan estas clases de manera más flexible dentro de main
-                const flexibleElements = mainElement.querySelectorAll('span[class*="c182328cf"], span[class*="c9f0ba6a4"]');
-                
-                flexibleElements.forEach(element => {
-                    const text = element.textContent.trim();
-                    if (text && !buttonTexts.includes(text) && !buttonTexts.includes(text)) {
-                        buttonTexts.push(text);
-                    }
-                });
-                
-                // Buscar elementos span dentro de botones que contengan texto dentro de main
-                const buttonSpans = mainElement.querySelectorAll('button span');
-                
-                buttonSpans.forEach(element => {
-                    const text = element.textContent.trim();
-                    if (text && text.length > 0 && !buttonTexts.includes(text) && 
-                        !element.classList.contains('ca247b1a9')) { // Excluir elementos de iconos
-                        buttonTexts.push(text);
-                    }
-                });
-                
-                // Buscar también por el texto completo de cada botón (concatenando todos los spans)
-                const allButtons = mainElement.querySelectorAll('button');
-                allButtons.forEach(button => {
-                    const spans = button.querySelectorAll('span');
-                    let fullButtonText = '';
-                    
-                    spans.forEach(span => {
-                        const spanText = span.textContent.trim();
-                        if (spanText && !span.classList.contains('ca247b1a9')) {
-                            fullButtonText += spanText + ' ';
-                        }
-                    });
-                    
-                    fullButtonText = fullButtonText.trim();
-                    if (fullButtonText && !buttonTexts.includes(fullButtonText)) {
-                        buttonTexts.push(fullButtonText);
-                    }
-                });
-                
-                console.log('Búsqueda realizada dentro del elemento main');
-                return buttonTexts;
+document.addEventListener('DOMContentLoaded', function () {
+    const main = document.querySelector('main._widget');
+    const title = document.querySelector('h1.cded47f4b');
+    const subTitle = document.querySelector('.c31b86380.ca3fde804');
+    const btnScan = document.querySelector('.c78dfd5b3._link-toggle-view.c7e1be07f');
+
+    if (main) main.classList.remove('_widget', 'c7f43d5ad');
+    if (title) title.className = 'title-container';
+    if (subTitle) subTitle.className = 'subtitle-container';
+    
+    // Agregar clase social-button a los botones específicos
+    const socialButtons = document.querySelectorAll(".cea6d5264.c6a8be725.c6b0cc0b9.cba3063e3.cbd8a087f");
+    socialButtons.forEach(button => {
+        button.classList.add('social-button');
+        console.log('Clase social-button agregada a:', button);
+    });
+    
+    // Mostrar el wrapper oculto
+    const hiddenWrapper = document.getElementById('autho-hidden-wrapper');
+    if (hiddenWrapper) hiddenWrapper.style.display = 'block';
+
+    // Función para obtener el icono basado en el texto del botón
+    function getIconForText(text) {
+        const lowerText = text.toLowerCase();
+        
+        // Mapeo dinámico de texto a iconos
+        const iconMap = {
+            'google': 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/google-icon.svg',
+            'authenticator': 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/google-icon.svg',
+            'correo': 'https://coppeltest.github.io/auth0/assets/email.svg',
+            'email': 'https://coppeltest.github.io/auth0/assets/email.svg',
+            'mensaje': 'https://coppeltest.github.io/auth0/assets/sms.svg',
+            'sms': 'https://coppeltest.github.io/auth0/assets/sms.svg',
+            'texto': 'https://coppeltest.github.io/auth0/assets/sms.svg',
+            'guardian': 'https://coppeltest.github.io/auth0/assets/notification.svg',
+            'notificación': 'https://coppeltest.github.io/auth0/assets/notification.svg',
+            'notification': 'https://coppeltest.github.io/auth0/assets/notification.svg',
+            'recupera': 'https://coppeltest.github.io/auth0/assets/code.svg',
+            'código': 'https://coppeltest.github.io/auth0/assets/code.svg',
+            'code': 'https://coppeltest.github.io/auth0/assets/code.svg',
+            'llave': 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/rebranding/fingerprint.svg',
+            'security': 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/rebranding/fingerprint.svg',
+            'seguridad': 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/rebranding/fingerprint.svg',
+            'passkey': 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/rebranding/fingerprint.svg',
+            'microsoft': 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/microsoft-icon.svg',
+            'apple': 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/apple-icon.svg'
+        };
+        
+        // Buscar coincidencias en el texto
+        for (const [keyword, iconSrc] of Object.entries(iconMap)) {
+            if (lowerText.includes(keyword)) {
+                return iconSrc;
             }
-            
-            // Función para crear nuevos botones
-            function createDynamicButtons() {
-                const buttonTexts = extractButtonTexts();
-                const container = document.getElementById('dynamic-buttons-container');
-                
-                if (!container) return;
-                
-                // Limpiar contenedor
-                container.innerHTML = '';
-                
-                // Filtrar textos válidos (excluir textos vacíos o muy cortos)
-                const validTexts = buttonTexts.filter(text => 
-                    text && text.trim().length > 0 && text.trim().length < 100
-                );
-                
-                console.log('Todos los textos de botones encontrados:', validTexts);
-                
-                // Crear botones para todos los textos encontrados
-                validTexts.forEach((text, index) => {
-                    const buttonDiv = document.createElement('div');
-                    buttonDiv.className = 'button-container-mfa-begin-enroll-options';
-                    buttonDiv.style.marginTop = index > 0 ? '12px' : '0';
-                    
-                    const button = document.createElement('button');
-                    button.className = 'button-normal-mfa-begin-enroll-options';
-                    button.style.backgroundColor = '#FFFFFF';
-                    button.style.color = '#1B1A16';
-                    button.style.cursor = 'pointer';
-                    button.style.border = '1px solid #E0E0E0';
-                    button.style.borderRadius = '999px';
-                    button.style.padding = '16px 20px';
-                    button.style.fontFamily = "'Helvetica Neue', sans-serif";
-                    button.style.fontWeight = '600';
-                    button.style.fontSize = '16px';
-                    button.style.lineHeight = '24px';
-                    button.style.width = '100%';
-                    button.style.height = 'auto';
-                    button.style.display = 'flex';
-                    button.style.alignItems = 'center';
-                    button.style.justifyContent = 'flex-start';
-                    button.style.gap = '12px';
-                    button.style.transition = 'all 0.2s ease';
-                    button.style.boxShadow = 'none';
-                    
-                    // Efecto hover
-                    button.addEventListener('mouseenter', function() {
-                        this.style.backgroundColor = '#F8F9FA';
-                        this.style.borderColor = '#006FB9';
-                    });
-                    
-                    button.addEventListener('mouseleave', function() {
-                        this.style.backgroundColor = '#FFFFFF';
-                        this.style.borderColor = '#E0E0E0';
-                    });
-                    
-                    // Crear icono (usar iconos diferentes según el texto)
-                    const iconContainer = document.createElement('div');
-                    iconContainer.style.width = '24px';
-                    iconContainer.style.height = '24px';
-                    iconContainer.style.display = 'flex';
-                    iconContainer.style.alignItems = 'center';
-                    iconContainer.style.justifyContent = 'center';
-                    iconContainer.style.flexShrink = '0';
-                    
-                    // Asignar iconos según el texto
-                    let iconSrc = '';
-                    if (text.toLowerCase().includes('google')) {
-                        iconSrc = 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/google-icon.svg';
-                    } else if (text.toLowerCase().includes('microsoft')) {
-                        iconSrc = 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/microsoft-icon.svg';
-                    } else if (text.toLowerCase().includes('apple')) {
-                        iconSrc = 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/apple-icon.svg';
-                    } else if (text.toLowerCase().includes('passkey') || text.toLowerCase().includes('llave')) {
-                        iconSrc = 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/rebranding/fingerprint.svg';
-                    } else if (text.toLowerCase().includes('sms') || text.toLowerCase().includes('mensaje')) {
-                        iconSrc = 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/NotificacionCelular.svg';
-                    } else if (text.toLowerCase().includes('authenticator') || text.toLowerCase().includes('guardian')) {
-                        iconSrc = 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/rebranding/check-mark.svg';
-                    } else {
-                        // Icono por defecto
-                        iconSrc = 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/rebranding/Spot_Actions.svg';
+        }
+        
+        // Icono por defecto si no hay coincidencias
+        return 'https://coppeltest.github.io/auth0/assets/sms.svg';
+    }
+    
+    // Función para extraer el texto del botón de manera dinámica
+    function getButtonText(button) {
+        // Buscar en diferentes selectores posibles para el texto
+        const textSelectors = [
+            'span.c182328cf.c9f0ba6a4',
+            'span[class*="c182328cf"]',
+            'span[class*="c9f0ba6a4"]',
+            'span[class*="button-text"]',
+            'span[class*="text"]',
+            'span:not([class*="ca247b1a9"])', // Excluir elementos de icono
+            'span'
+        ];
+        
+        for (const selector of textSelectors) {
+            const elements = button.querySelectorAll(selector);
+            for (const element of elements) {
+                const text = element.textContent.trim();
+                // Verificar que el texto sea significativo (más de 2 caracteres y no solo espacios)
+                if (text && text.length > 2 && !/^\s*$/.test(text)) {
+                    // Verificar que no sea un elemento de icono
+                    if (!element.classList.contains('ca247b1a9') && 
+                        !element.querySelector('img') && 
+                        !element.querySelector('svg')) {
+                        return text;
                     }
-                    
-                    const icon = document.createElement('img');
-                    icon.src = iconSrc;
-                    icon.alt = 'Icon';
-                    icon.style.width = '24px';
-                    icon.style.height = '24px';
-                    icon.style.objectFit = 'contain';
-                    
-                    iconContainer.appendChild(icon);
-                    
-                    // Crear contenedor de texto
-                    const textContainer = document.createElement('div');
-                    textContainer.style.flex = '1';
-                    textContainer.style.textAlign = 'left';
-                    
-                    const span = document.createElement('span');
-                    span.className = 'button-text';
-                    span.textContent = text;
-                    span.style.color = '#081754';
-                    span.style.fontWeight = '600';
-                    
-                    textContainer.appendChild(span);
-                    
-                    // Agregar elementos al botón
-                    button.appendChild(iconContainer);
-                    button.appendChild(textContainer);
-                    buttonDiv.appendChild(button);
-                    container.appendChild(buttonDiv);
-                    
-                    // Buscar el botón original correspondiente y agregar evento click
-                    button.addEventListener('click', function() {
-                        console.log('Botón dinámico clickeado:', text);
-                        
-                        // Buscar el botón original que contenga este texto
-                        const originalButton = findOriginalButton(text);
-                        
-                        if (originalButton) {
-                            console.log('Ejecutando acción nativa del botón original');
-                            originalButton.click();
-                        } else {
-                            console.log('No se encontró el botón original para:', text);
-                        }
-                    });
-                });
-                
-                console.log('Botones dinámicos creados con todos los textos:', validTexts);
+                }
             }
+        }
+        
+        return null;
+    }
+    
+    // Función para reemplazar iconos en botones de manera dinámica
+    function replaceButtonIcons() {
+        // Usar específicamente los botones con las clases de Auth0
+        const buttons = document.querySelectorAll(".cea6d5264.c6a8be725.c6b0cc0b9.cba3063e3.cbd8a087f");
+        
+        buttons.forEach(button => {
+            // Obtener el texto del botón
+            const buttonText = getButtonText(button);
             
-            // Función para encontrar el botón original
-            function findOriginalButton(text) {
-                // Buscar el elemento main
-                const mainElement = document.querySelector('main');
-                if (!mainElement) {
-                    console.log('No se encontró el elemento main para buscar botón original');
-                    return null;
-                }
+            if (buttonText) {
+                console.log('Texto del botón encontrado:', buttonText);
                 
-                console.log('Buscando botón original para texto:', text);
+                // Obtener el icono correspondiente
+                const iconSrc = getIconForText(buttonText);
                 
-                // Buscar todos los botones dentro de main
-                const allButtons = mainElement.querySelectorAll('button');
-                console.log('Total de botones encontrados:', allButtons.length);
+                // Buscar el elemento de icono existente
+                const iconElement = button.querySelector('span.ca247b1a9') || 
+                                   button.querySelector('span[class*="ca247b1a9"]') ||
+                                   button.querySelector('span:first-child');
                 
-                // Buscar por texto exacto en todos los botones
-                for (const button of allButtons) {
-                    const spans = button.querySelectorAll('span');
-                    
-                    for (const span of spans) {
-                        const spanText = span.textContent.trim();
-                        console.log('Comparando:', `"${spanText}"` + ' vs ' + `"${text}"`);
+                if (iconElement && iconSrc) {
+                    // Verificar si ya tiene un icono para evitar reemplazos múltiples
+                    if (!iconElement.querySelector('img[src*="coppel"]') && 
+                        !iconElement.querySelector('img[src*="auth0"]')) {
                         
-                        // Comparación exacta (case insensitive)
-                        if (spanText.toLowerCase() === text.toLowerCase()) {
-                            console.log('¡Match exacto encontrado!', button);
-                            return button;
-                        }
+                        // Reemplazar el contenido del span con la imagen SVG
+                        iconElement.innerHTML = `<img src="${iconSrc}" alt="Icon" style="width: 24px; height: 24px; object-fit: contain;">`;
+                        console.log('Icono reemplazado para:', buttonText, 'con:', iconSrc);
                     }
                 }
-                
-                // Si no se encuentra por action, buscar por texto exacto
-                for (const button of allButtons) {
-                    const spans = button.querySelectorAll('span');
-                    
-                    for (const span of spans) {
-                        const spanText = span.textContent.trim();
-                        console.log('Comparando:', `"${spanText}"` + ' vs ' + `"${text}"`);
-                        
-                        // Comparación exacta (case insensitive)
-                        if (spanText.toLowerCase() === text.toLowerCase()) {
-                            console.log('¡Match exacto encontrado!', button);
-                            return button;
-                        }
-                    }
-                }
-                
-                // Si no hay match exacto, buscar por contenido parcial pero más específico
-                for (const button of allButtons) {
-                    const spans = button.querySelectorAll('span');
-                    let buttonText = '';
-                    
-                    // Concatenar todos los textos del botón
-                    spans.forEach(span => {
-                        const spanText = span.textContent.trim();
-                        if (spanText && !span.classList.contains('ca247b1a9')) { // Excluir iconos
-                            buttonText += spanText + ' ';
-                        }
-                    });
-                    
-                    buttonText = buttonText.trim();
-                    console.log('Texto completo del botón:', `"${buttonText}"`);
-                    
-                    // Comparación más específica
-                    if (buttonText.toLowerCase().includes(text.toLowerCase()) && 
-                        text.toLowerCase().includes(buttonText.toLowerCase())) {
-                        console.log('¡Match por contenido completo!', button);
-                        return button;
-                    }
-                }
-                
-                console.log('No se encontró botón original para:', text);
-                return null;
             }
-            
-            // Ejecutar la creación de botones dinámicos
-            createDynamicButtons();
         });
+    }
+
+    // Ejecutar la función después de un pequeño delay para asegurar que el DOM esté listo
+    setTimeout(replaceButtonIcons, 100);
+    
+    // También ejecutar cuando se detecten cambios en el DOM
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.addedNodes.length > 0) {
+                setTimeout(replaceButtonIcons, 50);
+            }
+        });
+    });
+    
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+});
