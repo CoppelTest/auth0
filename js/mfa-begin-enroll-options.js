@@ -122,7 +122,5 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
-
-    // Ejecutar la función después de un pequeño delay para asegurar que el DOM esté listo
-    setTimeout(replaceButtonIcons, 100);
+    replaceButtonIcons(replaceButtonIcons);
 });
