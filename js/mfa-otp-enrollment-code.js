@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+
 
         const main = document.querySelector('main._widget');
         const title = document.querySelector('h1.cded47f4b');
@@ -22,4 +22,3 @@ document.addEventListener('DOMContentLoaded', function () {
         btnChangeMethod.classList.add('link');
         document.getElementById('auth0-hidden-wrapper').style.display = 'block';
 
-    });
