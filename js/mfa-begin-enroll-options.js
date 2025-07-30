@@ -104,21 +104,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Obtener el icono correspondiente
                 const iconSrc = getIconForText(buttonText);
                 
-                // Buscar el elemento de icono existente con la clase ca247b1a9
-                const iconElement = button.querySelector('span.ca247b1a9');
+                // Buscar el elemento de icono existente
+                const iconElement = button.querySelector('span.ca247b1a9') || 
+                                   button.querySelector('span[class*="ca247b1a9"]') ||
+                                   button.querySelector('span:first-child');
                 
                 if (iconElement && iconSrc) {
-                    // Verificar si ya tiene un background-image para evitar reemplazos múltiples
-                    const currentBackground = iconElement.style.backgroundImage;
-                    if (!currentBackground || !currentBackground.includes('coppel') && !currentBackground.includes('auth0')) {
+                    // Verificar si ya tiene un icono para evitar reemplazos múltiples
+                    if (!iconElement.querySelector('img[src*="coppel"]') && 
+                        !iconElement.querySelector('img[src*="auth0"]')) {
                         
-                        // Agregar el icono como background-image con !important
-                        iconElement.style.setProperty('background-image', `url("${iconSrc}")`, 'important');
-                        
-                        // Limpiar cualquier contenido existente
-                        iconElement.innerHTML = '';
-                        
-                        console.log('Icono agregado como background-image para:', buttonText, 'con:', iconSrc);
+                        // Reemplazar el contenido del span con la imagen SVG
+                        iconElement.innerHTML = `<img src="${iconSrc}" alt="Icon" style="width: 24px; height: 24px; object-fit: contain;">`;
+                        console.log('Icono reemplazado para:', buttonText, 'con:', iconSrc);
                     }
                 }
             }
