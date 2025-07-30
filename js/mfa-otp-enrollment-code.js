@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const inputEnterCode = document.querySelector('.c141f6ee9.cffa611b3.text.c206ae231.ulp-field.ca2723af5');
         const input = document.getElementById('code');
         const btnCopyCode = document.querySelector('.cea6d5264.c6a8be725.js-required.c8447a25a.cbd8a087f.c404de425.cc0e0bd0e');
+        const txtCode = document.querySelector('.input.multiline');
 
         main.classList.remove('_widget', 'c7f43d5ad');
         title.className = 'title-container';
@@ -21,4 +22,5 @@ document.addEventListener('DOMContentLoaded', function () {
         btnScan.classList.add('link');
         btnChangeMethod.classList.add('link');
         btnCopyCode.style.display = 'none';
+        txtCode.classList.add('mi-multiline');
 });
