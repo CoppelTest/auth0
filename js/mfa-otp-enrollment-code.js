@@ -16,11 +16,10 @@
         title.className = 'title-container';
         btnLogin.className ='button-normal';
         subTitle.className = 'subtitle-container';
-        btnCopyCode.style.display = 'none';
         input.className = 'email-input';
         labelCode.className = 'c2d2ff081 c66f4bc7e';
         enterCode.className = '.c141f6ee9 cffa611b3 text c206ae231 ulp-field';
         btnScan.classList.add('link');
         btnChangeMethod.classList.add('link');
-        document.getElementById('auth0-hidden-wrapper').style.display = 'block';
+        btnCopyCode.style.display = 'none';
 
