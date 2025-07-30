@@ -10,11 +10,13 @@
         const enterCode = document.querySelector('.c141f6ee9.cffa611b3.text.c206ae231.ulp-field.ca2723af5');
         const inputEnterCode = document.querySelector('.c141f6ee9.cffa611b3.text.c206ae231.ulp-field.ca2723af5');
         const input = document.getElementById('code');
+        const btnCopyCode = document.querySelector('.cea6d5264.c6a8be725.js-required.c8447a25a.cbd8a087f.c404de425.cc0e0bd0e');
 
         main.classList.remove('_widget', 'c7f43d5ad');
         title.className = 'title-container';
         btnLogin.className ='button-normal';
         subTitle.className = 'subtitle-container';
+        btnCopyCode.style.display = 'none';
         input.className = 'email-input';
         labelCode.className = 'c2d2ff081 c66f4bc7e';
         enterCode.className = '.c141f6ee9 cffa611b3 text c206ae231 ulp-field';
