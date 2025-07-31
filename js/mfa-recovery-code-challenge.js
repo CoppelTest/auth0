@@ -24,7 +24,9 @@
         btnChangeMethod.classList.add('link');
 
 
-    const observer = new MutationObserver(() => {
+        document.getElementById('auth0-hidden-wrapper').style.display = 'block';
+
+            const observer = new MutationObserver(() => {
       const errorSpan = document.getElementById('error-element-code');
       const isVisible = errorSpan && window.getComputedStyle(errorSpan).display !== 'none';
 
@@ -42,5 +44,4 @@
       childList: true,
       subtree: true,
     });
-        document.getElementById('auth0-hidden-wrapper').style.display = 'block';
     });
