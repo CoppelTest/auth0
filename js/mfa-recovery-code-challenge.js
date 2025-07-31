@@ -10,7 +10,6 @@
         const input = document.getElementById('code');
         const btnChangeMethod = document.querySelector('.c78dfd5b3.ca9aac5f4.c7e1be07f');
 
-        const form = document.querySelector('form[data-form-primary="true"]');
 
         main.classList.remove('_widget', 'c750085ad');        
         title.className = 'title-container';
@@ -22,10 +21,7 @@
         //labelCode.className = 'c2d2ff081 c66f4bc7e';
         //input.className = 'email-input input ce861d26a c5e190e5a';
         btnChangeMethod.classList.add('link');
-        const errorSpan = document.getElementById('error-element-code');
-        console.log('errorSpan:', errorSpan);
-
-        
+ 
         document.getElementById('auth0-hidden-wrapper').style.display = 'block';
        
     });
