@@ -18,6 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
   txtSend.style.display = 'none';
   btnContinue.className = '';
   btnContinue.className = 'button-normal';
-  btnContinue.style.setProperty('margin-top', '45px', 'important');
+  btnContinue.style.setProperty('margin-top', '55px', 'important');
   btnChangeMethod.classList.add('link', 'link-method');
 });
