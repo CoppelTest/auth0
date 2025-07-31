@@ -1,23 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const main = document.querySelector('main._widget');
+    const main = document.querySelector('main._widget.c1ea0cbeb');
     const title = document.querySelector('h1.cded47f4b');
     const subTitle = document.querySelector('.c31b86380.ca3fde804');
-    const btnScan = document.querySelector('.c78dfd5b3._link-toggle-view.c7e1be07f');
 
-    if (main) main.classList.remove('_widget', 'c7f43d5ad');
+    if (main) main.classList.remove('_widget', 'c1ea0cbeb');
     if (title) title.className = 'title-container';
     if (subTitle) subTitle.className = 'subtitle-container';
     
     // Agregar clase social-button a los botones específicos
     const socialButtons = document.querySelectorAll(".cea6d5264.c6a8be725.c6b0cc0b9.cba3063e3.cbd8a087f");
     socialButtons.forEach(button => {
-        button.classList.add('social-button');
-        console.log('Clase social-button agregada a:', button);
+        button.className = 'social-button';
     });
-    
-    // Mostrar el wrapper oculto
-    const hiddenWrapper = document.getElementById('autho-hidden-wrapper');
-    if (hiddenWrapper) hiddenWrapper.style.display = 'block';
 
     // Función para obtener el icono basado en el texto del botón
     function getIconForText(text) {
@@ -124,5 +118,5 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
-    replaceButtonIcons(replaceButtonIcons);
+    //replaceButtonIcons();
 });
