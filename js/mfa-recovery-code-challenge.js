@@ -26,19 +26,22 @@
 
         document.getElementById('auth0-hidden-wrapper').style.display = 'block';
 
-            const observer = new MutationObserver(() => {
+        const observer = new MutationObserver(() => {
+            console.log("Entra a observer");
       const errorSpan = document.getElementById('error-element-code');
       const isVisible = errorSpan && window.getComputedStyle(errorSpan).display !== 'none';
 
+
+         requestAnimationFrame(() => {
       if (isVisible) {
-        // Agrega la clase de borde rojo (si no está ya)
+          console.log("Flujo 1");
         inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 c2f342594 c29c5cf1d ulp-field';
-  
       } else {
-        // Opcional: remover la clase de error si ya no hay error
-          inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 ulp-field';
+          console.log("Flujo 2");
+        inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 ulp-field';
       }
-    });
+        });
+      });
 
     observer.observe(form, {
       childList: true,
