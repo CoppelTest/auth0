@@ -30,3 +30,12 @@
     justify-content: center;
     align-items: center;
 }
+.span-copy-style {
+  color: var(--Colores-Interactive-primary, #1C42E8);
+  text-align: center;
+  font-family: var(--Family-body, Poppins);
+  font-size: var(--Size-Small, 14px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 21px */
+}
