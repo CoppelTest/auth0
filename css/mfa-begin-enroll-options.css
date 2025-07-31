@@ -5,10 +5,10 @@
   margin-bottom: 25px;
 }
 .text-button {
-  color: var(--Colores-Text-text, #081754);
+  color: #081754;
   text-align: center;
-  font-family: var(--Family-body, Poppins);
-  font-size: var(--Size-Body, 16px);
+  font-family: Poppins;
+  font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
