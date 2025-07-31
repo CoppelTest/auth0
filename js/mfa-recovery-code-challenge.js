@@ -10,7 +10,7 @@
         const input = document.getElementById('code');
         const btnChangeMethod = document.querySelector('.c78dfd5b3.ca9aac5f4.c7e1be07f');
 
-        const form = document.querySelector('form');
+        const form = document.querySelector('form[data-form-primary="true"]');
 
         main.classList.remove('_widget', 'c750085ad');        
         title.className = 'title-container';
@@ -25,8 +25,8 @@
 
 
         document.getElementById('auth0-hidden-wrapper').style.display = 'block';
-
-        const observer = new MutationObserver(() => {
+        console.log("antes de entrar al observer");
+    const observer = new MutationObserver(() => {
             console.log("Entra a observer");
       const errorSpan = document.getElementById('error-element-code');
       const isVisible = errorSpan && window.getComputedStyle(errorSpan).display !== 'none';
