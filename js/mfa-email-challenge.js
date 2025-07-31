@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const txtEmail = document.querySelector('.c664f7803');
   const labelCode = document.querySelector('.cd36df9bd.c2d2ff081.c66f4bc7e');
   const enterCode = document.querySelector('.c141f6ee9.cffa611b3.text.c206ae231.ulp-field.ca2723af5');
+  const txtSend = document.querySelector('.c0d4bc756.c4d0f4b3c');
+  const btnContinue = document.querySelector('div.c04b24768 button[type="submit"]');
 
   main.classList.remove('_widget', 'c7f43d5ad');
   title.className = 'title-container';
@@ -12,4 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
   txtEmail.classList.add('mi-multiline');
   labelCode.className = 'c2d2ff081 c66f4bc7e';
   enterCode.className = '.c141f6ee9 cffa611b3 text c206ae231 ulp-field';
+  txtSend.style.display = 'none';
+  btnContinue.classList.add('button-normal');
+  btnContinue.style.setProperty('margin-top', '45px', 'important');
 });
