@@ -21,6 +21,19 @@
         //labelCode.className = 'c2d2ff081 c66f4bc7e';
         //input.className = 'email-input input ce861d26a c5e190e5a';
         btnChangeMethod.classList.add('link');
+
+        const errorSpan = document.getElementById('error-element-code');
+        console.log('errorSpan:', errorSpan);
+
+         console.log("antes de entrar al submit");
+        if(errorSpan){
+            console.log('errorSpan:', errorSpan);
+            inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 c2f342594 c29c5cf1d ulp-field';
+        }else{
+            console.log('errorSpan:', errorSpan);
+            inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 ulp-field';
+        }
+
  
         document.getElementById('auth0-hidden-wrapper').style.display = 'block';
        
