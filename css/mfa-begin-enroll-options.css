@@ -18,7 +18,9 @@
 }
 
 @media (max-width: 600px) {
-    .ca40fca87 {
-        padding: 0 var(--spacing-0) !important;
-    }
+  body ._widget-auto-layout .ca40fca87,
+  body .ca589b19d .ca40fca87,
+  body .ca40fca87 {
+    padding: 0 var(--spacing-0) !important;
+  }
 }
