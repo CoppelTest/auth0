@@ -25,6 +25,7 @@
             console.log('errorSpan:', errorSpan);
             inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 c2f342594 c29c5cf1d ulp-field';
             input.className = 'input ce861d26a c5e190e5a';
+            btnContinue.style.setProperty('margin-top', '25%', 'important');
         }else{
             console.log('errorSpan:', errorSpan);
             inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 ulp-field';
