@@ -15,10 +15,30 @@
         subTitle.className = 'subtitle-container';
         btnContinue.className ='button-normal';
                                     
-        //inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 ulp-field';
+        inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 ulp-field';
         //inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 c2f342594 c29c5cf1d ulp-field';
         //labelCode.className = 'c2d2ff081 c66f4bc7e';
         //input.className = 'email-input input ce861d26a c5e190e5a';
         btnChangeMethod.classList.add('link');
+
+
+    const observer = new MutationObserver(() => {
+      const errorSpan = document.getElementById('error-element-code');
+      const isVisible = errorSpan && window.getComputedStyle(errorSpan).display !== 'none';
+
+      if (isVisible) {
+        // Agrega la clase de borde rojo (si no está ya)
+        inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 c2f342594 c29c5cf1d ulp-field';
+  
+      } else {
+        // Opcional: remover la clase de error si ya no hay error
+          inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 ulp-field';
+      }
+    });
+
+    observer.observe(form, {
+      childList: true,
+      subtree: true,
+    });
         document.getElementById('auth0-hidden-wrapper').style.display = 'block';
     });
