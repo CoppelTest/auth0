@@ -21,6 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
         enterCode.className = '.c141f6ee9 cffa611b3 text c206ae231 ulp-field';
         btnScan.classList.add('link');
         btnChangeMethod.classList.add('link');
-        btnCopyCode.style.display = 'none';
+        btnCopyCode.classList.add('btn-copy-code');
         txtCode.classList.add('mi-multiline');
 });
