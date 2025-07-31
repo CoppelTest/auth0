@@ -3,14 +3,47 @@ document.addEventListener('DOMContentLoaded', function () {
     const title = document.querySelector('h1.cded47f4b');
     const subTitle = document.querySelector('.c31b86380.ca3fde804');
 
-    if (main) main.classList.remove('_widget', 'c1ea0cbeb');
-    if (title) title.className = 'title-container';
-    if (subTitle) subTitle.className = 'subtitle-container';
+    main.classList.remove('_widget', 'c1ea0cbeb');
+    title.className = 'title-container';
+    subTitle.className = 'subtitle-container';
     
-    // Agregar clase social-button a los botones específicos
+    // Procesar botones específicos: agregar clase y reemplazar iconos
     const socialButtons = document.querySelectorAll(".cea6d5264.c6a8be725.c6b0cc0b9.cba3063e3.cbd8a087f");
     socialButtons.forEach(button => {
+        // Agregar clase social-button
         button.className = 'social-button';
+        const textButton = document.querySelector('.c182328cf.c9f0ba6a4');
+        textButton.className = 'text-button';
+        // Obtener el texto del botón directamente
+        const text = button.textContent.trim();
+        
+        if (text && text.length > 2) {
+            console.log('Texto del botón encontrado:', text);
+            
+            // Obtener el icono correspondiente
+            const iconSrc = getIconForText(text);
+            
+            // Buscar el elemento de icono existente
+            const iconElement = button.querySelector('span.ca247b1a9') || 
+                               button.querySelector('span[class*="ca247b1a9"]') ||
+                               button.querySelector('span:first-child');
+            
+            if (iconElement && iconSrc) {
+                // Aplicar el icono como background-image con !important para sobrescribir el existente
+                iconElement.style.setProperty('background-image', `url("${iconSrc}")`, 'important');
+                iconElement.style.setProperty('background-size', '24px 24px', 'important');
+                iconElement.style.setProperty('background-repeat', 'no-repeat', 'important');
+                iconElement.style.setProperty('background-position', 'center', 'important');
+                iconElement.style.setProperty('width', '24px', 'important');
+                iconElement.style.setProperty('height', '24px', 'important');
+                iconElement.style.setProperty('display', 'inline-block', 'important');
+                
+                // Limpiar cualquier contenido existente (iconos, texto, etc.)
+                iconElement.innerHTML = '';
+                
+                console.log('Icono aplicado como background-image para:', text, 'con:', iconSrc);
+            }
+        }
     });
 
     // Función para obtener el icono basado en el texto del botón
@@ -50,73 +83,4 @@ document.addEventListener('DOMContentLoaded', function () {
         // Icono por defecto si no hay coincidencias
         return 'https://coppeltest.github.io/auth0/assets/sms.svg';
     }
-    
-    // Función para extraer el texto del botón de manera dinámica
-    function getButtonText(button) {
-        // Buscar en diferentes selectores posibles para el texto
-        const textSelectors = [
-            'span.c182328cf.c9f0ba6a4',
-            'span[class*="c182328cf"]',
-            'span[class*="c9f0ba6a4"]',
-            'span[class*="button-text"]',
-            'span[class*="text"]',
-            'span:not([class*="ca247b1a9"])', // Excluir elementos de icono
-            'span'
-        ];
-        
-        for (const selector of textSelectors) {
-            const elements = button.querySelectorAll(selector);
-            for (const element of elements) {
-                const text = element.textContent.trim();
-                // Verificar que el texto sea significativo (más de 2 caracteres y no solo espacios)
-                if (text && text.length > 2 && !/^\s*$/.test(text)) {
-                    // Verificar que no sea un elemento de icono
-                    if (!element.classList.contains('ca247b1a9') && 
-                        !element.querySelector('img') && 
-                        !element.querySelector('svg')) {
-                        return text;
-                    }
-                }
-            }
-        }
-        
-        return null;
-    }
-    
-    // Función para reemplazar iconos en botones de manera dinámica
-    function replaceButtonIcons() {
-        // Usar específicamente los botones con las clases de Auth0
-        const buttons = document.querySelectorAll(".cea6d5264.c6a8be725.c6b0cc0b9.cba3063e3.cbd8a087f");
-        
-        buttons.forEach(button => {
-            // Obtener el texto del botón
-            const buttonText = getButtonText(button);
-            
-            if (buttonText) {
-                console.log('Texto del botón encontrado:', buttonText);
-                
-                // Obtener el icono correspondiente
-                const iconSrc = getIconForText(buttonText);
-                
-                // Buscar el elemento de icono existente
-                const iconElement = button.querySelector('span.ca247b1a9') || 
-                                   button.querySelector('span[class*="ca247b1a9"]') ||
-                                   button.querySelector('span:first-child');
-                
-                if (iconElement && iconSrc) {
-                    iconElement.style.setProperty('background-image', `url("${iconSrc}")`, 'important');
-                    iconElement.style.setProperty('background-size', '24px 24px', 'important');
-                    iconElement.style.setProperty('background-repeat', 'no-repeat', 'important');
-                    iconElement.style.setProperty('background-position', 'center', 'important');
-                    iconElement.style.setProperty('width', '24px', 'important');
-                    iconElement.style.setProperty('height', '24px', 'important');
-                    iconElement.style.setProperty('display', 'inline-block', 'important');
-                    
-                    // Limpiar cualquier contenido existente (iconos, texto, etc.)
-                    iconElement.innerHTML = '';
-                }
-            }
-        });
-    }
-    //replaceButtonIcons();
 });
