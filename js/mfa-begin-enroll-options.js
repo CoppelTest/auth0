@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const spaceDiv = document.querySelector('.ca40fca87.c7f03c812');
         spaceDiv.style.setProperty('padding', '0 var(--spacing-0)', 'important');
     }
-    main.classList.remove('_widget', 'c1ea0cbeb');
     title.className = 'title-container';
     subTitle.className = 'subtitle-container';
     const socialButtons = document.querySelectorAll(".cea6d5264.c6a8be725.c6b0cc0b9.cba3063e3.cbd8a087f");
