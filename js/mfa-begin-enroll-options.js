@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const main = document.querySelector('main._widget.c1ea0cbeb');
     const title = document.querySelector('h1.cded47f4b');
     const subTitle = document.querySelector('.c31b86380.ca3fde804');
+    
+    if (window.innerWidth <= 600) {
+        const spaceDiv = document.querySelector('.ca40fca87.c7f03c812');
+        spaceDiv.style.setProperty('padding', '0 var(--spacing-0)', 'important');
+    }
 
     main.classList.remove('_widget', 'c1ea0cbeb');
     title.className = 'title-container';
