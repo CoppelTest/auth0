@@ -3,8 +3,13 @@ document.addEventListener('DOMContentLoaded', function () {
   const title = document.querySelector('h1.cded47f4b');
   const subTitle = document.querySelector('.c31b86380.ca3fde804');
   const txtEmail = document.querySelector('.c664f7803');
+  const labelCode = document.querySelector('.cd36df9bd.c2d2ff081.c66f4bc7e');
+  const enterCode = document.querySelector('.c141f6ee9.cffa611b3.text.c206ae231.ulp-field.ca2723af5');
 
+  main.classList.remove('_widget', 'c7f43d5ad');
   title.className = 'title-container';
   subTitle.className = 'subtitle-container';
   txtEmail.classList.add('mi-multiline');
+  labelCode.className = 'c2d2ff081 c66f4bc7e';
+  enterCode.className = '.c141f6ee9 cffa611b3 text c206ae231 ulp-field';
 });
