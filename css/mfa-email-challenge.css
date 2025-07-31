@@ -11,9 +11,17 @@
     margin-block-end: 30px !important;
   }
 .link-method {
-  color: #1C42E8;
+    color: #1C42E8;
     font-family: var(--Family-body, Poppins);
     font-size: var(--Size-Body, 16px);
     font-style: normal;
     line-height: 150%;
+}
+.btn-copy-code {
+  border-radius: var(--rounded-full, 999px);
+    border: 1px solid var(--Colores-Interactive-primary, #1C42E8);
+    background: var(--Colores-Background-background-body, #FFF);
+    padding: var(--s-unit-3, 12px) var(--s-unit-6, 24px);
+    justify-content: center;
+    align-items: center;
 }
