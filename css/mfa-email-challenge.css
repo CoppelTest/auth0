@@ -8,4 +8,5 @@
     overflow: hidden !important;
     color: #717171 !important;
     text-overflow: ellipsis !important;
+    margin-block-end: 30px !important;
   }
