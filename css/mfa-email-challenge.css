@@ -10,3 +10,10 @@
     text-overflow: ellipsis !important;
     margin-block-end: 30px !important;
   }
+.link-method {
+  color: #1C42E8;
+    font-family: var(--Family-body, Poppins);
+    font-size: var(--Size-Body, 16px);
+    font-style: normal;
+    line-height: 150%;
+}
