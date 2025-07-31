@@ -16,11 +16,3 @@
 .ca40fca87 {
   padding: 0px var(--spacing-2);
 }
-
-@media (max-width: 600px) {
-  body ._widget-auto-layout .ca40fca87,
-  body .ca589b19d .ca40fca87,
-  body .ca40fca87 {
-    padding: 0 var(--spacing-0) !important;
-  }
-}
