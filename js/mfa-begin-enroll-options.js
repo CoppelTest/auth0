@@ -110,14 +110,16 @@ document.addEventListener('DOMContentLoaded', function () {
                                    button.querySelector('span:first-child');
                 
                 if (iconElement && iconSrc) {
-                    // Verificar si ya tiene un icono para evitar reemplazos múltiples
-                    if (!iconElement.querySelector('img[src*="coppel"]') && 
-                        !iconElement.querySelector('img[src*="auth0"]')) {
-                        
-                        // Reemplazar el contenido del span con la imagen SVG
-                        iconElement.innerHTML = `<img src="${iconSrc}" alt="Icon" style="width: 24px; height: 24px; object-fit: contain;">`;
-                        console.log('Icono reemplazado para:', buttonText, 'con:', iconSrc);
-                    }
+                    iconElement.style.setProperty('background-image', `url("${iconSrc}")`, 'important');
+                    iconElement.style.setProperty('background-size', '24px 24px', 'important');
+                    iconElement.style.setProperty('background-repeat', 'no-repeat', 'important');
+                    iconElement.style.setProperty('background-position', 'center', 'important');
+                    iconElement.style.setProperty('width', '24px', 'important');
+                    iconElement.style.setProperty('height', '24px', 'important');
+                    iconElement.style.setProperty('display', 'inline-block', 'important');
+                    
+                    // Limpiar cualquier contenido existente (iconos, texto, etc.)
+                    iconElement.innerHTML = '';
                 }
             }
         });
