@@ -17,34 +17,31 @@
         subTitle.className = 'subtitle-container';
         btnContinue.className ='button-normal';
                                     
-        inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 ulp-field';
+        //inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 ulp-field';
         //inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 c2f342594 c29c5cf1d ulp-field';
         //labelCode.className = 'c2d2ff081 c66f4bc7e';
         //input.className = 'email-input input ce861d26a c5e190e5a';
         btnChangeMethod.classList.add('link');
+        const errorSpan = document.getElementById('error-element-code');
+        console.log('errorSpan:', errorSpan);
+ console.log("antes de entrar al submit");
+        form.addEventListener('submit', function (event) {
+             console.log("entra al submit");
 
-
-        document.getElementById('auth0-hidden-wrapper').style.display = 'block';
-        console.log("antes de entrar al observer");
-    const observer = new MutationObserver(() => {
-            console.log("Entra a observer");
-      const errorSpan = document.getElementById('error-element-code');
-      const isVisible = errorSpan && window.getComputedStyle(errorSpan).display !== 'none';
-
-
-         requestAnimationFrame(() => {
-      if (isVisible) {
-          console.log("Flujo 1");
+    // Esperar un momento para que el DOM renderice el mensaje de error
+    setTimeout(() => {
+      const isErrorVisible = errorSpan && window.getComputedStyle(errorSpan).display !== 'none';
+        console.log('Error visible:', isErrorVisible);
+      if (isErrorVisible) {
+        // Pintar borde rojo
         inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 c2f342594 c29c5cf1d ulp-field';
       } else {
-          console.log("Flujo 2");
+        // Dejar clase normal
         inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 ulp-field';
       }
-        });
-      });
-
-    observer.observe(form, {
-      childList: true,
-      subtree: true,
-    });
+    }, 200); // tiempo suficiente para esperar render
+  });
+        
+        document.getElementById('auth0-hidden-wrapper').style.display = 'block';
+       
     });
