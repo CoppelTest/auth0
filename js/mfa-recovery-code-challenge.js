@@ -10,6 +10,8 @@
         const input = document.getElementById('code');
         const btnChangeMethod = document.querySelector('.c78dfd5b3.ca9aac5f4.c7e1be07f');
 
+        const form = document.querySelector('form');
+
         main.classList.remove('_widget', 'c750085ad');        
         title.className = 'title-container';
         subTitle.className = 'subtitle-container';
