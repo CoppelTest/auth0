@@ -67,25 +67,11 @@ document.addEventListener('DOMContentLoaded', function () {
         
         // Mapeo dinámico de texto a iconos
         const iconMap = {
-            'google': 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/google-icon.svg',
-            'authenticator': 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/google-icon.svg',
-            'correo': 'https://coppeltest.github.io/auth0/assets/email.svg',
-            'email': 'https://coppeltest.github.io/auth0/assets/email.svg',
-            'mensaje': 'https://coppeltest.github.io/auth0/assets/sms.svg',
-            'sms': 'https://coppeltest.github.io/auth0/assets/sms.svg',
-            'texto': 'https://coppeltest.github.io/auth0/assets/sms.svg',
-            'guardian': 'https://coppeltest.github.io/auth0/assets/notification.svg',
             'notificación': 'https://coppeltest.github.io/auth0/assets/notification.svg',
-            'notification': 'https://coppeltest.github.io/auth0/assets/notification.svg',
-            'recupera': 'https://coppeltest.github.io/auth0/assets/code.svg',
-            'código': 'https://coppeltest.github.io/auth0/assets/code.svg',
-            'code': 'https://coppeltest.github.io/auth0/assets/code.svg',
-            'llave': 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/rebranding/fingerprint.svg',
-            'security': 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/rebranding/fingerprint.svg',
-            'seguridad': 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/rebranding/fingerprint.svg',
-            'passkey': 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/rebranding/fingerprint.svg',
-            'microsoft': 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/microsoft-icon.svg',
-            'apple': 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/apple-icon.svg'
+            'google': 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/google-icon.svg',
+            'mensaje': 'https://coppeltest.github.io/auth0/assets/sms.svg',
+            'correo': 'https://coppeltest.github.io/auth0/assets/email.svg',
+            'código': 'https://coppeltest.github.io/auth0/assets/code.svg'
         };
         
         // Buscar coincidencias en el texto
