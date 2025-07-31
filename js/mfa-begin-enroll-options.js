@@ -21,12 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
             spanToRemove.remove();
         }
         
-        // Eliminar las clases del span específico
-        const spanToRemoveClass = button.querySelector('span.ca247b1a9.c5a03cf0e.c7cb18864');
-        if (spanToRemoveClass) {
-            spanToRemoveClass.className = '';
-        }
-        
         // Obtener el texto del botón directamente
         const text = button.textContent.trim();
         
@@ -40,6 +34,9 @@ document.addEventListener('DOMContentLoaded', function () {
             const iconElement = button.querySelector('span.ca247b1a9') || 
                                button.querySelector('span[class*="ca247b1a9"]') ||
                                button.querySelector('span:first-child');
+            if (iconElement) {
+                iconElement.className = '';
+            }
             
             if (iconElement && iconSrc) {
                 // Aplicar el icono como background-image con !important para sobrescribir el existente
