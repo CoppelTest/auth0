@@ -14,6 +14,13 @@ document.addEventListener('DOMContentLoaded', function () {
         button.className = 'social-button';
         const textButton = document.querySelector('.c182328cf.c9f0ba6a4');
         textButton.className = 'text-button';
+        
+        // Eliminar el span con las clases específicas
+        const spanToRemove = button.querySelector('span.ca247b1a9.c0d0e7438.c2237a039');
+        if (spanToRemove) {
+            spanToRemove.remove();
+        }
+        
         // Obtener el texto del botón directamente
         const text = button.textContent.trim();
         
