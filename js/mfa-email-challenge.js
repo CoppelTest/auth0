@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
   labelCode.className = 'c2d2ff081 c66f4bc7e';
   enterCode.className = '.c141f6ee9 cffa611b3 text c206ae231 ulp-field';
   txtSend.style.display = 'none';
-  btn.className = '';
-  btn.className = 'button-normal';
+  btnContinue.className = '';
+  btnContinue.className = 'button-normal';
   btnContinue.style.setProperty('margin-top', '45px', 'important');
   btnChangeMethod.classList.add('link', 'link-method');
 });
