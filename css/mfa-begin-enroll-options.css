@@ -1,18 +1,8 @@
-main {
-    margin: 5px auto;
-    padding: 0 16px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    max-width: 100%;
-    box-sizing: border-box
-}
-
 .social-button {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box !important;
-    border-radius: var(--rounded-full, 999px) !important;
-    border: 1px solid var(--Colores-Border-border, #C9C9C9) !important;
-    background: var(--Colores-Background-background-body, #FFF) !important;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box !important;
+  border-radius: var(--rounded-full, 999px) !important;
+  border: 1px solid var(--Colores-Border-border, #C9C9C9) !important;
+  background: var(--Colores-Background-background-body, #FFF) !important;
 }
