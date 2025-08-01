@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const input = document.getElementById('code');
         const btnCopyCode = document.querySelector('.cea6d5264.c6a8be725.js-required.c8447a25a.cbd8a087f.c404de425.cc0e0bd0e');
         const txtCode = document.querySelector('.input.multiline');
-        const spanCopy = document.querySelector('.btn-copy-code span');
+        const spanCopy = document.querySelector('.cea6d5264 span');
 
         main.classList.remove('_widget', 'c7f43d5ad');
         title.className = 'title-container';
