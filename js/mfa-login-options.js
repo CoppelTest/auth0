@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const main = document.querySelector('main._widget.c35245740');
-    const title = document.querySelector('c674cdded__title');
+    const title = document.querySelector('.c674cdded__title');
     //const subTitle = document.querySelector('.c31b86380.ca3fde804');
 
     if (window.innerWidth <= 600) {
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //subTitle.className = 'subtitle-container'; 
     const socialButtons = document.querySelectorAll(".c78dfd5b3.c00bfb08d.cac488521.ca0c96df3.c6b0cc0b9.c5c314304");
     document.getElementById('auth0-hidden-wrapper').style.display = 'block';
+    main.classList.remove('_widget', 'c1ea0cbeb');
     socialButtons.forEach(button => {
         button.className = 'social-button';
         const textButton = document.querySelector('.c182328cf.c9f0ba6a4');
