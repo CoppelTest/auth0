@@ -25,5 +25,13 @@ document.addEventListener('DOMContentLoaded', function () {
         btnCopyCode.classList.add('btn-copy-code');
         txtCode.classList.add('mi-multiline');
         spanCopy.classList.add('span-copy-style');
-        
+
+        const errorSpan = document.getElementById('error-element-code');
+        const containerDiv = document.querySelector('.c04b24768'); // El div al que quieres agregar el padding
+
+          if (errorSpan.offsetHeight > 0) { // Si el error tiene altura, está visible
+            containerDiv.style.padding = '30px 0px 5px'; // Aplica el padding cuando el error está visible
+          } else {
+            containerDiv.style.padding = 'initial'; // Resetea el padding cuando no hay error
+          }
 });
