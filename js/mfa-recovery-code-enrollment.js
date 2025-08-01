@@ -11,7 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
         subTitle.className = 'subtitle-container';
         btnContinue.className ='button-normal';
         spanSavedCode.classList.add('text');
-            
-        document.getElementById('auth0-hidden-wrapper').style.display = 'block';
+        const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
+            if (auth0Wrapper) {
+                auth0Wrapper.style.removeProperty('display');
+                auth0Wrapper.style.setProperty('height', 'inherit', 'important');
+            } 
 
     });
