@@ -30,7 +30,9 @@
             console.log('errorSpan:', errorSpan);
             inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 ulp-field';
         }
-
-        document.getElementById('auth0-hidden-wrapper').style.display = 'block';
-       
+         const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
+            if (auth0Wrapper) {
+                auth0Wrapper.style.removeProperty('display');
+                auth0Wrapper.style.setProperty('height', 'inherit', 'important');
+            }        
     });
