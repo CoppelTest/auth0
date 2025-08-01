@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         spaceDiv.style.setProperty('padding', '0 var(--spacing-0)', 'important');
     }
     title.className = 'title-container';             
-    //subTitle.className = 'subtitle-container';     
+    main.classList.remove('_widget', 'c35245740');
     const socialButtons = document.querySelectorAll('button.cac488521.ca0c96df3.c6b0cc0b9.c5c314304');
     ulSection.classList.remove('c384a9c40', 'c7bd2a184');
     socialButtons.forEach(button => {
@@ -42,12 +42,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 iconElement.innerHTML = '';
             }
         }
-        if (main) {
-            main.style.display = 'block';
-            main.classList.remove('_widget', 'c35245740');
-        }
+     
 
     });
+    const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
+    if (auth0Wrapper) {
+        auth0Wrapper.style.removeProperty('display');
+        auth0Wrapper.style.setProperty('height', 'inherit', 'important');
+    }
     function getIconForText(text) {
         const lowerText = text.toLowerCase();
         const iconMap = {
