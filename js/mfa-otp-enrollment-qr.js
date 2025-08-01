@@ -20,6 +20,10 @@ document.addEventListener('DOMContentLoaded', function () {
         enterCode.className = '.c141f6ee9 cffa611b3 text c206ae231 ulp-field';
         btnScan.classList.add('link');
         btnChangeMethod.classList.add('link');
-        document.getElementById('auth0-hidden-wrapper').style.display = 'block';
+        const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
+            if (auth0Wrapper) {
+                auth0Wrapper.style.removeProperty('display');
+                auth0Wrapper.style.setProperty('height', 'inherit', 'important');
+            } 
 
     });
