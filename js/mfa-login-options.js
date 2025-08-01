@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const spaceDiv = document.querySelector('.ca40fca87.c7f03c812');
         spaceDiv.style.setProperty('padding', '0 var(--spacing-0)', 'important');
     }
-    title.className = 'title-container';
-    //subTitle.className = 'subtitle-container'; 
-    const socialButtons = document.querySelectorAll(".c78dfd5b3.c00bfb08d.cac488521.ca0c96df3.c6b0cc0b9.c5c314304");
+    title.className = 'title-container';             
+    //subTitle.className = 'subtitle-container';     
+    const socialButtons = document.querySelectorAll("button.cac488521.ca0c96df3.c6b0cc0b9.c5c314304);
     document.getElementById('auth0-hidden-wrapper').style.display = 'block';
     
     socialButtons.forEach(button => {
