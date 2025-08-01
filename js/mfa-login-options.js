@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     title.className = 'title-container';             
     //subTitle.className = 'subtitle-container';     
-    const socialButtons = document.querySelectorAll("button.cac488521.ca0c96df3.c6b0cc0b9.c5c314304);
+    const socialButtons = document.querySelectorAll('button.cac488521.ca0c96df3.c6b0cc0b9.c5c314304');
     document.getElementById('auth0-hidden-wrapper').style.display = 'block';
     
     socialButtons.forEach(button => {
