@@ -47,17 +47,17 @@ document.addEventListener('DOMContentLoaded', function () {
     function getIconForText(text) {
         const lowerText = text.toLowerCase();
         const iconMap = {
-            'notificación': 'https://coppeltest.github.io/auth0/assets/notification.svg',
+            'notificación': 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/notification.svg',
             'google': 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/google-icon.svg',
-            'mensaje': 'https://coppeltest.github.io/auth0/assets/sms.svg',
-            'correo': 'https://coppeltest.github.io/auth0/assets/email.svg',
-            'código': 'https://coppeltest.github.io/auth0/assets/code.svg'
+            'mensaje': 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/sms.svg',
+            'correo': 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/email.svg',
+            'código': 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/code.svg'
         };
         for (const [keyword, iconSrc] of Object.entries(iconMap)) {
             if (lowerText.includes(keyword)) {
                 return iconSrc;
             }
         }
-        return 'https://coppeltest.github.io/auth0/assets/sms.svg';
+        return 'https://cdn2.coppel.com/images/emarketing/Materiales/assets/sms.svg';
     }
 });
