@@ -24,6 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
         btnChangeMethod.classList.add('link');
         btnCopyCode.classList.add('btn-copy-code');
         txtCode.classList.add('mi-multiline');
-        spanCopiar.classList.add('span-copy-style');
+        spanCopy.classList.add('span-copy-style');
         
 });
