@@ -44,7 +44,9 @@ footer {
   .c651dda97{
     padding: 40px 25px 24px !important;
   }
-  .button-normal {
-      margin-top: 95px;
+  @media (max-width: 375px) {
+    .button-normal {
+      margin-top: 55px;
+    }
   }
 }
