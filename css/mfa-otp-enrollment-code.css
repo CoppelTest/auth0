@@ -36,3 +36,12 @@
   font-weight: 700;
   line-height: 150%; /* 21px */
 }
+footer {
+  margin-top: auto;
+}
+
+@media (max-width: 767px) {
+  .c651dda97{
+    padding: 40px 25px 24px !important;
+  }
+}
