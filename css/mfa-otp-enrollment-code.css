@@ -36,10 +36,3 @@
   font-weight: 700;
   line-height: 150%; /* 21px */
 }
-
-button,
-input {
-  width: 100% !important;
-  max-width: 341px !important;
-  height: 45px !important;
-}
