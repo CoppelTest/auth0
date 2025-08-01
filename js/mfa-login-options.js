@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         spaceDiv.style.setProperty('padding', '0 var(--spacing-0)', 'important');
     }
     title.className = 'title-container';             
-    main.classList.remove('_widget', 'c35245740');
+   
     const socialButtons = document.querySelectorAll('button.cac488521.ca0c96df3.c6b0cc0b9.c5c314304');
     ulSection.classList.remove('c384a9c40', 'c7bd2a184');
     socialButtons.forEach(button => {
