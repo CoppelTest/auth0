@@ -5,4 +5,16 @@ document.addEventListener('DOMContentLoaded', function () {
     main.classList.remove('_widget', 'c1ea0cbeb');
     title.className = 'title-container';
     subTitle.className = 'subtitle-container';
+    const countryCodeButton = document.querySelector('button[value="pick-country-code"]');
+    if (countryCodeButton) {
+        countryCodeButton.classList.add('country-code-selector');
+        const countryLabel = document.createElement('label');
+        countryLabel.textContent = 'Celular';
+        countryLabel.className = 'country-label';
+        countryCodeButton.parentNode.insertBefore(phoneLabel, countryCodeButton);
+        const countryTextSpan = countryCodeButton.querySelector('span.c8e25e3d0');
+        if (countryTextSpan) {
+            countryTextSpan.textContent = '+52';
+        }
+    }
 });
