@@ -2,10 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const main = document.querySelector('main._widget.c35245740');
     const title = document.querySelector('.c674cdded__title');
     const ulSection = document.querySelector('.c384a9c40.c7bd2a184');
-    if (main) {
-        main.style.display = 'none';
-    }
-
+       
+    main.classList.remove('_widget', 'c35245740');
     if (window.innerWidth <= 600) {
         const spaceDiv = document.querySelector('.ca40fca87.c7f03c812');
         spaceDiv.style.setProperty('padding', '0 var(--spacing-0)', 'important');
