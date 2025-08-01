@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const main = document.querySelector('main._widget.c35245740');
-    const title = document.querySelector('.c674cdded__title');
+    const title = document.querySelector('.c674cdded.__title');
     const ulSection = document.querySelector('.c384a9c40.c7bd2a184');
     if (main) {
         main.style.display = 'none';
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         if (main) {
             main.style.display = 'block';
-            //main.classList.remove('_widget', 'c35245740');
+            main.classList.remove('_widget', 'c35245740');
         }
 
     });
