@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const main = document.querySelector('main._widget.c35245740');
     const title = document.querySelector('.c674cdded__title');
-    //const subTitle = document.querySelector('.c31b86380.ca3fde804');
+    const ulSection = document.querySelector('.c384a9c40.c7bd2a184');
     if (main) {
         main.style.display = 'none';
     }
@@ -13,8 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     title.className = 'title-container';             
     //subTitle.className = 'subtitle-container';     
     const socialButtons = document.querySelectorAll('button.cac488521.ca0c96df3.c6b0cc0b9.c5c314304');
-    document.getElementById('auth0-hidden-wrapper').style.display = 'block';
-    
+    ulSection.classList.remove('c384a9c40', 'c7bd2a184');
     socialButtons.forEach(button => {
         button.className = 'social-button';
         const textButton = document.querySelector('.c182328cf.c9f0ba6a4');
