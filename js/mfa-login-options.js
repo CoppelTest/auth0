@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         if (main) {
             main.style.display = 'block';
-            main.classList.remove('_widget', 'c35245740');
+            //main.classList.remove('_widget', 'c35245740');
         }
 
     });
