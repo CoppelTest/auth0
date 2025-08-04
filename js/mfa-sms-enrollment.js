@@ -13,9 +13,12 @@ document.addEventListener('DOMContentLoaded', function () {
         countryLabel.className = 'country-label';
         countryCodeButton.parentNode.insertBefore(countryLabel, countryCodeButton);
         const countryTextSpan = countryCodeButton.querySelector('span.c8e25e3d0');
-        if (countryTextSpan) {
-            countryTextSpan.textContent = '+52';
-        }
+        countryTextSpan.textContent = '+52';
+        const spanToRemove = button.querySelector('span.ca247b1a9.c0d0e7438');
+        spanToRemove.remove();
+        const spanImage = button.querySelector('span.ca247b1a9.c2a310de9.c32beeb11');
+        spanImage.classList.add('cf2b3b200');
+        spanImage.classList.remove('c32beeb11');
     }
     const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
     if (auth0Wrapper) {
