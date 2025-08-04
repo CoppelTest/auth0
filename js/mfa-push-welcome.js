@@ -36,4 +36,9 @@ document.addEventListener('DOMContentLoaded', function () {
       outline: none;
     } `;
   document.head.appendChild(focusStyle);
+  const socialButtonSpans = document.querySelectorAll('.social-button span');
+  socialButtonSpans.forEach(span => {
+    span.style.color = '#081754';
+    span.style.fontFamily = 'var(--Family-body, Poppins)';
+  });
 });
