@@ -25,19 +25,49 @@ document.addEventListener('DOMContentLoaded', function () {
         const errorSpan = document.getElementById('error-element-code');
         const errorSpancs = document.getElementById('error-cs-code-required');
 
-        if(errorSpan || errorSpancs){
-            console.log('errorSpan:', errorSpan);
-            inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 c2f342594 c29c5cf1d ulp-field';
-            input.className = 'input ce861d26a c5e190e5a';
-            //btnContinue.style.setProperty('margin-top', '25%', 'important');
-        }else{
-            console.log('errorSpan:', errorSpan);
-            inputEnterCode.className = 'cffa611b3 text c206ae231 ulp-field';
+
+                // Función que actualiza el estilo si hay error
+        function applyErrorStyles() {
+                inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 c2f342594 c29c5cf1d ulp-field';
+                input.className = 'input ce861d26a c5e190e5a';
         }
 
+        // Si ya existe error de código (ej. server-side render)
+        if (errorSpan) {
+                applyErrorStyles();
+        }else{
+                console.log('errorSpan:', errorSpan);
+                inputEnterCode.className = 'cffa611b3 text c206ae231 ulp-field';
+        }
+
+        
+        // Observa cambios en las clases del error-cs-code-required
+        const observer = new MutationObserver(function (mutationsList) {
+        for (const mutation of mutationsList) {
+            if (
+                mutation.type === 'attributes' &&
+                mutation.attributeName === 'class' &&
+                errorSpancs.classList.contains('ulp-validator-error')
+            ) {
+                applyErrorStyles();
+            }
+        }
+    });
+
+    if (errorSpancs) {
+        observer.observe(errorSpancs, {
+            attributes: true,
+            attributeFilter: ['class']
+        });
+    }
         const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
             if (auth0Wrapper) {
                 auth0Wrapper.style.removeProperty('display');
             } 
+
+
+ 
+
+    
 
     });
