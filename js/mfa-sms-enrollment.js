@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const countryCodeButton = document.querySelector('button[value="pick-country-code"]');
     if (countryCodeButton) {
         countryCodeButton.classList.add('country-code-selector');
+        countryCodeButton.disabled = true;
+        countryCodeButton.style.setProperty('box-shadow', 'inset 0 0 0 150px #fff', 'important');
         const countryLabel = document.createElement('label');
         countryLabel.textContent = 'Celular';
         countryLabel.className = 'country-label';
