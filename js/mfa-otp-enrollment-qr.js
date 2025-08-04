@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const labelCode = document.querySelector('.cd36df9bd.c2d2ff081.c66f4bc7e');
         const inputEnterCode = document.querySelector('.c141f6ee9.cffa611b3.text.c206ae231.ulp-field.ca2723af5');
         const enterCode = document.querySelector('.c141f6ee9.cffa611b3.text.c206ae231.ulp-field.ca2723af5');
-        
+                                                        c141f6ee9 cffa611b3 text c206ae231 ulp-field ca2723af5
         const input = document.getElementById('code');
 
         main.classList.remove('_widget', 'c7f43d5ad');
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         subTitle.className = 'subtitle-container';
         input.className = 'email-input';
         labelCode.className = 'c2d2ff081 c66f4bc7e';
-        enterCode.className = '.c141f6ee9 cffa611b3 text c206ae231 ulp-field';
+        enterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 ulp-field';
         btnScan.classList.add('link');
         btnChangeMethod.classList.add('link');
 
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
             //btnContinue.style.setProperty('margin-top', '25%', 'important');
         }else{
             console.log('errorSpan:', errorSpan);
-            inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 ulp-field ca2723af5';
+            inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 ulp-field';
         }
 
         const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
