@@ -32,12 +32,11 @@
   font-size: 14px;
   color: #1a1a1a;
   border: none;
-  padding: 0.4rem 0.6rem;
-  border-radius: 6px;
-  background-color: #f7f7f7;
+  padding: 0.1rem 0.6rem;
+  border-radius: 6px; 
 }
 .custom-checkbox-container input[type="checkbox"] {
-  accent-color: #0052cc; /* color del check */
+  accent-color: 
   width: 16px;
   height: 16px;
   margin: 0;
@@ -52,4 +51,8 @@
 }
 .custom-checkbox-container span {
   user-select: none;
+}
+.c074eacd2>span {
+  color: #081754;
+  top: 0px;
 }
