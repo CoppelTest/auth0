@@ -18,8 +18,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const spanToRemove = countryCodeButton.querySelector('span.ca247b1a9.c0d0e7438');
         spanToRemove.remove();
         const spanImage = countryCodeButton.querySelector('span.ca247b1a9.c2a310de9.c32beeb11');
-        spanImage.classList.add('cf2b3b200');
-        spanImage.classList.remove('c32beeb11');
+        if (spanImage) {
+            spanImage.classList.add('cf2b3b200');
+            spanImage.classList.remove('c32beeb11');
+        }
     }
     const btnContinueMethod = document.querySelector('button.cea6d5264.c125e81f5.c8447a25a');
     btnContinueMethod.className = 'button-normal';
