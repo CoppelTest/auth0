@@ -29,6 +29,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const phoneForm = document.querySelector('.ce1f80875.c2ff167ed');
     const phoneDiv = phoneForm.querySelector('.cd0bf197b.c9172280c');
     phoneDiv.classList.add('phone-div');
+    const inputWrapper = document.querySelector('.input-wrapper');
+    if (inputWrapper) {
+        inputWrapper.classList.add('input-wrapper');
+    }
     const btnContinueMethod = document.querySelector('button.cea6d5264.c125e81f5.c8447a25a');
     btnContinueMethod.className = 'button-normal';
     const btnChangeMethod = document.querySelector('button[value="pick-authenticator"]');
