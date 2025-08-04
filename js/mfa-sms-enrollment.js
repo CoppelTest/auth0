@@ -14,12 +14,17 @@ document.addEventListener('DOMContentLoaded', function () {
         countryCodeButton.parentNode.insertBefore(countryLabel, countryCodeButton);
         const countryTextSpan = countryCodeButton.querySelector('span.c8e25e3d0');
         countryTextSpan.textContent = '+52';
-        const spanToRemove = button.querySelector('span.ca247b1a9.c0d0e7438');
+        countryTextSpan.style.setProperty('color', '#8C8C8C', 'important');
+        const spanToRemove = countryCodeButton.querySelector('span.ca247b1a9.c0d0e7438');
         spanToRemove.remove();
-        const spanImage = button.querySelector('span.ca247b1a9.c2a310de9.c32beeb11');
+        const spanImage = countryCodeButton.querySelector('span.ca247b1a9.c2a310de9.c32beeb11');
         spanImage.classList.add('cf2b3b200');
         spanImage.classList.remove('c32beeb11');
     }
+    const btnContinueMethod = document.querySelector('button.cea6d5264.c125e81f5.c8447a25a');
+    btnContinueMethod.className = 'button-normal';
+    const btnChangeMethod = document.querySelector('button[value="pick-authenticator"]');
+    btnChangeMethod.classList.add('link');
     const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
     if (auth0Wrapper) {
         auth0Wrapper.style.removeProperty('display');
