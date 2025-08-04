@@ -9,14 +9,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if (countryCodeButton) {
         countryCodeButton.classList.add('country-code-selector');
         countryCodeButton.disabled = true;
-        countryCodeButton.style.setProperty('box-shadow', 'inset 0 0 0 150px #fff', 'important');
         const countryLabel = document.createElement('label');
         countryLabel.textContent = 'Celular';
         countryLabel.className = 'country-label';
         countryCodeButton.parentNode.insertBefore(countryLabel, countryCodeButton);
         const countryTextSpan = countryCodeButton.querySelector('span.c8e25e3d0');
         countryTextSpan.textContent = '+52';
-        countryTextSpan.style.setProperty('color', '#8C8C8C', 'important');
+        countryTextSpan.classList.add('country-text-span');
         const spanToRemove = countryCodeButton.querySelector('span.ca247b1a9.c0d0e7438');
         spanToRemove.remove();
         const spanImage = countryCodeButton.querySelector('span.ca247b1a9.c2a310de9.c32beeb11');
