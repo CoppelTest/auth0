@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const labelCode = document.querySelector('.cd36df9bd.c2d2ff081.c66f4bc7e');
         const inputEnterCode = document.querySelector('.c141f6ee9.cffa611b3.text.c206ae231.ulp-field.ca2723af5');
         const enterCode = document.querySelector('.c141f6ee9.cffa611b3.text.c206ae231.ulp-field.ca2723af5');
-                                                        c141f6ee9 cffa611b3 text c206ae231 ulp-field ca2723af5
         const input = document.getElementById('code');
 
         main.classList.remove('_widget', 'c7f43d5ad');
