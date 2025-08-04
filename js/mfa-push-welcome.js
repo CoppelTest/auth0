@@ -41,4 +41,11 @@ document.addEventListener('DOMContentLoaded', function () {
     span.style.color = '#081754';
     span.style.fontFamily = 'var(--Family-body, Poppins)';
   });
+  const linkStyle = document.createElement('style');
+  linkStyle.innerHTML = `
+    .link {
+      color: #1c42e8 !important;
+      font-size: 16px !important;
+    } `;
+  document.head.appendChild(linkStyle);
 });
