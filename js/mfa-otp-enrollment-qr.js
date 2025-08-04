@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
             //btnContinue.style.setProperty('margin-top', '25%', 'important');
         }else{
             console.log('errorSpan:', errorSpan);
-            inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 ulp-field';
+            inputEnterCode.className = 'cffa611b3 text c206ae231 ulp-field';
         }
 
         const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
