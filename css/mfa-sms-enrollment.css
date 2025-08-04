@@ -24,3 +24,7 @@
   display: block;
   text-align: left;
 }
+.link {
+  color: #1C42E8 !important;
+  font-size: 16px !important;
+}
