@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const inputEnterCode = document.querySelector('.c141f6ee9.cffa611b3.text.c206ae231.ulp-field.ca2723af5');
         const enterCode = document.querySelector('.c141f6ee9.cffa611b3.text.c206ae231.ulp-field.ca2723af5');
         const input = document.getElementById('code');
+        const checkBox = document.querySelector('.c9b982290.c0c94efe0.c71e7db48');
 
         main.classList.remove('_widget', 'c7f43d5ad');
         title.className = 'title-container';
@@ -18,6 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
         input.className = 'email-input';
         labelCode.className = 'c2d2ff081 c66f4bc7e';
         enterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 ulp-field';
+
+        checkBox.classList.add('custom-checkbox-container');
         btnScan.classList.add('link');
         btnChangeMethod.classList.add('link');
 
