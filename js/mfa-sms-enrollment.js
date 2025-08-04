@@ -24,6 +24,11 @@ document.addEventListener('DOMContentLoaded', function () {
             spanImage.classList.remove('c32beeb11');
         }
     }
+    const phoneLabel = document.querySelector('#phone-label');
+    phoneLabel.classList.add('phone-label');
+    const phoneForm = document.querySelector('.ce1f80875.c2ff167ed');
+    const phoneDiv = phoneForm.querySelector('.cd0bf197b.c9172280c');
+    phoneDiv.classList.add('phone-div');
     const btnContinueMethod = document.querySelector('button.cea6d5264.c125e81f5.c8447a25a');
     btnContinueMethod.className = 'button-normal';
     const btnChangeMethod = document.querySelector('button[value="pick-authenticator"]');
