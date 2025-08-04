@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const countryLabel = document.createElement('label');
         countryLabel.textContent = 'Celular';
         countryLabel.className = 'country-label';
-        countryCodeButton.parentNode.insertBefore(phoneLabel, countryCodeButton);
+        countryCodeButton.parentNode.insertBefore(countryLabel, countryCodeButton);
         const countryTextSpan = countryCodeButton.querySelector('span.c8e25e3d0');
         if (countryTextSpan) {
             countryTextSpan.textContent = '+52';
