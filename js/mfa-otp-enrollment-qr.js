@@ -7,8 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const btnChangeMethod = document.querySelector('.c78dfd5b3.ca9aac5f4.c7e1be07f');
         const btnLogin = document.querySelector('.cea6d5264.c125e81f5.c8447a25a.ca798bf5e.c48cd8769');
         const labelCode = document.querySelector('.cd36df9bd.c2d2ff081.c66f4bc7e');
-        const enterCode = document.querySelector('.c141f6ee9.cffa611b3.text.c206ae231.ulp-field.ca2723af5');
         const inputEnterCode = document.querySelector('.c141f6ee9.cffa611b3.text.c206ae231.ulp-field.ca2723af5');
+        const enterCode = document.querySelector('.c141f6ee9.cffa611b3.text.c206ae231.ulp-field.ca2723af5');
+        
         const input = document.getElementById('code');
 
         main.classList.remove('_widget', 'c7f43d5ad');
@@ -20,6 +21,20 @@ document.addEventListener('DOMContentLoaded', function () {
         enterCode.className = '.c141f6ee9 cffa611b3 text c206ae231 ulp-field';
         btnScan.classList.add('link');
         btnChangeMethod.classList.add('link');
+
+
+        const errorSpan = document.getElementById('error-element-code');
+
+        if(errorSpan){
+            console.log('errorSpan:', errorSpan);
+            inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 c2f342594 c29c5cf1d ulp-field';
+            input.className = 'input ce861d26a c5e190e5a';
+            //btnContinue.style.setProperty('margin-top', '25%', 'important');
+        }else{
+            console.log('errorSpan:', errorSpan);
+            inputEnterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 ulp-field ca2723af5';
+        }
+
         const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
             if (auth0Wrapper) {
                 auth0Wrapper.style.removeProperty('display');
