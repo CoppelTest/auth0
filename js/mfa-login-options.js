@@ -2,22 +2,24 @@ document.addEventListener('DOMContentLoaded', function () {
     const main = document.querySelector('main._widget.c35245740');
     const title = document.querySelector('.c674cdded__title');
     const ulSection = document.querySelector('.c384a9c40.c7bd2a184');
-       
+    const container = document.querySelector('.c674cdded__container');
+    
     main.classList.remove('_widget', 'c35245740');
     if (window.innerWidth <= 600) {
         const spaceDiv = document.querySelector('.ca40fca87.c7f03c812');
         spaceDiv.style.setProperty('padding', '0 var(--spacing-0)', 'important');
     }
       
-    if (title) {
     title.className = 'title-container'; 
-    title.insertAdjacentHTML('afterend', `
-      <div class="subtitle-container">
-        Para verificar tu identidad
-      </div>
-    `);
+ 
+  if (container) {
+    const subtitle = document.createElement('div');
+    subtitle.className = 'subtitle-container';
+    subtitle.textContent = 'para verificar tu identidad';
+
+    // Inserta justo después de .c674cdded__container
+    container.parentNode.insertBefore(subtitle, container.nextSibling);
   }
-   
     const socialButtons = document.querySelectorAll('button.cac488521.ca0c96df3.c6b0cc0b9.c5c314304');
     ulSection.classList.remove('c384a9c40', 'c7bd2a184');
     socialButtons.forEach(button => {
