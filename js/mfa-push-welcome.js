@@ -30,4 +30,10 @@ document.addEventListener('DOMContentLoaded', function () {
   document.head.appendChild(styleElement);
   const footer = document.querySelector('footer');
   footer.style.marginTop = 'auto';
+  const focusStyle = document.createElement('style');
+  focusStyle.innerHTML = `
+    button:focus, a:focus {
+      outline: none;
+    } `;
+  document.head.appendChild(focusStyle);
 });
