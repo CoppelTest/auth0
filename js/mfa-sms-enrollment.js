@@ -52,20 +52,13 @@ document.addEventListener('DOMContentLoaded', function () {
     
     const originalPhoneInput = document.querySelector('input[name="phone"]');
     if (originalPhoneInput) {
-        originalPhoneInput.style.setProperty('position', 'absolute', 'important');
-        originalPhoneInput.style.setProperty('left', '-9999px', 'important');
-        originalPhoneInput.style.setProperty('opacity', '0', 'important');
+        originalPhoneInput.classList.add('original-phone-input');
         
         const visualPhoneInput = document.createElement('input');
         visualPhoneInput.type = 'tel';
         visualPhoneInput.placeholder = phoneLabelText;
-        visualPhoneInput.style.setProperty('border-radius', '8px', 'important');
-        visualPhoneInput.style.setProperty('width', '100%', 'important');
-        visualPhoneInput.style.setProperty('padding', '12px', 'important');
-        visualPhoneInput.style.setProperty('border', '1px solid #ccc', 'important');
-        visualPhoneInput.style.setProperty('font-size', '16px', 'important');
         visualPhoneInput.id = 'visual-phone-input';
-        visualPhoneInput.classList.add('input', 'ce861d26a', 'cfe8b2407');
+        visualPhoneInput.classList.add('input', 'ce861d26a', 'cfe8b2407', 'phone-input');
         
         visualPhoneInput.addEventListener('input', function() {
             originalPhoneInput.value = this.value;
@@ -73,28 +66,17 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         
         const gridContainer = document.createElement('div');
-        gridContainer.style.setProperty('display', 'grid', 'important');
-        gridContainer.style.setProperty('grid-template-columns', '120px 8px 1fr', 'important');
-        gridContainer.style.setProperty('grid-template-rows', '1fr', 'important');
-        gridContainer.style.setProperty('align-items', 'center', 'important');
-        gridContainer.style.setProperty('width', '100%', 'important');
-        gridContainer.style.setProperty('gap', '0', 'important');
+        gridContainer.classList.add('grid-container');
         
         if (countryCodeButton) {
             const countryForm = document.querySelector('form.cb44dbdfa.ce1f80875');
             if (countryForm) {
                 countryForm.appendChild(gridContainer);
                 gridContainer.appendChild(countryCodeButton);
-                countryCodeButton.style.setProperty('grid-column', '1', 'important');
-                countryCodeButton.style.setProperty('grid-row', '1', 'important');
-                countryCodeButton.style.setProperty('width', '100%', 'important');
-                countryCodeButton.style.setProperty('border-radius', '8px', 'important');
             }
         }
         
         gridContainer.appendChild(visualPhoneInput);
-        visualPhoneInput.style.setProperty('grid-column', '3', 'important');
-        visualPhoneInput.style.setProperty('grid-row', '1', 'important');
     }
     
     const btnContinueMethod = document.querySelector('button.cea6d5264.c125e81f5.c8447a25a');
