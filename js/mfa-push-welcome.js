@@ -28,4 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
       left: 8px !important;
   } `;
   document.head.appendChild(styleElement);
+  const footer = document.querySelector('footer');
+  footer.style.marginTop = 'auto';
 });
