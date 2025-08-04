@@ -48,4 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
       font-size: 16px !important;
     } `;
   document.head.appendChild(linkStyle);
+  const button = document.querySelector('button[name="action"][value="pick-authenticator"]');
+  if (button) {
+    button.classList.add('link');
+  }
 });
