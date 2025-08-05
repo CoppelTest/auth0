@@ -72,3 +72,6 @@ input[name="phone"] {
 main.c4a74ed23 {
   padding: unset !important;
 }
+.input-wrapper {
+    height: auto !important;
+}
