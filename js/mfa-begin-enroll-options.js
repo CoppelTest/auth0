@@ -1,28 +1,32 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const main = document.querySelector('main._widget');
-    const title = document.querySelector('h1.cded47f4b');
-    const subTitle = document.querySelector('.c31b86380.ca3fde804');
-    main.classList.remove('_widget', 'c1ea0cbeb');
-    if (window.innerWidth <= 600) {
-        const spaceDiv = document.querySelector('.ca40fca87.c7f03c812');
-        spaceDiv.style.setProperty('padding', '0 var(--spacing-0)', 'important');
+    const logoViejo = document.getElementById('custom-prompt-logo');
+    if (logoViejo) {
+        logoViejo.remove();
     }
+    const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
+    const main = auth0Wrapper.querySelector('main');
+    const title = auth0Wrapper.querySelector('h1');
+    const subTitle = auth0Wrapper.querySelector('main > section > div > div > header > div');
+    const header = auth0Wrapper.querySelector('main > section > div > div > header');
+    const divAfterHeader = auth0Wrapper.querySelector('main > section > div > div > div');
+    main.classList.remove(...main.classList);
+    header.style.setProperty('padding', '0 var(--spacing-0)', 'important');
+    divAfterHeader.style.setProperty('padding', '0 var(--spacing-0)', 'important');
     title.className = 'title-container';
     subTitle.className = 'subtitle-container';
-    const socialButtons = document.querySelectorAll(".cea6d5264.c6a8be725.c6b0cc0b9.cba3063e3.cbd8a087f");
+    const socialButtons = auth0Wrapper.querySelectorAll("main > section > div > div > div > div > form > button");
     socialButtons.forEach(button => {
         button.className = 'social-button';
-        const textButton = document.querySelector('.c182328cf.c9f0ba6a4');
-        textButton.className = 'text-button';
-        const spanToRemove = button.querySelector('span.ca247b1a9.c0d0e7438.c2237a039');
-        if (spanToRemove) {
-            spanToRemove.remove();
+        const spans = button.querySelectorAll('span');
+        if (spans.length >= 3) {
+            spans[1].classList.add('text-button');
+            button.removeChild(spans[2]);
         }
+
         const text = button.textContent.trim();
         if (text && text.length > 2) {
             const iconSrc = getIconForText(text);
-            const iconElement = button.querySelector('span.ca247b1a9') || 
-                               button.querySelector('span[class*="ca247b1a9"]') ||
+            const iconElement = button.querySelector('span') || 
                                button.querySelector('span:first-child');
             if (iconElement) {
                 iconElement.className = '';
@@ -39,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
-    const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
     if (auth0Wrapper) {
         auth0Wrapper.style.removeProperty('display');
         auth0Wrapper.style.setProperty('height', 'inherit', 'important');
