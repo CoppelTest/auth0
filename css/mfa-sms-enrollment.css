@@ -36,7 +36,7 @@
 .country-text-span {
   color: #8C8C8C !important;
 }
-.phone-div {
+.phone-label {
   display: none;
 }
 input[name="phone"] {
