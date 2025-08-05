@@ -1,5 +1,6 @@
 .social-button {
   margin-top: var(--spacing-3);
+  max-width: none;
 }
 .title-container{
   margin-bottom: 25px;
@@ -7,12 +8,9 @@
 .text-button {
   color: #081754;
   text-align: center;
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
-}
-.ca40fca87 {
-  padding: 0px var(--spacing-2);
 }
