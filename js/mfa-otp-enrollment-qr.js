@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
             subTitle.insertAdjacentElement('afterend', secondP);
           }
+        }
 
         
         const errorSpan = document.getElementById('error-element-code');
