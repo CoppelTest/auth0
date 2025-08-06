@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-        const main = auth0Wrapper.querySelector('main');
-        const title = auth0Wrapper.querySelector('h1');
+        const main = querySelector.querySelector('main');
+        const title = querySelector.querySelector('h1');
         //const subTitle = document.querySelector('.c31b86380.ca3fde804');
         const subTitle = main?.querySelector('p');
         //const btnScan = document.querySelector('.c78dfd5b3._link-toggle-view.c7e1be07f');
