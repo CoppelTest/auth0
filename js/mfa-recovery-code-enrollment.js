@@ -29,11 +29,19 @@ document.addEventListener('DOMContentLoaded', function () {
         title.className = 'title-container';
         subTitle.className = 'subtitle-container';
         btnContinue.className ='button-normal';
+
+        const checkbox = document.querySelector('input[type="checkbox"]');
+        const checkBoxContainer = checkbox?.closest('div');
+
+        checkBoxContainer.classList.add('custom-checkbox-container');
+        if (containerDiv) {
+          containerDiv.classList.add('mi-nueva-clase-1');
+          containerDiv.classList.add('mi-nueva-clase-2');
+        }
         if (btnCopyCode) {
           btnCopyCode.classList.add('btn-copy-code');
           btnCopyCode.classList.add('span-copy-style');
-          const checkBox = btnCopyCode?.querySelector('div'); 
-          //checkBox.classList.add('custom-checkbox-container');
+
         }
         const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
             if (auth0Wrapper) {
