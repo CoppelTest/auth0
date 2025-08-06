@@ -94,10 +94,10 @@ document.addEventListener('DOMContentLoaded', function () {
     btnContinueMethod.className = 'button-normal';
     const btnChangeMethod = forms[2].querySelector('button[value="pick-authenticator"]');
     btnChangeMethod.classList.add('link');
-    const input = auth0Wrapper.querySelector('#visual-phone-input');
-    input.focus();
     if (auth0Wrapper) {
         auth0Wrapper.style.removeProperty('display');
         auth0Wrapper.style.setProperty('height', 'inherit', 'important');
     }
+    const input = auth0Wrapper.querySelector('#visual-phone-input');
+    input.focus();
 });
