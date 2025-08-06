@@ -32,6 +32,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (btnCopyCode) {
           btnCopyCode.classList.add('btn-copy-code');
           btnCopyCode.classList.add('span-copy-style');
+          const checkBox = btnCopyCode?.querySelector('div'); 
+          checkBox.classList.add('custom-checkbox-container');
         }
         const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
             if (auth0Wrapper) {
