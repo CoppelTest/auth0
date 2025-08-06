@@ -56,4 +56,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	if (button) {
 		button.classList.add('link');
 	}
+
+	const focusStyle = document.createElement('style');
+	focusStyle.innerHTML = `
+    button:focus, a:focus {
+      outline: none;
+    } `;
+	document.head.appendChild(focusStyle);
 });
