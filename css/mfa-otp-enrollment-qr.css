@@ -1,5 +1,7 @@
 .title-container{
   margin-bottom: 25px;
+}
+.subtitle-container{
   font-size: var(--font-size-body, 15px) !important;
 }
 .c651dda97{
