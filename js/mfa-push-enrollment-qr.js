@@ -11,14 +11,18 @@ document.addEventListener('DOMContentLoaded', function () {
 	copyButton.className = 'button-normal';
 	const copyCodeLink = copyButton.querySelector('a');
 	copyCodeLink.style.color = 'white';  // Cambiar el color del texto
-    copyCodeLink.innerText = 'Copiar como código';
-
+    	copyCodeLink.innerText = 'Copiar como código';
+	const images = mainElement.querySelectorAll('img');
+	if (images.length > 1) {
+	    const secondImage = images[1];  // Seleccionamos la segunda imagen
+	    secondImage.style.border = 'none';  // Eliminar el borde de la segunda imagen
+	}
 	const linkStyle = document.createElement('style');
 	linkStyle.innerHTML = `
-    .link {
-      color: #1c42e8 !important;
-      font-size: 16px !important;
-    } `;
+	    .link {
+	      color: #1c42e8 !important;
+	      font-size: 16px !important;
+	    } `;
 	document.head.appendChild(linkStyle);
 	const button = document.querySelector('button[name="action"][value="pick-authenticator"]');
 	if (button) {
