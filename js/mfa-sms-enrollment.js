@@ -30,9 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const texto = countryTextSpan[1].textContent;
             const partes = texto.split(',');
             const lada = partes[partes.length - 1].trim();
-            if (lada === '+52') {
-                countryCodeButton.disabled = true;
-            }
             countryTextSpan[1].textContent = lada;
             countryTextSpan[1].classList.add('country-text-span');
             countryCodeButton.removeChild(countryTextSpan[2]);
