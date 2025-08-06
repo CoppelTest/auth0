@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const labelCode = document.querySelector('div[data-action-text][data-alternate-action-text]');
         const inputCode = divCodeInput ? divCodeInput.querySelector('input[name="code"]') : null;
         const btnLogin = mainElement?.querySelector('button[value="default"]');
-        const labelCode = mainElement.querySelector('#code-label'); 
+        const txtCode = mainElement.querySelector('#code-label'); 
 
         mainElement.classList.remove('_widget', 'c7f43d5ad');
         title.className = 'title-container';
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         inputCode.className = 'email-input';
         labelCode.className = '';
         btnLogin.className ='button-normal';
-        labelCode.style.color = '#081754';
-        labelCode.style.fontFamily = 'var(--font-family-body, "Helvetica Neue")';
-        labelCode.style.lineHeight = '24px';
+        txtCode.style.color = '#081754';
+        txtCode.style.fontFamily = 'var(--font-family-body, "Helvetica Neue")';
+        txtCode.style.lineHeight = '24px';
 });
