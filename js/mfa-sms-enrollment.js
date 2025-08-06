@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
     const main = auth0Wrapper.querySelector('main');
     const title = auth0Wrapper.querySelector('h1');
-    const subTitle = auth0Wrapper.querySelector('main > section > div > div > header');
+    const subTitle = auth0Wrapper.querySelector('main > section > div > div > header > div > p');
     const header = auth0Wrapper.querySelector('main > section > div > div > header');
     const divAfterHeader = auth0Wrapper.querySelector('main > section > div > div > div');
     main.classList.remove(...main.classList);
-    header.style.setProperty('padding', '0 var(--spacing-0)', 'important');
+    header.style.setProperty('margin-bottom', '25px', 'important');
     divAfterHeader.style.setProperty('padding', '0 var(--spacing-0)', 'important');
     title.className = 'title-container';
     subTitle.className = 'subtitle-container';
@@ -94,10 +94,10 @@ document.addEventListener('DOMContentLoaded', function () {
     btnContinueMethod.className = 'button-normal';
     const btnChangeMethod = forms[2].querySelector('button[value="pick-authenticator"]');
     btnChangeMethod.classList.add('link');
+    const input = auth0Wrapper.querySelector('#visual-phone-input');
+    input.focus();
     if (auth0Wrapper) {
         auth0Wrapper.style.removeProperty('display');
         auth0Wrapper.style.setProperty('height', 'inherit', 'important');
     }
-    const input = auth0Wrapper.querySelector('#visual-phone-input');
-    input.focus();
 });
