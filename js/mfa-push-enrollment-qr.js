@@ -6,6 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
 	const subTitle = mainElement.querySelector('p');
 	subTitle.className = 'subtitle-container';
 	subTitle.style.paddingTop = '25px';
+	const copyButton = mainElement.querySelector('button[type="button"]');
+	copyButton.id = 'copy-button';
+	copyButton.className = 'button-normal';
+	const copyCodeLink = copyButton.querySelector('a');
+	copyCodeLink.style.color = 'white';  // Cambiar el color del texto
+    copyCodeLink.innerText = 'Copiar como código';
 
 	const linkStyle = document.createElement('style');
 	linkStyle.innerHTML = `
