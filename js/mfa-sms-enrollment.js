@@ -1,12 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const main = document.querySelector('main._widget');
-    const title = document.querySelector('h1.cded47f4b');
-    const subTitle = document.querySelector('.cdf1d7eb2.c2baadf66');
-    main.classList.remove('_widget', 'c1ea0cbeb');
+    const logoViejo = document.getElementById('custom-prompt-logo');
+    if (logoViejo) {
+        logoViejo.remove();
+    }
+    const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
+    const main = auth0Wrapper.querySelector('main');
+    const title = auth0Wrapper.querySelector('h1');
+    const subTitle = auth0Wrapper.querySelector('main > section > div > div > header');
+    const header = auth0Wrapper.querySelector('main > section > div > div > header');
+    const divAfterHeader = auth0Wrapper.querySelector('main > section > div > div > div');
+    main.classList.remove(...main.classList);
+    header.style.setProperty('padding', '0 var(--spacing-0)', 'important');
+    divAfterHeader.style.setProperty('padding', '0 var(--spacing-0)', 'important');
     title.className = 'title-container';
     subTitle.className = 'subtitle-container';
     
-    const countryCodeButton = document.querySelector('button[value="pick-country-code"]');
+    const countryCodeButton = auth0Wrapper.querySelector('button[value="pick-country-code"]');
     if (countryCodeButton) {
         countryCodeButton.classList.add('country-code-selector');
         countryCodeButton.disabled = true;
@@ -16,23 +25,16 @@ document.addEventListener('DOMContentLoaded', function () {
         countryLabel.className = 'country-label';
         countryCodeButton.parentNode.insertBefore(countryLabel, countryCodeButton);
         
-        const countryTextSpan = countryCodeButton.querySelector('span.c8e25e3d0');
-        countryTextSpan.textContent = '+52';
-        countryTextSpan.classList.add('country-text-span');
-        
-        const spanToRemove = countryCodeButton.querySelector('span.ca247b1a9.c0d0e7438');
-        if (spanToRemove) {
-            spanToRemove.remove();
-        }
-        
-        const spanImage = countryCodeButton.querySelector('span.ca247b1a9.c2a310de9.c32beeb11');
-        if (spanImage) {
-            spanImage.classList.add('cf2b3b200');
-            spanImage.classList.remove('c32beeb11');
+        const countryTextSpan = countryCodeButton.querySelectorAll('span');
+        if (countryTextSpan.length >= 3) {
+            countryTextSpan[0].style.setProperty('background-image', `url("https://cdn.auth0.com/ulp/react-components/0.0.0-semantically-released/img/flags/mx.svg")`, 'important');
+            countryTextSpan[1].textContent = '+52';
+            countryTextSpan[1].classList.add('country-text-span');
+            countryCodeButton.removeChild(countryTextSpan[2]);
         }
     }
     
-    const phoneLabel = document.querySelector('#phone-label');
+    const phoneLabel = auth0Wrapper.querySelector('#phone-label');
     let phoneLabelText = 'Ingresa tu celular';
     
     if (phoneLabel) {
@@ -46,19 +48,24 @@ document.addEventListener('DOMContentLoaded', function () {
             .trim();
     }
     
-    const phoneForm = document.querySelector('.ce1f80875.c2ff167ed');
-    const phoneDiv = phoneForm.querySelector('.cd0bf197b.c9172280c');
-    phoneDiv.classList.add('phone-div');
+    const forms = divAfterHeader.querySelectorAll('div > div > form');
+    let phoneDiv = '';
+    if (forms.length >= 2) {
+        phoneDiv = forms[1].querySelector('div > div > div > div');
+        phoneDiv.classList.add('phone-div');
+    }
     
-    const originalPhoneInput = document.querySelector('input[name="phone"]');
+    const originalPhoneInput = phoneDiv.querySelector('input[name="phone"]');
     if (originalPhoneInput) {
-        originalPhoneInput.classList.add('original-phone-input');
-        
         const visualPhoneInput = document.createElement('input');
         visualPhoneInput.type = 'tel';
         visualPhoneInput.placeholder = phoneLabelText;
         visualPhoneInput.id = 'visual-phone-input';
-        visualPhoneInput.classList.add('input', 'ce861d26a', 'cfe8b2407', 'phone-input');
+        originalPhoneInput.classList.forEach(clase => {
+            visualPhoneInput.classList.add(clase);
+        });
+        originalPhoneInput.classList.add('original-phone-input');
+        visualPhoneInput.classList.add('phone-input');
         
         visualPhoneInput.addEventListener('input', function() {
             originalPhoneInput.value = this.value;
@@ -69,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
         gridContainer.classList.add('grid-container');
         
         if (countryCodeButton) {
-            const countryForm = document.querySelector('form.cb44dbdfa.ce1f80875');
+            const countryForm = forms[0];
             if (countryForm) {
                 countryForm.appendChild(gridContainer);
                 gridContainer.appendChild(countryCodeButton);
@@ -79,11 +86,11 @@ document.addEventListener('DOMContentLoaded', function () {
         gridContainer.appendChild(visualPhoneInput);
     }
     
-    const btnContinueMethod = document.querySelector('button.cea6d5264.c125e81f5.c8447a25a');
+    const btnContinueMethod = forms[1].querySelector('button');
     btnContinueMethod.className = 'button-normal';
-    const btnChangeMethod = document.querySelector('button[value="pick-authenticator"]');
+    const btnChangeMethod = forms[2].querySelector('button[value="pick-authenticator"]');
     btnChangeMethod.classList.add('link');
-    const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
+
     if (auth0Wrapper) {
         auth0Wrapper.style.removeProperty('display');
         auth0Wrapper.style.setProperty('height', 'inherit', 'important');
