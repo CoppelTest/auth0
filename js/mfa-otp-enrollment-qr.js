@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         if (subTitle) {
           const fullText = subTitle.textContent || '';
-          
+          console.log(fullText);
           // Separar por "2-" (respetando el guion)
           const parts = fullText.split(/2-\s*/);
           
