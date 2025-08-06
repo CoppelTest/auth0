@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-        
+        /*
         const main = document.querySelector('main._widget.caa90f795'); 
         const title = document.querySelector('h1.cded47f4b.c3871ca44');
         const subTitle = document.querySelector('.c31b86380.ca3fde804');
@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
         subTitle.className = 'subtitle-container';
         btnContinue.className ='button-normal';
         spanSavedCode.classList.add('text');
+
+        */
         const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
             if (auth0Wrapper) {
                 auth0Wrapper.style.removeProperty('display');
