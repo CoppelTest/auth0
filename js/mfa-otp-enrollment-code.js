@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
         labelCode.className = '';
         btnLogin.className ='button-normal';
         label.style.color = '#081754';
-        label.style.fontFamily = 'var(--font-family-body, "Helvetica Neue")';
         label.style.lineHeight = '24px';
         
         if (inputCode && btnLogin) {
