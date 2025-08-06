@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const divAfterHeader = auth0Wrapper.querySelector('main > section > div > div > div');
     main.classList.remove(...main.classList);
     header.style.setProperty('margin-bottom', '25px', 'important');
+    header.classList.remove(...header.classList);
     divAfterHeader.style.setProperty('padding', '0 var(--spacing-0)', 'important');
     title.className = 'title-container';
     subTitle.className = 'subtitle-container';
