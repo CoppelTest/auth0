@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const spanCopy = btnCopyCode ? btnCopyCode.querySelector('span') : null;
         const btnScan = mainElement?.querySelector('button[value="toggle-view"]');
         const btnChangeMethod = mainElement?.querySelector('button[value="pick-authenticator"]');
+        const divCodeInput = mainElement.querySelector('div[data-action-text=""]');
         const labelCode = document.querySelector('div[data-action-text][data-alternate-action-text]');
         const inputCode = divCodeInput ? divCodeInput.querySelector('input[name="code"]') : null;
 
