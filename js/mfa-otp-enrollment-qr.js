@@ -4,21 +4,13 @@ document.addEventListener('DOMContentLoaded', function () {
         const main = auth0Wrapper.querySelector('main');
         const title = auth0Wrapper.querySelector('h1');
 
-        //const subTitle = document.querySelector('.c31b86380.ca3fde804');
         const subTitle = main?.querySelector('p');
-        //const btnScan = document.querySelector('.c78dfd5b3._link-toggle-view.c7e1be07f');
         const btnScan = main?.querySelector('button[value="toggle-view"]');
-         //const btnChangeMethod = document.querySelector('.c78dfd5b3.ca9aac5f4.c7e1be07f');
         const btnChangeMethod = main?.querySelector('button[value="pick-authenticator"]');
-        //const btnLogin = document.querySelector('.cea6d5264.c125e81f5.c8447a25a.ca798bf5e.c48cd8769');
         const btnLogin = main?.querySelector('button[value="default"]');
         
-        //const labelCode = document.querySelector('.cd36df9bd.c2d2ff081.c66f4bc7e');
         const labelCodeContainer = document.querySelector('div[data-action-text][data-alternate-action-text]');
         const labelCode = labelCodeContainer?.querySelector('label');
-        //const inputEnterCode = document.querySelector('.c141f6ee9.cffa611b3.text.c206ae231.ulp-field.ca2723af5');
-        //const enterCode = document.querySelector('.c141f6ee9.cffa611b3.text.c206ae231.ulp-field.ca2723af5');
-        //const input = document.getElementById('code');
         const inputCode = document.querySelector('[type="text"][aria-required="true"]');
         
 
@@ -28,28 +20,22 @@ document.addEventListener('DOMContentLoaded', function () {
         inputCode.className = 'email-input';
         labelCodeContainer.className = '';
         labelCode.className = 'text';
-        //enterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 ulp-field';
-
         btnScan.classList.add('link');
         btnChangeMethod.classList.add('link');
-
 
         
         if (subTitle) {
           const fullText = subTitle.textContent || '';
           console.log(fullText);
-          // Separar por "2-" (respetando el guion)
           const parts = fullText.split(/2-\s*/);
           
           if (parts.length === 2) {
             const firstText = parts[0].trim(); // Esto incluirá "1- ..."
             const secondText = '2- ' + parts[1].trim();
         
-            // Modificar el primer <p>
             subTitle.textContent = firstText;
             subTitle.className = 'subtitle-container';
         
-            // Crear el segundo <p>
             const secondP = document.createElement('p');
             secondP.className = 'subtitle-container';
             secondP.textContent = secondText;
