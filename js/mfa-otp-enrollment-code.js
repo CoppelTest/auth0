@@ -28,7 +28,11 @@ document.addEventListener('DOMContentLoaded', function () {
         label.style.color = '#081754';
         label.style.fontFamily = 'var(--font-family-body, "Helvetica Neue")';
         label.style.lineHeight = '24px';
-         if (errorSpan.offsetHeight > 0) { 
-             btnLogin.style.marginTop = '80px'; 
-         }
+        if (errorSpan.offsetHeight > 0) {
+            inputCode.style.border = '1px solid red'; // Borde rojo
+            btnLogin.style.marginTop = '80px'; 
+          } else {
+            inputCode.style.border = '1px solid #C9C9C9'; // Borde original
+            btnLogin.style.marginTop = '60px'; 
+          }
 });
