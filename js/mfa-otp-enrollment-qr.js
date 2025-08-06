@@ -77,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
         
     }
     */
-        const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
             if (auth0Wrapper) {
                 auth0Wrapper.style.removeProperty('display');
             } 
