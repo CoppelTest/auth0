@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const subTitle = mainElement.querySelector('p');
         const txtCode = mainElement.querySelectorAll('section div > div')[5];
         const btnCopyCode = mainElement.querySelector('button[type="button"]');
-        const spanCopy = btnCopyCode ? btnCopyCode.querySelector('span');
+        const spanCopy = btnCopyCode ? btnCopyCode.querySelector('span') : null;
         const btnScan = mainElement?.querySelector('button[value="toggle-view"]');
         const btnChangeMethod = mainElement?.querySelector('button[value="pick-authenticator"]');
 
