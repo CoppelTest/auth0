@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const spanCopy = btnCopyCode ? btnCopyCode.querySelector('span') : null;
         const btnScan = mainElement?.querySelector('button[value="toggle-view"]');
         const btnChangeMethod = mainElement?.querySelector('button[value="pick-authenticator"]');
+        const labelCode = document.querySelector('div[data-action-text][data-alternate-action-text]');
+        const inputCode = divCodeInput ? divCodeInput.querySelector('input[name="code"]') : null;
 
         mainElement.classList.remove('_widget', 'c7f43d5ad');
         title.className = 'title-container';
@@ -16,4 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
         spanCopy.classList.add('span-copy-style');
         btnScan.classList.add('link');
         btnChangeMethod.classList.add('link');
+        inputCode.className = 'email-input';
+        labelCode.className = '';
 });
