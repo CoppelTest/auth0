@@ -22,9 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const title = document.querySelector('h1');
         const subTitle = main?.querySelector('p');
         const btnContinue = document.querySelector('button[value="default"]');
-        const btnCopyCode = Array.from(document.querySelectorAll('button')).find(btn => 
-          btn.querySelector('span') !== null
-        );        
+        const btnCopyCode = main?.querySelector('button'); 
 
 
         main.className = '';
