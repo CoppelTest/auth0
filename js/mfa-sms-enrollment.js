@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const countryCodeButton = auth0Wrapper.querySelector('button[value="pick-country-code"]');
     if (countryCodeButton) {
         countryCodeButton.classList.add('country-code-selector');
-        countryCodeButton.disabled = true;
+        //countryCodeButton.disabled = true;
         
         const countryLabel = document.createElement('label');
         countryLabel.textContent = 'Celular';
