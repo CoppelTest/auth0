@@ -21,4 +21,5 @@ document.addEventListener('DOMContentLoaded', function () {
         btnChangeMethod.classList.add('link');
         inputCode.className = 'email-input';
         labelCode.className = '';
+        
 });
