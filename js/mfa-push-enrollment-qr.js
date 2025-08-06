@@ -18,5 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	if (button) {
 		button.classList.add('link');
 	}
-
+	const footer = document.querySelector('footer');
+	footer.style.marginTop = 'auto';
 });
