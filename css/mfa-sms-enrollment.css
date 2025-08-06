@@ -10,9 +10,6 @@
   font-weight: 700;
   line-height: 150%;
 }
-.ca40fca87 {
-  padding: 0px var(--spacing-2);
-}
 .country-label {
   color: #081754;
   font-family: Poppins, sans-serif;
@@ -32,6 +29,9 @@
   box-shadow: inset 0 0 0 150px #fff !important;
   width: 25%;
   grid-area: 1 / 1 !important;
+}
+.country-code-selector:focus {
+  outline: unset !important;
 }
 .country-text-span {
   color: #8C8C8C !important;
@@ -68,9 +68,6 @@ input[name="phone"] {
   position: absolute !important;
   left: -9999px !important;
   opacity: 0 !important;
-}
-main.c4a74ed23 {
-  padding: unset !important;
 }
 .input-wrapper {
     height: auto !important;
