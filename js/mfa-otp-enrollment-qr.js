@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const btnLogin = main?.querySelector('button[value="default"]');
         
         //const labelCode = document.querySelector('.cd36df9bd.c2d2ff081.c66f4bc7e');
-        const labelCode = document.querySelector('div[data-action-text][data-alternate-action-text]');
+        const labelCodeContainer = document.querySelector('div[data-action-text][data-alternate-action-text]');
+        const labelCode = labelCodeContainer?.querySelector('label');
         //const inputEnterCode = document.querySelector('.c141f6ee9.cffa611b3.text.c206ae231.ulp-field.ca2723af5');
         //const enterCode = document.querySelector('.c141f6ee9.cffa611b3.text.c206ae231.ulp-field.ca2723af5');
         //const input = document.getElementById('code');
@@ -25,7 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
         title.className = 'title-container';
         btnLogin.className ='button-normal';
         inputCode.className = 'email-input';
-        labelCode.className = '';
+        labelCodeContainer.className = '';
+        labelCode.className = 'text';
         //enterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 ulp-field';
 
         btnScan.classList.add('link');
