@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
         main.className = '';
         title.className = 'title-container';
         btnLogin.className ='button-normal';
-        subTitle.className = 'subtitle-container';
         inputCode.className = 'email-input';
         labelCode.className = '';
         //enterCode.className = 'c141f6ee9 cffa611b3 text c206ae231 ulp-field';
@@ -33,6 +32,30 @@ document.addEventListener('DOMContentLoaded', function () {
         btnChangeMethod.classList.add('link');
 
 
+        
+        if (subTitle) {
+          const fullText = subTitle.textContent || '';
+          
+          // Separar por "2-" (respetando el guion)
+          const parts = fullText.split(/2-\s*/);
+          
+          if (parts.length === 2) {
+            const firstText = parts[0].trim(); // Esto incluirá "1- ..."
+            const secondText = '2- ' + parts[1].trim();
+        
+            // Modificar el primer <p>
+            subTitle.textContent = firstText;
+            subTitle.className = 'subtitle-container';
+        
+            // Crear el segundo <p>
+            const secondP = document.createElement('p');
+            secondP.className = 'subtitle-container';
+            secondP.textContent = secondText;
+        
+            subTitle.insertAdjacentElement('afterend', secondP);
+          }
+
+        
         const errorSpan = document.getElementById('error-element-code');
         const errorSpancs = document.getElementById('error-cs-code-required');
 
