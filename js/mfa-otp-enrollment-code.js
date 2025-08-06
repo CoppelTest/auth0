@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const inputCode = divCodeInput ? divCodeInput.querySelector('input[name="code"]') : null;
         const btnLogin = mainElement?.querySelector('button[value="default"]');
         const label = mainElement.querySelector('#code-label'); 
+        const errorSpan = document.getElementById('error-element-code');
 
         mainElement.classList.remove('_widget', 'c7f43d5ad');
         title.className = 'title-container';
@@ -27,4 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         label.style.color = '#081754';
         label.style.fontFamily = 'var(--font-family-body, "Helvetica Neue")';
         label.style.lineHeight = '24px';
+         if (errorSpan.offsetHeight > 0) { 
+             btnLogin.style.marginTop = '80px'; 
+         }
 });
