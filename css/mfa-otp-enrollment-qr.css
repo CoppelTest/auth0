@@ -1,5 +1,6 @@
 .title-container{
   margin-bottom: 25px;
+  font-size: var(--font-size-body, 15px) !important;
 }
 .c651dda97{
   padding: 40px 25px 24px !important;
