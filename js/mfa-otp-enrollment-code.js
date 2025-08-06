@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const divCodeInput = mainElement.querySelector('div[data-action-text=""]');
         const labelCode = document.querySelector('div[data-action-text][data-alternate-action-text]');
         const inputCode = divCodeInput ? divCodeInput.querySelector('input[name="code"]') : null;
+        const btnLogin = mainElement?.querySelector('button[value="default"]');
 
         mainElement.classList.remove('_widget', 'c7f43d5ad');
         title.className = 'title-container';
@@ -21,5 +22,5 @@ document.addEventListener('DOMContentLoaded', function () {
         btnChangeMethod.classList.add('link');
         inputCode.className = 'email-input';
         labelCode.className = '';
-        
+        btnLogin.className ='button-normal';
 });
