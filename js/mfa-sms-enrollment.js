@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
         
         const countryTextSpan = countryCodeButton.querySelectorAll('span');
         if (countryTextSpan.length >= 3) {
-            countryTextSpan[0].style.setProperty('background-image', `url("https://cdn.auth0.com/ulp/react-components/0.0.0-semantically-released/img/flags/mx.svg")`, 'important');
-            countryTextSpan[1].textContent = '+52';
+            //countryTextSpan[0].style.setProperty('background-image', `url("https://cdn.auth0.com/ulp/react-components/0.0.0-semantically-released/img/flags/mx.svg")`, 'important');
+            //countryTextSpan[1].textContent = '+52';
             countryTextSpan[1].classList.add('country-text-span');
             countryCodeButton.removeChild(countryTextSpan[2]);
         }
