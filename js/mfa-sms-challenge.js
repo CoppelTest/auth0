@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (logoViejo) {
         logoViejo.remove();
     }
+    const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
     
     
     if (auth0Wrapper) {
