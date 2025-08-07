@@ -18,10 +18,11 @@ document.addEventListener('DOMContentLoaded', function () {
         btnContinue.className ='button-normal';
         spanSavedCode.classList.add('text');
         */
+        onst auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
         const main = document.querySelector('main');
         const title = document.querySelector('h1');
         const subTitle = main?.querySelector('p');
-        const headerContainer = main?.querySelector('header');
+        const headerContainer = auth0Wrapper.querySelector('header');
         const btnContinue = document.querySelector('button[value="default"]');
         const btnCopyCode = main?.querySelector('button'); 
 
