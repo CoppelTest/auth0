@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
     //const title = auth0Wrapper.querySelector('h1');
 
 
-    //main.classList.remove(...main.classList);
-    //title.className = 'title-container';
+    main.classList.remove(...main.classList);
+    title.className = 'title-container';
 
 
 
