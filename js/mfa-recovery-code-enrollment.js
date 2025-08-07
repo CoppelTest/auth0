@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const main = document.querySelector('main');
         const title = document.querySelector('h1');
         const subTitle = main?.querySelector('p');
-        const headerContainer = document.querySelector('header');
+        const headerContainer = main?.querySelector('header');
         const btnContinue = document.querySelector('button[value="default"]');
         const btnCopyCode = main?.querySelector('button'); 
 
