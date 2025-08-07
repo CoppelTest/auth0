@@ -20,6 +20,10 @@
 }
 .lada-input {
   width: 25%;
+  font-family: Poppins, sans-serif;
+}
+.number-input{
+  font-family: Poppins, sans-serif;
 }
 .lada-input:read-only,
 .number-input:read-only {
