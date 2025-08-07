@@ -78,6 +78,24 @@ document.addEventListener('DOMContentLoaded', function () {
             countryLabel.textContent = 'Celular';
             countryLabel.className = 'country-label';
             phoneInputsContainer.parentNode.insertBefore(countryLabel, phoneInputsContainer);
+        } else if (fullPhone.includes('X')) {
+            const phoneInputsContainer = document.createElement('div');
+            phoneInputsContainer.className = 'phone-inputs-container';
+            const numberInput = document.createElement('input');
+            numberInput.type = 'text';
+            numberInput.className = 'number-input';
+            numberInput.value = fullPhone;
+            numberInput.readOnly = true;
+            numberInput.classList.add('input');
+            const numberInputContainer = document.createElement('div');
+            numberInputContainer.className = 'number-input-container';
+            numberInputContainer.appendChild(numberInput);
+            phoneInputsContainer.appendChild(numberInputContainer);
+            phoneSpan.parentNode.replaceChild(phoneInputsContainer, phoneSpan);
+            const countryLabel = document.createElement('label');
+            countryLabel.textContent = 'Celular';
+            countryLabel.className = 'country-label';
+            phoneInputsContainer.parentNode.insertBefore(countryLabel, phoneInputsContainer);
         }
     }
     
