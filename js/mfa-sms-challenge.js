@@ -98,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const codeInput = auth0Wrapper.querySelector('input[name="code"]');
     if (codeInput) {
         const codeInputWrapper = codeInput.closest('.input-wrapper');
+        codeInputWrapper.style.setProperty('height', 'unset');
         if (codeInputWrapper) {
             const codeLabel = document.createElement('label');
             codeLabel.textContent = codeLabelText;
@@ -108,6 +109,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const btnContinueMethod = divAfterHeader.querySelector('div > div > form > div > button');
     btnContinueMethod.className = 'button-normal';
+    divFather[9].classList.add('div-after-button-continue');
+    const divAfterButtonContinue = divFather[9].querySelector('form > button');
+    divAfterButtonContinue.classList.remove(...divAfterButtonContinue.classList);
+    divAfterButtonContinue.classList.add('link');
+    divAfterButtonContinue.classList.add('div-bottom-link');
+
+    const divBottomLink = divFather[10].querySelector('form > button');
+    divBottomLink.classList.remove(...divBottomLink.classList);
+    divBottomLink.classList.add('link');
+    divBottomLink.classList.add('div-bottom-link');
     
     if (auth0Wrapper) {
         auth0Wrapper.style.removeProperty('display');
