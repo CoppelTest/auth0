@@ -38,14 +38,12 @@ document.addEventListener('DOMContentLoaded', function () {
 	const parentDiv = document.getElementById('waiting-text-container');
 	const childDiv = parentDiv.querySelector('div');
 	childDiv.id = 'waiting-child-div';
-	
-	const linkStyle = document.createElement('style');
-	linkStyle.innerHTML = `
-    .link {
-      color: #1c42e8 !important;
-      font-size: 16px !important;
-    } `;
-	document.head.appendChild(linkStyle);
+
+	const txtsubt = document.querySelector('.subtitle-container');
+	const newTxt = `
+	  1- Te enviamos una notificación al siguiente dispositivo, a través de la app Auth0 Guardian. <br>
+	  2- Haz clic en Aprobar`;
+    txtsubt.innerHTML = newTxt.trim();
 	const button = document.querySelector('button[name="action"][value="pick-authenticator"]');
 	if (button) {
 		button.classList.add('link');
