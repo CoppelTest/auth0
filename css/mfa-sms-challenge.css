@@ -24,6 +24,7 @@
 }
 .number-input{
   font-family: Poppins, sans-serif;
+  background: var(--Background-background-neutral, #BDBDBD);
 }
 .lada-input:read-only,
 .number-input:read-only {
@@ -45,9 +46,6 @@
   padding: 4px 8px;
   border-radius: 3px;
   font-size: unset;
-}
-.edit-button:hover {
-  background-color: rgba(8, 23, 84, 0.1);
 }
 @media (max-width: 480px) {
   .phone-inputs-container {
