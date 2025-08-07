@@ -22,3 +22,16 @@
     font-weight: 400;
     line-height: 150%;
 }
+#waiting-child-div {
+    border-radius: var(--rounded-sm, 8px);
+    border: 1px solid var(--Border-border-neutral, #BDBDBD);
+    background: var(--Background-background-neutral, #BDBDBD);
+    overflow: hidden;
+    color: var(--Text-text-soft, #717171);
+    text-overflow: ellipsis;
+    font-family: var(--Family-body, Poppins);
+    font-size: var(--Size-Small, 14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
