@@ -7,8 +7,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const title = auth0Wrapper.querySelector('h1');
 
     main.classList.remove(...main.classList);
-    title.className = 'title-container';
 
+    const allH1s = auth0Wrapper.querySelectorAll('h1');
+    
+    // Asegúrate de que al menos haya dos <h1>
+    if (allH1s.length >= 2) {
+      const secondH1 = allH1s[1]; // Segundo h1
+      secondH1.className = 'title-container';
+    }
+    
     if (auth0Wrapper) {
         auth0Wrapper.style.removeProperty('display');
     } 
