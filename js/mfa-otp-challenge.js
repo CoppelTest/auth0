@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
     btnLogin.className ='button-normal';
     label.style.color = '#081754';
     label.style.lineHeight = '24px';
-
 	if (inputCode && btnLogin) {
         if (errorSpan && errorSpan.offsetHeight > 0) {
 			inputCode.style.border = '1px solid red';
@@ -29,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
 			btnLogin.style.marginTop = '55px';
         }
     }
-
 	const linkStyle = document.createElement('style');
 	linkStyle.innerHTML = `
     .link {
