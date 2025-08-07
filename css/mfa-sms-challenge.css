@@ -24,12 +24,15 @@
 }
 .number-input{
   font-family: Poppins, sans-serif;
-  background: var(--Background-background-neutral, #BDBDBD);
 }
-.lada-input:read-only,
-.number-input:read-only {
+.lada-input:read-only {
   background-color: #f8f9fa;
   color: var(--Colores-Text-text-inactive, #8C8C8C);
+  cursor: not-allowed;
+}
+.number-input:read-only {
+  background: var(--Background-background-neutral, #BDBDBD);
+  color: var(--Text-text-soft, #717171);
   cursor: not-allowed;
 }
 .number-input-container {
