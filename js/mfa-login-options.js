@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
-    const main = auth0Wrapper.querySelector('main');
-    const title = auth0Wrapper.querySelector('h1');
+    //const main = auth0Wrapper.querySelector('main');
+    //const title = auth0Wrapper.querySelector('h1');
 
 
     //main.classList.remove(...main.classList);
