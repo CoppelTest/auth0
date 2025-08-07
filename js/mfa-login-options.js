@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const titles = auth0Wrapper.querySelectorAll('h1');
     const ulSection = auth0Wrapper.querySelector('ul');
     const header = auth0Wrapper.querySelector('header');
-    console.log('header3:', header);
     const divContainer = auth0Wrapper.querySelector('header > div');
     console.log('divContainer2:', divContainer);
     divContainer.style.setProperty('padding', '50px 0px 5px', 'important');
@@ -22,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     
     main.classList.remove(...main.classList);
-    console.log('prueba 2');
     const spaceDiv = header.nextElementSibling;
     spaceDiv.style.setProperty('padding', '0px 0px', 'important');
     header.style.setProperty('border-bottom', '0px', 'important');
