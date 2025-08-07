@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const header = auth0Wrapper.querySelector('header');
    
     //main.classList.remove(...main.classList);
-
+    console.log('prueba');
     const spaceDiv = header.nextElementSibling;
     spaceDiv.style.setProperty('padding', '0px 0px', 'important');
     header.style.setProperty('border-bottom', '0px', 'important');
