@@ -19,6 +19,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	const divs = mainElement.querySelectorAll('div');
 	const twelfthDiv = divs[12];
  	twelfthDiv.id = 'div-notify'; 
+
+	onst divNotify = document.querySelector('#div-notify');
+	const notifyText = divNotify ? divNotify.querySelector('p') : null;
+	const resendButton = divNotify ? divNotify.querySelector('button[type="submit"]') : null;
+	notifyText.id = 'notify-text';
+	resendButton.id = 'resend-button';
+	resendButton.classList.add('link');
 	
 	const linkStyle = document.createElement('style');
 	linkStyle.innerHTML = `
