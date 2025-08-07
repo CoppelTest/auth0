@@ -17,24 +17,33 @@
   gap: 8px;
   align-items: center;
   margin: 10px 0;
+  width: 100%;
 }
 
 .lada-input,
 .number-input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
   font-family: Poppins, sans-serif;
-  border-radius: var(--rounded-sm, 8px);
-  border: 1px solid var(--Colores-Border-border, #C9C9C9);
-  background: var(--Background-background-neutral, #BDBDBD);
+  font-size: 14px;
+  background-color: #f8f9fa;
+  color: #333;
+  text-align: center;
+  height: 40px;
+  box-sizing: border-box;
 }
 
 .lada-input {
-  width: 25%;
+  width: 80px;
   flex-shrink: 0;
 }
 
 .number-input {
   flex: 1;
   min-width: 120px;
+  position: relative;
+  padding-right: 60px; /* Espacio para el botón editar */
 }
 
 .lada-input:read-only,
@@ -44,15 +53,72 @@
   cursor: not-allowed;
 }
 
+/* Botón editar dentro del input del número */
+.number-input-container {
+  position: relative;
+  flex: 1;
+  min-width: 120px;
+}
+
+.edit-button {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #081754;
+  font-family: Poppins, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 4px 8px;
+  border-radius: 3px;
+  transition: background-color 0.2s;
+}
+
+.edit-button:hover {
+  background-color: rgba(8, 23, 84, 0.1);
+}
+
 /* Estilos responsivos */
 @media (max-width: 480px) {
   .phone-inputs-container {
-    flex-direction: column;
-    gap: 4px;
+    flex-direction: row; /* Mantener en fila en móvil */
+    gap: 6px;
   }
   
-  .lada-input,
+  .lada-input {
+    width: 70px; /* Tamaño fijo más pequeño en móvil */
+    flex-shrink: 0;
+  }
+  
   .number-input {
-    width: 100%;
+    flex: 1;
+    min-width: 100px;
+    padding-right: 50px; /* Menos espacio para el botón en móvil */
+  }
+  
+  .edit-button {
+    font-size: 11px;
+    padding: 3px 6px;
+    right: 6px;
+  }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 360px) {
+  .lada-input {
+    width: 60px;
+  }
+  
+  .number-input {
+    padding-right: 45px;
+  }
+  
+  .edit-button {
+    font-size: 10px;
+    padding: 2px 4px;
   }
 }
