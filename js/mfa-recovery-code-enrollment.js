@@ -24,10 +24,9 @@ document.addEventListener('DOMContentLoaded', function () {
           btnCopyCode.classList.add('span-copy-style');
 
         }
-        const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
-            if (auth0Wrapper) {
-                auth0Wrapper.style.removeProperty('display');
-                auth0Wrapper.style.setProperty('height', 'inherit', 'important');
-            } 
+        if (auth0Wrapper) {
+            auth0Wrapper.style.removeProperty('display');
+            auth0Wrapper.style.setProperty('height', 'inherit', 'important');
+         } 
 
     });
