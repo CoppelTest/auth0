@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const title = auth0Wrapper.querySelector('h1');
 
 
-    main.classList.remove(...main.classList);
-    title.className = 'title-container';
+    //main.classList.remove(...main.classList);
+    //title.className = 'title-container';
 
 
 
@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         auth0Wrapper.style.removeProperty('display');
         auth0Wrapper.style.setProperty('height', 'inherit', 'important');
     }
+    });
     /*
     const main = document.querySelector('main._widget.c35245740');
     const title = document.querySelector('.c674cdded__title');
@@ -93,4 +94,4 @@ document.addEventListener('DOMContentLoaded', function () {
         return 'https://coppeltest.github.io/auth0/assets/sms.svg';
     }
     */
-});
+
