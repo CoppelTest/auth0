@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const checkbox = document.querySelector('input[type="checkbox"]');
         const checkBoxContainer = checkbox?.closest('div');
+        checkbox.className ='';
         checkBoxContainer.classList.add('custom-checkbox-container');
         if (btnCopyCode) {
           btnCopyCode.classList.add('btn-copy-code');
