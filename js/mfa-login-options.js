@@ -7,9 +7,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const titles = auth0Wrapper.querySelectorAll('h1');
     const ulSection = auth0Wrapper.querySelector('ul');
     const header = auth0Wrapper.querySelector('header');
-console.log('header:', header);
-    const divConteiner = header?.querySelector('div');
+    if(header){
+    console.log('header2:', header);
+    const divConteiner = header?.closest('div');
     console.log('divContainer:', divContainer);
+
     if (divContainer) {
       const containerChild = divContainer.querySelector('div'); // Esto es <div class="c2fc184ff__container">
 
@@ -20,6 +22,10 @@ console.log('header:', header);
         containerChild.insertAdjacentElement('afterend', newDiv);
        }
     }
+    }
+
+    
+    
     
     //main.classList.remove(...main.classList);
     console.log('prueba 2');
