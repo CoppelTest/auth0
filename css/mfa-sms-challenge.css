@@ -28,7 +28,7 @@
 .lada-input:read-only,
 .number-input:read-only {
   background-color: #f8f9fa;
-  color: #666;
+  color: var(--Colores-Text-text-inactive, #8C8C8C);
   cursor: not-allowed;
 }
 .number-input-container {
