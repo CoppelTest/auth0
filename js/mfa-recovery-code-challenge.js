@@ -1,4 +1,24 @@
     document.addEventListener('DOMContentLoaded', function () {
+
+        const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
+        const main = auth0Wrapper.querySelector('main');
+        const title = auth0Wrapper.querySelector('h1');
+        const subTitle = main?.querySelector('p');
+        const btnContinue = main?.querySelector('button[value="default"]');
+        const inputEnterCode = document.querySelector('div[data-action-text]');
+        const labelCode = inputEnterCode?.querySelector('label');
+        const inputCode = document.getElementById('code');
+        const btnChangeMethod = main?.querySelector('button[value="pick-authenticator"]');
+        
+        main.className = '';
+        title.className = 'title-container';
+        subTitle.className = 'subtitle-container';
+        btnContinue.className ='button-normal';
+        inputEnterCode.className = '';
+        labelCode.className = 'text';
+        inputCode.className = 'email-input';
+        btnChangeMethod.classList.add('link');
+
         /*     
         const main = document.querySelector('main._widget.c750085ad'); 
         const title = document.querySelector('h1.cded47f4b.c3871ca44');
