@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	const dotIcon = waitingTextContainer ? waitingTextContainer.querySelector('span[role="img"]') : null;
 	dotIcon.id ='icon'; 
+
+	const btnCopy = document.querySelector('button[name="action"][value="enter-otp-code"]');
+	btnCopy.classList.add('custom-style');
 	
 	const linkStyle = document.createElement('style');
 	linkStyle.innerHTML = `
