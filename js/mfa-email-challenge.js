@@ -29,6 +29,9 @@ document.addEventListener('DOMContentLoaded', function () {
 			btnLogin.style.marginTop = '55px';
         }
     }
+	const divs = document.querySelectorAll('main div');
+	const div14 = divs[14];
+	div14.style.display = 'none';
 
 	const linkStyle = document.createElement('style');
 	linkStyle.innerHTML = `
