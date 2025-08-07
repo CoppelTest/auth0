@@ -6,9 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const main = auth0Wrapper.querySelector('main');
     const titles = auth0Wrapper.querySelectorAll('h1');
     const ulSection = auth0Wrapper.querySelector('ul');
+    const header = auth0Wrapper.querySelector('header');
     main.classList.remove(...main.classList);
 
-    
+    const spaceDiv = header.nextElementSibling;
+    spaceDiv.style.setProperty('padding', '0 var(--spacing-2)', 'important');
     // Asegúrate de que al menos haya dos <h1>
     if (titles.length >= 2) {
       const secondH1 = titles[1]; // Segundo h1
