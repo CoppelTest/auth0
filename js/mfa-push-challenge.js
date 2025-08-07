@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	const btnCopy = document.querySelector('button[name="action"][value="enter-otp-code"]');
 	btnCopy.classList.add('custom-style');
+
+	const divs = mainElement.querySelectorAll('div');
+	const twelfthDiv = divs[12];
+ 	twelfthDiv.id = 'div-notify'; 
 	
 	const linkStyle = document.createElement('style');
 	linkStyle.innerHTML = `
