@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     main.classList.remove(...main.classList);
 
     const spaceDiv = header.nextElementSibling;
-    spaceDiv.style.setProperty('padding', '0 var(--spacing-2)', 'important');
+    spaceDiv.style.setProperty('padding', '0px 0px', 'important');
     // Asegúrate de que al menos haya dos <h1>
     if (titles.length >= 2) {
       const secondH1 = titles[1]; // Segundo h1
