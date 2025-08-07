@@ -32,6 +32,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	const divs = document.querySelectorAll('main div');
 	const div16 = divs[16];
 	div16.style.display = 'none';
+	const div8 = divs[8];
+	div8.style.borderRadius = '8px';
+	div8.style.border = '1px solid #BDBDBD';
+	div8.style.background = '#BDBDBD';
+	div8.style.overflow = 'hidden';
+	div8.style.color = '#717171';
+	div8.style.textOverflow = 'ellipsis';
 
 	const linkStyle = document.createElement('style');
 	linkStyle.innerHTML = `
