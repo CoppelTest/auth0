@@ -1,23 +1,46 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const main = document.querySelector('main._widget');
-  const title = document.querySelector('h1.cded47f4b');
-  const subTitle = document.querySelector('.c31b86380.ca3fde804');
-  const txtEmail = document.querySelector('.c664f7803');
-  const labelCode = document.querySelector('.cd36df9bd.c2d2ff081.c66f4bc7e');
-  const enterCode = document.querySelector('.c141f6ee9.cffa611b3.text.c206ae231.ulp-field.ca2723af5');
-  const txtSend = document.querySelector('.c0d4bc756.c4d0f4b3c');
-  const btnContinue = document.querySelector('div.c04b24768 button[type="submit"]');
-  const btnChangeMethod = document.querySelector('.c78dfd5b3.ca9aac5f4.c7e1be07f');
+  const mainElement = document.querySelector('main');
+	mainElement.classList.remove('_widget', 'c7f43d5ad');
+	const title = mainElement.querySelector('h1');
+	title.className = 'title-container';
+	const subTitle = mainElement.querySelector('p');
+	subTitle.className = 'subtitle-container';
+	const btnLogin = mainElement?.querySelector('button[value="default"]');
+	btnLogin.className ='button-normal';
 
-  main.classList.remove('_widget', 'c7f43d5ad');
-  title.className = 'title-container';
-  subTitle.className = 'subtitle-container';
-  txtEmail.classList.add('mi-multiline');
-  labelCode.className = 'c2d2ff081 c66f4bc7e';
-  enterCode.className = '.c141f6ee9 cffa611b3 text c206ae231 ulp-field';
-  txtSend.style.display = 'none';
-  btnContinue.className = '';
-  btnContinue.className = 'button-normal';
-  btnContinue.style.setProperty('margin-top', '55px', 'important');
-  btnChangeMethod.classList.add('link', 'link-method');
+	const divCodeInput = mainElement.querySelector('div[data-action-text=""]');
+	const labelCode = document.querySelector('div[data-action-text][data-alternate-action-text]');
+	const inputCode = divCodeInput ? divCodeInput.querySelector('input[name="code"]') : null;
+	const label = mainElement.querySelector('#code-label'); 
+	const errorSpan = document.getElementById('error-element-code');
+
+	inputCode.className = 'email-input';
+    labelCode.className = '';
+    btnLogin.className ='button-normal';
+    label.style.color = '#081754';
+    label.style.lineHeight = '24px';
+
+	if (inputCode && btnLogin) {
+        if (errorSpan && errorSpan.offsetHeight > 0) {
+			inputCode.style.border = '1px solid red';
+			btnLogin.style.marginTop = '80px';
+        } else {
+			inputCode.style.border = '1px solid #C9C9C9';
+			btnLogin.style.marginTop = '55px';
+        }
+    }
+
+	const linkStyle = document.createElement('style');
+	linkStyle.innerHTML = `
+    .link {
+      color: #1c42e8 !important;
+      font-size: 16px !important;
+    } `;
+	document.head.appendChild(linkStyle);
+	const button = document.querySelector('button[name="action"][value="pick-authenticator"]');
+	if (button) {
+		button.classList.add('link');
+	}
+	const footer = document.querySelector('footer');
+	footer.style.marginTop = 'auto';
 });
