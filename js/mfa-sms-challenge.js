@@ -17,8 +17,12 @@ document.addEventListener('DOMContentLoaded', function () {
     subTitle.className = 'subtitle-container';
     
     const divFather = divAfterHeader.querySelectorAll('div > div > div > div');
-    divFather[3].classList.remove(...divFather[3].classList);
-    const phoneSpan = divFather[3].querySelector('span');
+    let countAlert = 3;
+    if (divFather[0].id === 'prompt-alert') {
+        countAlert = 4;
+    }
+    divFather[countAlert].classList.remove(...divFather[countAlert].classList);
+    const phoneSpan = divFather[countAlert].querySelector('span');
     if (phoneSpan) {
         const fullPhone = phoneSpan.textContent.trim();
         const phoneMatch = fullPhone.match(/^(\+\d+)\s(.+)$/);
@@ -47,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
             numberInput.readOnly = true;
             numberInput.classList.add('input');
             
-            const editButton = divFather[3].querySelector('a[href*="mfa-sms-enrollment"]');
+            const editButton = divFather[countAlert].querySelector('a[href*="mfa-sms-enrollment"]');
             editButton.style.display = 'none';
             
             if (editButton) {
