@@ -10,8 +10,6 @@
   font-weight: 700;
   line-height: 150%;
 }
-
-/* Estilos para los inputs de teléfono */
 .phone-inputs-container {
   display: flex;
   gap: 8px;
@@ -20,25 +18,20 @@
   width: 100%;
   margin-bottom: var(--spacing-4);
 }
-
 .lada-input {
   width: 25%;
 }
-
 .lada-input:read-only,
 .number-input:read-only {
   background-color: #f8f9fa;
   color: #666;
   cursor: not-allowed;
 }
-
-/* Botón editar dentro del input del número */
 .number-input-container {
   position: relative;
   flex: 1;
   min-width: 120px;
 }
-
 .edit-button {
   position: absolute;
   right: 8px;
@@ -47,16 +40,14 @@
   background: none;
   padding: 4px 8px;
   border-radius: 3px;
+  font-size: unset;
 }
-
 .edit-button:hover {
   background-color: rgba(8, 23, 84, 0.1);
 }
-
-/* Estilos responsivos */
 @media (max-width: 480px) {
   .phone-inputs-container {
-    flex-direction: row; /* Mantener en fila en móvil */
+    flex-direction: row;
     gap: 6px;
   }
 }
