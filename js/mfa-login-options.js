@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const titles = auth0Wrapper.querySelectorAll('h1');
     const ulSection = auth0Wrapper.querySelector('ul');
     const header = auth0Wrapper.querySelector('header');
-    console.log('header:', header);
+    console.log('header3:', header);
     const divConteiner = auth0Wrapper.querySelector('header > div');
     console.log('divContainer:', divContainer);
 
