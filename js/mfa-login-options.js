@@ -9,6 +9,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     main.classList.remove(...main.classList);
     title.className = 'title-container';
+
+
+
+    if (auth0Wrapper) {
+        auth0Wrapper.style.removeProperty('display');
+        auth0Wrapper.style.setProperty('height', 'inherit', 'important');
+    }
     /*
     const main = document.querySelector('main._widget.c35245740');
     const title = document.querySelector('.c674cdded__title');
