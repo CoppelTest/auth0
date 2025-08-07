@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const ulSection = auth0Wrapper.querySelector('ul');
     const header = auth0Wrapper.querySelector('header');
     console.log('header3:', header);
-    const divConteiner = auth0Wrapper.querySelector('header > div');
-    console.log('divContainer2:', divConteiner);
+    const divContainer = auth0Wrapper.querySelector('header > div');
+    console.log('divContainer2:', divContainer);
 
     if (divContainer) {
       const containerChild = divContainer.querySelector('div'); // Esto es <div class="c2fc184ff__container">
