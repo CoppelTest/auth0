@@ -8,8 +8,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const ulSection = auth0Wrapper.querySelector('ul');
     const header = auth0Wrapper.querySelector('header');
     if(header){
-    console.log('header2:', header);
-    const divConteiner = header?.closest('div');
+    console.log('header:', header);
+        console.log('title:', titles[0]);
+    const divConteiner = titles[0]?.closest('div');
     console.log('divContainer:', divContainer);
 
     if (divContainer) {
