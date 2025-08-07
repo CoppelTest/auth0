@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('header3:', header);
     const divContainer = auth0Wrapper.querySelector('header > div');
     console.log('divContainer2:', divContainer);
-    divContainer.style.setProperty('padding', '50px 0px 24px', 'important');
+    divContainer.style.setProperty('padding', '50px 0px 5px', 'important');
 
     if (divContainer) {
       const containerChild = divContainer.querySelector('div'); // Esto es <div class="c2fc184ff__container">
