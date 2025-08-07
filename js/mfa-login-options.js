@@ -6,11 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const main = auth0Wrapper.querySelector('main');
     const title = auth0Wrapper.querySelector('h1');
 
-
     main.classList.remove(...main.classList);
     title.className = 'title-container';
-
-
 
     if (auth0Wrapper) {
         auth0Wrapper.style.removeProperty('display');
