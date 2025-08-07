@@ -65,3 +65,14 @@
   display: block;
   text-align: left;
 }
+.input-wrapper {
+  height: auto !important;
+  margin-bottom: var(--spacing-3);
+}
+.div-after-button-continue {
+  color: #081754;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  margin-bottom: 8px;
+  display: block;
+}
