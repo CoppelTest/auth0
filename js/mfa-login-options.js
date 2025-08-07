@@ -7,7 +7,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const titles = auth0Wrapper.querySelectorAll('h1');
     const ulSection = auth0Wrapper.querySelector('ul');
     const header = auth0Wrapper.querySelector('header');
-   
+
+    const divConteiner = header?.querySelector('div');
+    if (divContainer) {
+      const containerChild = divContainer.querySelector('div'); // Esto es <div class="c2fc184ff__container">
+
+      if (containerChild) {
+        const newDiv = document.createElement('div');
+        newDiv.className = 'subtitle-container';
+        newDiv.textContent = 'Para verificar tu identidad';    
+        containerChild.insertAdjacentElement('afterend', newDiv);
+       }
+    }
+    
     //main.classList.remove(...main.classList);
     console.log('prueba');
     const spaceDiv = header.nextElementSibling;
@@ -51,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
      
 
     });
-    
+     
     function getIconForText(text) {
         const lowerText = text.toLowerCase();
         const iconMap = {
