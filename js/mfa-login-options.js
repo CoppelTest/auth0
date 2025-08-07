@@ -7,10 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const titles = auth0Wrapper.querySelectorAll('h1');
     const ulSection = auth0Wrapper.querySelector('ul');
     const header = auth0Wrapper.querySelector('header');
-    if(header){
     console.log('header:', header);
-        console.log('title:', titles[0]);
-    const divConteiner = titles[0]?.closest('div');
+    const divConteiner = auth0Wrapper.querySelector('header > div');
     console.log('divContainer:', divContainer);
 
     if (divContainer) {
@@ -23,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
         containerChild.insertAdjacentElement('afterend', newDiv);
        }
     }
-    }
+    
 
     
     
