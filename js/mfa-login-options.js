@@ -4,15 +4,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
     const main = auth0Wrapper.querySelector('main');
-    const title = auth0Wrapper.querySelector('h1');
+    const titles = auth0Wrapper.querySelectorAll('h1');
 
     main.classList.remove(...main.classList);
 
-    const allH1s = auth0Wrapper.querySelectorAll('h1');
     
     // Asegúrate de que al menos haya dos <h1>
-    if (allH1s.length >= 2) {
-      const secondH1 = allH1s[1]; // Segundo h1
+    if (titles.length >= 2) {
+      const secondH1 = titles[1]; // Segundo h1
       secondH1.className = 'title-container';
     }
     
