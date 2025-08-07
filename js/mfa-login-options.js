@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     
     //main.classList.remove(...main.classList);
-    console.log('prueba');
+    console.log('prueba 2');
     const spaceDiv = header.nextElementSibling;
     spaceDiv.style.setProperty('padding', '0px 0px', 'important');
     header.style.setProperty('border-bottom', '0px', 'important');
