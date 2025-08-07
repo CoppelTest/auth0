@@ -7,8 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const titles = auth0Wrapper.querySelectorAll('h1');
     const ulSection = auth0Wrapper.querySelector('ul');
     const header = auth0Wrapper.querySelector('header');
-
+console.log('header:', header);
     const divConteiner = header?.querySelector('div');
+    console.log('divContainer:', divContainer);
     if (divContainer) {
       const containerChild = divContainer.querySelector('div'); // Esto es <div class="c2fc184ff__container">
 
