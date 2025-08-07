@@ -75,6 +75,7 @@
   font-size: 16px;
   margin-bottom: 8px;
   display: block;
+  margin-top: var(--spacing-3) !important;
 }
 .div-bottom-link {
   background: unset;
