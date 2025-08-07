@@ -1,5 +1,6 @@
 .social-button {
   margin-top: var(--spacing-2);
+  max-width: 100% !important;
 }
 .title-container{
   margin-bottom: 15px;
@@ -13,21 +14,9 @@
   font-weight: 700;
   line-height: 150%;
 }
-.ca40fca87 {
-  padding: 0px var(--spacing-2);
-}
-.cb79e947c{
-  border-bottom: 0px !important;
-}
 .ca247b1a9 {
   transform: translateX(-100%) translateY(-100%) !important;
 }
-.cb79e947c {
-  padding: 70px 0px 24px !important;
-}
-.c674cdded__container{
-  padding: 8px 48px 0px !important;
-}
-li.ce1a0ebc4 {
-    padding: 5px 0px 0px !important;
+li {
+  padding: 5px 0px 0px !important;
 }
