@@ -26,6 +26,10 @@ document.addEventListener('DOMContentLoaded', function () {
 	notifyText.id = 'notify-text';
 	resendButton.id = 'resend-button';
 	resendButton.classList.add('link');
+
+	const parentDiv = document.getElementById('waiting-text-container');
+	const childDiv = parentDiv.querySelector('div');
+	childDiv.id = 'waiting-child-div';
 	
 	const linkStyle = document.createElement('style');
 	linkStyle.innerHTML = `
