@@ -1,5 +1,5 @@
     document.addEventListener('DOMContentLoaded', function () {
-             
+        /*     
         const main = document.querySelector('main._widget.c750085ad'); 
         const title = document.querySelector('h1.cded47f4b.c3871ca44');
         const subTitle = document.querySelector('.c31b86380.ca3fde804');
@@ -34,5 +34,7 @@
             if (auth0Wrapper) {
                 auth0Wrapper.style.removeProperty('display');
                 auth0Wrapper.style.setProperty('height', 'inherit', 'important');
-            }        
+            }  
+
+          */  
     });
