@@ -10,3 +10,49 @@
   font-weight: 700;
   line-height: 150%;
 }
+
+/* Estilos para los inputs de teléfono */
+.phone-inputs-container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.lada-input,
+.number-input {
+  font-family: Poppins, sans-serif;
+  border-radius: var(--rounded-sm, 8px);
+  border: 1px solid var(--Colores-Border-border, #C9C9C9);
+  background: var(--Background-background-neutral, #BDBDBD);
+}
+
+.lada-input {
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.number-input {
+  flex: 1;
+  min-width: 120px;
+}
+
+.lada-input:read-only,
+.number-input:read-only {
+  background-color: #f8f9fa;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* Estilos responsivos */
+@media (max-width: 480px) {
+  .phone-inputs-container {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .lada-input,
+  .number-input {
+    width: 100%;
+  }
+}
