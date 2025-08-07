@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const twelfthDiv = divs[12];
  	twelfthDiv.id = 'div-notify'; 
 
-	onst divNotify = document.querySelector('#div-notify');
+	const divNotify = document.querySelector('#div-notify');
 	const notifyText = divNotify ? divNotify.querySelector('p') : null;
 	const resendButton = divNotify ? divNotify.querySelector('button[type="submit"]') : null;
 	notifyText.id = 'notify-text';
