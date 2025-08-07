@@ -18,6 +18,7 @@
         labelCode.className = 'text';
         inputCode.className = 'email-input';
         btnChangeMethod.classList.add('link');
+        console.log('prueba2');
 
         /*     
         const main = document.querySelector('main._widget.c750085ad'); 
@@ -52,8 +53,6 @@
         }
 
            */ 
-        console.log('prueba');
-         const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
             if (auth0Wrapper) {
                 auth0Wrapper.style.removeProperty('display');
                 auth0Wrapper.style.setProperty('height', 'inherit', 'important');
