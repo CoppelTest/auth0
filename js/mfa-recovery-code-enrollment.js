@@ -21,11 +21,13 @@ document.addEventListener('DOMContentLoaded', function () {
         const main = document.querySelector('main');
         const title = document.querySelector('h1');
         const subTitle = main?.querySelector('p');
+        const headerContainer = document.querySelector('header');
         const btnContinue = document.querySelector('button[value="default"]');
         const btnCopyCode = main?.querySelector('button'); 
 
 
         main.className = '';
+        headerContainer.classList.add('header-container');
         title.className = 'title-container';
         subTitle.className = 'subtitle-container';
         btnContinue.className ='button-normal';
