@@ -86,3 +86,8 @@ input[name="phone"] {
   font-weight: 400;
   line-height: 150%;
 }
+#error-cs-phone-required,
+#error-cs-pattern-mismatch {
+  font-family: Poppins, sans-serif;
+  background-image: url(https://cdn2.coppel.com/images/emarketing/Materiales/assets/rebranding/alert-info.svg) !important;
+}
