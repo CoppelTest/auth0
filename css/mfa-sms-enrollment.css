@@ -72,7 +72,6 @@ input[name="phone"] {
 .input-wrapper {
     height: auto !important;
 }
-
 #prompt-alert {
   border-radius: var(--rounded-sm, 8px);
   border: 2px solid var(--Colores-Border-border-error, #FF594D);
