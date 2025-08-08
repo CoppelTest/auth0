@@ -127,3 +127,7 @@
   font-weight: 400;
   line-height: 150%;
 }
+#error-cs-code-required,
+#error-cs-pattern-mismatch {
+  font-family: Poppins, sans-serif;
+}
