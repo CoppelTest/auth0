@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+ const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
+ try {
 	const mainElement = document.querySelector('main');
 	mainElement.classList.remove('_widget', 'c7f43d5ad');
 	const title = mainElement.querySelector('h1');
@@ -63,4 +65,12 @@ document.addEventListener('DOMContentLoaded', function () {
       outline: none;
     } `;
 	document.head.appendChild(focusStyle);
+	if (auth0Wrapper) {
+	                auth0Wrapper.style.removeProperty('display');
+	            } 
+	
+	        } catch (error) {
+	        
+	        auth0Wrapper.style.removeProperty('display');
+	    }
 });
