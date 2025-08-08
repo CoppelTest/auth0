@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const subTitle = main?.querySelector('p');
         const btnScan = main?.querySelector('button[value="toggle-view"]');
         const btnChangeMethod = main?.querySelector('button[value="pick-authenticator"]');
-        const btnLogin = main?.querySelector('button[value="default"]');
+        const btnContinuar = main?.querySelector('button[value="default"]');
         
         const labelCodeContainer = document.querySelector('div[data-action-text][data-alternate-action-text]');
         const labelCode = labelCodeContainer?.querySelector('label');
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         main.className = '';
         title.className = 'title-container';
-        btnLogin.className ='button-normal';
+        btnContinuar.className ='button-normal';
         inputCode.className = 'email-input';
         labelCodeContainer.className = '';
         labelCode.className = 'text';
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if(errorSpan){
             inputCode.style.border = '1px solid red';
-            btnLogin.style.setProperty('margin-top', '22%', 'important');
+            btnContinuar.style.setProperty('margin-top', '22%', 'important');
         }else{
             inputCode.style.border = '1px solid #C9C9C9';
         }
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ) {
                  
             inputCode.style.border = '1px solid red';
-            btnLogin.style.setProperty('margin-top', '22%', 'important');
+            btnContinuar.style.setProperty('margin-top', '22%', 'important');
             }
          }
          });
