@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+
         const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
-        const main = auth0Wrapper.querySelector('main');
+        const main = auth0Wrapper.querySelector('main2');
         const title = auth0Wrapper.querySelector('h1');
 
         const subTitle = main?.querySelector('p');
