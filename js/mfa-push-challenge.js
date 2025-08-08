@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const txtsubt = document.querySelector('.subtitle-container');
 	const newTxt = `
 	  1- Te enviamos una notificación al siguiente dispositivo, a través de la app Auth0 Guardian. <br>
-	  2- Haz clic en Aprobar`;
+	  2- Haz clic en <b>Aprobar</b>`;
     txtsubt.innerHTML = newTxt.trim();
 	const button = document.querySelector('button[name="action"][value="pick-authenticator"]');
 	if (button) {
