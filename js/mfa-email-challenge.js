@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	const inputCode = divCodeInput ? divCodeInput.querySelector('input[name="code"]') : null;
 	const label = mainElement.querySelector('#code-label'); 
 	const errorSpan = document.getElementById('error-element-code');
-
 	inputCode.className = 'email-input';
     labelCode.className = '';
     btnLogin.className ='button-normal';
@@ -40,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	div8.style.overflow = 'hidden';
 	div8.style.color = '#717171';
 	div8.style.textOverflow = 'ellipsis';
-
 	const linkStyle = document.createElement('style');
 	linkStyle.innerHTML = `
     .link {
