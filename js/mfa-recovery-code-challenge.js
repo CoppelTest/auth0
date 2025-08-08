@@ -26,7 +26,7 @@
         if(errorSpan){
             console.log('errorSpan:', errorSpan);
             inputCode.style.border = '1px solid red';
-            btnContinue.style.setProperty('margin-top', '25%', 'important');
+            btnContinue.style.setProperty('margin-top', '22%', 'important');
         }else{
             console.log('errorSpan:', errorSpan);
             inputCode.style.border = '1px solid #C9C9C9';
@@ -42,7 +42,7 @@
             ) {
                  
             inputCode.style.border = '1px solid red';
-            btnContinue.style.setProperty('margin-top', '25%', 'important');
+            btnContinue.style.setProperty('margin-top', '22%', 'important');
             }
         }
         
