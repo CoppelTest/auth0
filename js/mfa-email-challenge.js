@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     btnLogin.className ='button-normal';
     label.style.color = '#081754';
     label.style.lineHeight = '24px';
-
+	const emptyError = document.getElementById('error-cs-code-required');
 	if (inputCode && btnLogin) {
         if ((errorSpan && errorSpan.offsetHeight > 0) || (emptyError  && emptyError .offsetHeight > 0) ) {
 			inputCode.style.border = '1px solid red';
