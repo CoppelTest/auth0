@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	subTitle.className = 'subtitle-container';
 	const btnLogin = mainElement?.querySelector('button[value="default"]');
 	btnLogin.className ='button-normal';
-	btnLogin.style.marginTop = '55px';
+	btnLogin.style.marginTop = '60px';
 
 	const divCodeInput = mainElement.querySelector('div[data-action-text=""]');
 	const labelCode = document.querySelector('div[data-action-text][data-alternate-action-text]');
