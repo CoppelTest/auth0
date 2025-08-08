@@ -21,6 +21,8 @@
         console.log('prueba2');
 
         const errorSpan = document.getElementById('error-element-code');
+        const errorSpancs = document.getElementById('error-cs-code-required');
+     
         if(errorSpan){
             console.log('errorSpan:', errorSpan);
             inputCode.style.border = '1px solid red';
@@ -29,6 +31,30 @@
             console.log('errorSpan:', errorSpan);
             inputCode.style.border = '1px solid #C9C9C9';
         }
+
+        const observer = new MutationObserver(function (mutationsList) {
+        for (const mutation of mutationsList) {
+                console.log('entra a observer:');
+            if (
+                mutation.type === 'attributes' &&
+                mutation.attributeName === 'class' &&
+                errorSpancs.classList.contains('ulp-validator-error')
+            ) {
+                 
+            inputCode.style.border = '1px solid red';
+            btnContinue.style.setProperty('margin-top', '25%', 'important');
+            }
+        }
+        
+    });
+
+    if (errorSpancs) {
+        observer.observe(errorSpancs, {
+            attributes: true,
+            attributeFilter: ['class']
+        });
+        
+    }
         /*     
         const main = document.querySelector('main._widget.c750085ad'); 
         const title = document.querySelector('h1.cded47f4b.c3871ca44');
