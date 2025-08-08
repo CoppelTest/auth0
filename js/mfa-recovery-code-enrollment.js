@@ -7,8 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const headerContainer = auth0Wrapper.querySelector('header');
         const btnContinue = document.querySelector('button[value="default"]');
         const btnCopyCode = main?.querySelector('button'); 
-        const txtCode = mainElement.querySelectorAll('section div > div')[5];
-
 
         main.className = '';
         headerContainer.classList.add('header-container');
