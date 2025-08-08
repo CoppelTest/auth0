@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const headerContainer = auth0Wrapper.querySelector('header');
         const btnContinue = document.querySelector('button[value="default"]');
         const btnCopyCode = main?.querySelector('button'); 
+        const txtCode = mainElement.querySelectorAll('section div > div')[5];
 
 
         main.className = '';
@@ -19,7 +20,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const checkBoxContainer = checkbox?.closest('div');
         checkbox.className ='';
         checkBoxContainer.classList.add('custom-checkbox-container');
+        
         if (btnCopyCode) {
+          const divPrevious = btnCopyCode.previousElementSibling;
+          divCode = divPrevious?.querySelector('div');
+          divCode.classList.add('multiline-style');
           btnCopyCode.classList.add('btn-copy-code');
           btnCopyCode.classList.add('span-copy-style');
 
