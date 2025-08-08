@@ -20,6 +20,15 @@
         btnChangeMethod.classList.add('link');
         console.log('prueba2');
 
+        const errorSpan = document.getElementById('error-element-code');
+        if(errorSpan){
+            console.log('errorSpan:', errorSpan);
+            inputCode.style.border = '1px solid red';
+            btnContinue.style.setProperty('margin-top', '25%', 'important');
+        }else{
+            console.log('errorSpan:', errorSpan);
+            inputCode.style.border = '1px solid #C9C9C9';
+        }
         /*     
         const main = document.querySelector('main._widget.c750085ad'); 
         const title = document.querySelector('h1.cded47f4b.c3871ca44');
