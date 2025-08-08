@@ -40,14 +40,15 @@ document.addEventListener('DOMContentLoaded', function () {
             
             const flagImage = document.createElement('img');
             flagImage.src = 'https://cdn.auth0.com/ulp/react-components/0.0.0-semantically-released/img/flags/mx.svg';
-            flagImage.alt = 'Bandera de México';
             flagImage.className = 'flag-image';
             
             const ladaSpan = document.createElement('span');
             ladaSpan.textContent = lada;
             ladaSpan.className = 'lada-text';
             
-            ladaInput.appendChild(flagImage);
+            if (lada === '+52') {
+                ladaInput.appendChild(flagImage);
+            }
             ladaInput.appendChild(ladaSpan);
             
             const numberInputContainer = document.createElement('div');
