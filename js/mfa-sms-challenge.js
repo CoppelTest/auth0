@@ -36,19 +36,17 @@ document.addEventListener('DOMContentLoaded', function () {
             
             const ladaInput = document.createElement('div');
             ladaInput.className = 'lada-input-container';
+            ladaInput.classList.add('input');
             
-            // Crear la imagen de la bandera
             const flagImage = document.createElement('img');
             flagImage.src = 'https://cdn.auth0.com/ulp/react-components/0.0.0-semantically-released/img/flags/mx.svg';
             flagImage.alt = 'Bandera de México';
             flagImage.className = 'flag-image';
             
-            // Crear el span para la lada
             const ladaSpan = document.createElement('span');
             ladaSpan.textContent = lada;
             ladaSpan.className = 'lada-text';
             
-            // Agregar la bandera y la lada al contenedor
             ladaInput.appendChild(flagImage);
             ladaInput.appendChild(ladaSpan);
             
