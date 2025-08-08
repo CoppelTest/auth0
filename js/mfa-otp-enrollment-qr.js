@@ -48,6 +48,37 @@ document.addEventListener('DOMContentLoaded', function () {
         const errorSpan = document.getElementById('error-element-code');
         const errorSpancs = document.getElementById('error-cs-code-required');
 
+        if(errorSpan){
+            inputCode.style.border = '1px solid red';
+            btnLogin.style.setProperty('margin-top', '22%', 'important');
+        }else{
+            inputCode.style.border = '1px solid #C9C9C9';
+        }
+
+
+        const observer = new MutationObserver(function (mutationsList) {
+        for (const mutation of mutationsList) {
+                console.log('entra a observer:');
+            if (
+                mutation.type === 'attributes' &&
+                mutation.attributeName === 'class' &&
+                errorSpancs.classList.contains('ulp-validator-error')
+            ) {
+                 
+            inputCode.style.border = '1px solid red';
+            btnLogin.style.setProperty('margin-top', '22%', 'important');
+            }
+         }
+         });
+
+            if (errorSpancs) {
+                observer.observe(errorSpancs, {
+                    attributes: true,
+                    attributeFilter: ['class']
+                });
+                
+            }
+
 
                 // Función que actualiza el estilo si hay error
         /*
