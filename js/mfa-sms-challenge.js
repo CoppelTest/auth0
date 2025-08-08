@@ -34,12 +34,26 @@ document.addEventListener('DOMContentLoaded', function () {
             const phoneInputsContainer = document.createElement('div');
             phoneInputsContainer.className = 'phone-inputs-container';
             
+            // Crear contenedor para la bandera y la lada
+            const flagLadaContainer = document.createElement('div');
+            flagLadaContainer.className = 'flag-lada-container';
+            
+            // Crear la imagen de la bandera
+            const flagImage = document.createElement('img');
+            flagImage.src = 'https://cdn.auth0.com/ulp/react-components/0.0.0-semantically-released/img/flags/mx.svg';
+            flagImage.alt = 'Bandera de México';
+            flagImage.className = 'flag-image';
+            
             const ladaInput = document.createElement('input');
             ladaInput.type = 'text';
             ladaInput.className = 'lada-input';
             ladaInput.value = lada;
             ladaInput.readOnly = true;
             ladaInput.classList.add('input');
+            
+            // Agregar la bandera y la lada al contenedor
+            flagLadaContainer.appendChild(flagImage);
+            flagLadaContainer.appendChild(ladaInput);
             
             const numberInputContainer = document.createElement('div');
             numberInputContainer.className = 'number-input-container';
@@ -73,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 numberInputContainer.appendChild(numberInput);
             }
             
-            phoneInputsContainer.appendChild(ladaInput);
+            phoneInputsContainer.appendChild(flagLadaContainer);
             phoneInputsContainer.appendChild(numberInputContainer);
             
             phoneSpan.parentNode.replaceChild(phoneInputsContainer, phoneSpan);
@@ -85,6 +99,28 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (fullPhone.includes('X')) {
             const phoneInputsContainer = document.createElement('div');
             phoneInputsContainer.className = 'phone-inputs-container';
+            
+            // Crear contenedor para la bandera y la lada
+            const flagLadaContainer = document.createElement('div');
+            flagLadaContainer.className = 'flag-lada-container';
+            
+            // Crear la imagen de la bandera
+            const flagImage = document.createElement('img');
+            flagImage.src = 'https://cdn.auth0.com/ulp/react-components/0.0.0-semantically-released/img/flags/mx.svg';
+            flagImage.alt = 'Bandera de México';
+            flagImage.className = 'flag-image';
+            
+            const ladaInput = document.createElement('input');
+            ladaInput.type = 'text';
+            ladaInput.className = 'lada-input';
+            ladaInput.value = '+52';
+            ladaInput.readOnly = true;
+            ladaInput.classList.add('input');
+            
+            // Agregar la bandera y la lada al contenedor
+            flagLadaContainer.appendChild(flagImage);
+            flagLadaContainer.appendChild(ladaInput);
+            
             const numberInput = document.createElement('input');
             numberInput.type = 'text';
             numberInput.className = 'number-input';
@@ -94,6 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const numberInputContainer = document.createElement('div');
             numberInputContainer.className = 'number-input-container';
             numberInputContainer.appendChild(numberInput);
+            phoneInputsContainer.appendChild(flagLadaContainer);
             phoneInputsContainer.appendChild(numberInputContainer);
             phoneSpan.parentNode.replaceChild(phoneInputsContainer, phoneSpan);
             const countryLabel = document.createElement('label');
