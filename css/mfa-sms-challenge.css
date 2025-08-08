@@ -65,6 +65,24 @@
   display: block;
   text-align: left;
 }
+.flag-label-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.flag-lada-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 25%;
+}
+.flag-image {
+  width: 24px;
+  height: 16px;
+  border-radius: 2px;
+  object-fit: cover;
+}
 .input-wrapper {
   height: auto !important;
   margin-bottom: var(--spacing-3);
