@@ -18,7 +18,7 @@
         labelCode.className = 'text';
         inputCode.className = 'email-input';
         btnChangeMethod.classList.add('link');
-        console.log('prueba2');
+        console.log('prueba3');
 
         const errorSpan = document.getElementById('error-element-code');
         const errorSpancs = document.getElementById('error-cs-code-required');
