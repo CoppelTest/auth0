@@ -86,7 +86,7 @@ try {
             } 
 
         } catch (error) {
-        console.error("Error en el script:", error);
+        
         auth0Wrapper.style.removeProperty('display');
     }
     
