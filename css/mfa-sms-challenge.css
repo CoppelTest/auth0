@@ -118,6 +118,7 @@
   border-radius: var(--rounded-sm, 8px);
   border: 2px solid var(--Colores-Border-border-error, #FF594D);
   background: var(--Colores-Background-background-body, #FFF);
+  padding: 12px 8px !important;
 }
 #prompt-alert p {
   color: var(--Colores-Text-text, #081754);
@@ -126,6 +127,9 @@
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
+  background-image: url(https://cdn2.coppel.com/images/emarketing/Materiales/assets/rebranding/alert-info.svg) !important;
+  background-repeat: no-repeat;
+  padding-left: 32px;
 }
 #error-cs-code-required,
 #error-cs-pattern-mismatch {
