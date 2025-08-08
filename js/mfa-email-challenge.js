@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     label.style.lineHeight = '24px';
 
 	if (inputCode && btnLogin) {
-        if (errorSpan && errorSpan.offsetHeight > 0) {
+        if ((errorSpan && errorSpan.offsetHeight > 0) || (emptyError  && emptyError .offsetHeight > 0) ) {
 			inputCode.style.border = '1px solid red';
 			btnLogin.style.marginTop = '80px';
         } else {
