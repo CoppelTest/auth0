@@ -6,15 +6,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
     const main = auth0Wrapper.querySelector('main');
     const title = auth0Wrapper.querySelector('h1');
-    const subTitle = auth0Wrapper.querySelector('main > section > div > div > header > div');
-    const header = auth0Wrapper.querySelector('main > section > div > div > header');
+    const subTitle = auth0Wrapper.querySelector('header > div');
+    const header = auth0Wrapper.querySelector('header');
     const divAfterHeader = auth0Wrapper.querySelector('main > section > div > div > div');
     main.classList.remove(...main.classList);
     header.style.setProperty('padding', '0 var(--spacing-0)', 'important');
     divAfterHeader.style.setProperty('padding', '0 var(--spacing-0)', 'important');
     title.className = 'title-container';
     subTitle.className = 'subtitle-container';
-    const socialButtons = auth0Wrapper.querySelectorAll("main > section > div > div > div > div > form > button");
+    const socialButtons = auth0Wrapper.querySelectorAll("button");
     socialButtons.forEach(button => {
         button.className = 'social-button';
         const spans = button.querySelectorAll('span');
