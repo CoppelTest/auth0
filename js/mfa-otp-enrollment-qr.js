@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-
-        const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
+ const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
+try {
+      
         const main = auth0Wrapper.querySelector('main2');
         const title = auth0Wrapper.querySelector('h1');
 
@@ -84,7 +85,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 auth0Wrapper.style.removeProperty('display');
             } 
 
-
+        } catch (error) {
+        console.error("Error en el script:", error);
+        auth0Wrapper.style.removeProperty('display');
+    }
     
 
     });
