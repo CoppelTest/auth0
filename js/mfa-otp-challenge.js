@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				btnLogin.style.marginTop = '80px';
 			} else {
 				inputCode.style.border = '1px solid #C9C9C9';
-				btnLogin.style.marginTop = '55px';
+				btnLogin.style.marginTop = '60px';
 			}
 		}
 		const linkStyle = document.createElement('style');
