@@ -18,9 +18,25 @@
   width: 100%;
   margin-bottom: var(--spacing-4);
 }
-.lada-input {
+.lada-input-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   width: 25%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  color: #666;
   font-family: Poppins, sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+  height: 40px;
+}
+.lada-text {
+  color: #666;
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
 }
 .number-input{
   font-family: Poppins, sans-serif;
@@ -49,6 +65,12 @@
   padding: 4px 8px;
   border-radius: 3px;
   font-size: unset;
+}
+.flag-image {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+  object-fit: cover;
 }
 @media (max-width: 480px) {
   .phone-inputs-container {
