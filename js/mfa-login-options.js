@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
+    try {
     const main = auth0Wrapper.querySelector('main');
     const titles = auth0Wrapper.querySelectorAll('h1');
     const ulSection = auth0Wrapper.querySelector('ul');
@@ -83,6 +84,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (auth0Wrapper) {
         auth0Wrapper.style.removeProperty('display');
         auth0Wrapper.style.setProperty('height', 'inherit', 'important');
+    }
+
+    } catch (error) {
+        
+        auth0Wrapper.style.removeProperty('display');
     }
     });
 
