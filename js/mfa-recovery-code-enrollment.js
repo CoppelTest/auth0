@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
         const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
+        try {
         const main = document.querySelector('main');
         const title = document.querySelector('h1');
         const subTitle = main?.querySelector('p');
@@ -32,4 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
             auth0Wrapper.style.setProperty('height', 'inherit', 'important');
          } 
 
+        } catch (error) { 
+         auth0Wrapper.style.removeProperty('display');
+    }
     });
