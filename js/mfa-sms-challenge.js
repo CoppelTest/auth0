@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        const divRemember = auth0Wrapper.querySelector('#rememberBrowser').closest('div');
+        const divRemember = auth0Wrapper.querySelector('#rememberBrowser');
         if (divRemember) {
             divRemember.closest('div').style.display = "none";
         }
