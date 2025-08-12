@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     label.style.color = '#081754';
     label.style.lineHeight = '24px';
 	const checkBoxContainer = checkbox?.closest('div');
+	const checkbox = document.querySelector('input[type="checkbox"]');
     checkbox.className ='';
     checkBoxContainer.classList.add('custom-checkbox-container');
 	const div16 = divs[17];
@@ -54,8 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
 			inputCode.style.border = '1px solid #C9C9C9';
         }
     }
-	const checkbox = document.querySelector('input[type="checkbox"]');
-    
 	const footer = document.querySelector('footer');
 	footer.style.marginTop = 'auto';
 });
