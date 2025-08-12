@@ -33,13 +33,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	div8.style.overflow = 'hidden';
 	div8.style.color = '#717171';
 	div8.style.textOverflow = 'ellipsis';
-	const linkStyle = document.createElement('style');
-	linkStyle.innerHTML = `
-    .link {
-      color: #1c42e8 !important;
-      font-size: 16px !important;
-    } `;
-	document.head.appendChild(linkStyle);
 	const button = document.querySelector('button[name="action"][value="pick-authenticator"]');
 	if (button) {
 		button.classList.add('link');
