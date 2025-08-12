@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-	 setTimeout(() => {
     const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
     
     try {
@@ -103,6 +102,5 @@ document.addEventListener('DOMContentLoaded', function () {
         if (auth0Wrapper) {
             auth0Wrapper.style.removeProperty('display');
        }
-        }
-    }, 6000);
+    }
 });
