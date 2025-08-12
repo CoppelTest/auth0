@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
             footer.style.marginTop = 'auto';
         }
 		
-        const hasPromptAlertError = promptAlertDiv && promptAlertDiv.offsetHeight > 0;
+        const hasPromptAlertError = promptAlertDiv != null && promptAlertDiv.offsetHeight > 0;
         const hasGeneralError = (errorSpan && errorSpan.offsetHeight > 0) || (emptyError && emptyError.offsetHeight > 0);
 
         if (hasPromptAlertError) {
