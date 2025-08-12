@@ -140,6 +140,11 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
+        const divRemember = document.querySelector('#rememberBrowser').closest('div');
+        if (divRemember) {
+            divRemember.style.display = "none";
+        }
+
         const btnContinueMethod = divAfterHeader.querySelector('button[value="default"]');
         btnContinueMethod.className = 'button-normal';
         divFather[divFather.length - 2].classList.add('div-after-button-continue');
