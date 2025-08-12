@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const divRemember = auth0Wrapper.querySelector('#rememberBrowser').closest('div');
         if (divRemember) {
-            divRemember.style.display = "none";
+            divRemember.closest('div').style.display = "none";
         }
 
         const btnContinueMethod = divAfterHeader.querySelector('button[value="default"]');
