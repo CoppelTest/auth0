@@ -134,3 +134,6 @@
 #error-cs-pattern-mismatch:before {
   background-image: url(https://cdn2.coppel.com/images/emarketing/Materiales/assets/rebranding/alert-info.svg) !important;
 }
+footer {
+  margin-top: auto;
+}
