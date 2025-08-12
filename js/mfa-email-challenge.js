@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	div8.style.overflow = 'hidden';
 	div8.style.color = '#717171';
 	div8.style.textOverflow = 'ellipsis';
+	document.querySelector('.custom-checkbox-container').style.paddingTop = '15px';
 	const button = document.querySelector('button[name="action"][value="pick-authenticator"]');
 	if (button) {
 		button.classList.add('link');
