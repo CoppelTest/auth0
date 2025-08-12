@@ -63,21 +63,22 @@ document.addEventListener('DOMContentLoaded', function () {
 		
         const hasPromptAlertError = promptAlertDiv != null && promptAlertDiv.offsetHeight > 0;
         const hasGeneralError = (errorSpan && errorSpan.offsetHeight > 0) || (emptyError && emptyError.offsetHeight > 0);
-
-        if (hasPromptAlertError) {
-			console.log("linea hasPromptAlertError");
-            // Caso 1: Error en el div "prompt-alert" (sin borde rojo)
-            if (btnLogin) btnLogin.style.marginTop = '70px'; // <-- ¡NUEVA REGLA AQUÍ!
-            if (inputCode) inputCode.style.border = '';
-            if (div15) div15.style.display = 'none';
-            if (checkBoxContainer) checkBoxContainer.style.paddingTop = '20px';
-            if (div17) div17.style.display = 'none';
-            
-        } else if (hasGeneralError) {
+		console.log("hasGeneralError ", hasGeneralError);
+		console.log("hasPromptAlertError ", hasPromptAlertError);
+        if (hasGeneralError) {
 			console.log("linea hasGeneralError");
             // Caso 2: Error general (con borde rojo)
             if (btnLogin) btnLogin.style.marginTop = '20px';
             if (inputCode) inputCode.style.border = '1px solid red';
+            if (div15) div15.style.display = 'none';
+            if (checkBoxContainer) checkBoxContainer.style.paddingTop = '20px';
+            if (div17) div17.style.display = 'none';
+            
+        } else if (hasPromptAlertError) {
+			console.log("linea hasPromptAlertError");
+            // Caso 1: Error en el div "prompt-alert" (sin borde rojo)
+            if (btnLogin) btnLogin.style.marginTop = '70px'; // <-- ¡NUEVA REGLA AQUÍ!
+            if (inputCode) inputCode.style.border = '';
             if (div15) div15.style.display = 'none';
             if (checkBoxContainer) checkBoxContainer.style.paddingTop = '20px';
             if (div17) div17.style.display = 'none';
