@@ -24,8 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	const checkBoxContainer = checkbox?.closest('div');
     checkbox.className ='';
     checkBoxContainer.classList.add('custom-checkbox-container');
-	const div16 = divs[17];
-	div16.style.display = 'none';
 	const div8 = divs[8];
 	div8.style.borderRadius = '8px';
 	div8.style.border = '1px solid #BDBDBD';
@@ -47,6 +45,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		    document.querySelector('.custom-checkbox-container').style.paddingTop = '20px';
         } else {
 			inputCode.style.border = '1px solid #C9C9C9';
+			const div16 = divs[17];
+			div16.style.display = 'none';
         }
     }
 	const footer = document.querySelector('footer');
