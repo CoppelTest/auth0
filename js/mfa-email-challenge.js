@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const btnLogin = mainElement?.querySelector('button[value="default"]');
 	btnLogin.className ='button-normal';
 	btnLogin.style.marginTop = '20px';
+	const divs = document.querySelectorAll('main div');
 
 	const divCodeInput = mainElement.querySelector('div[data-action-text=""]');
 	const labelCode = document.querySelector('div[data-action-text][data-alternate-action-text]');
@@ -23,6 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	if (inputCode && btnLogin) {
         if ((errorSpan && errorSpan.offsetHeight > 0) || (emptyError  && emptyError .offsetHeight > 0) ) {
 			inputCode.style.border = '1px solid red';
+			const div16 = divs[15];
+			div16.style.display = 'none';
         } else {
 			inputCode.style.border = '1px solid #C9C9C9';
         }
@@ -31,8 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const checkBoxContainer = checkbox?.closest('div');
     checkbox.className ='';
     checkBoxContainer.classList.add('custom-checkbox-container');
-	const divs = document.querySelectorAll('main div');
-	const div16 = divs[15];
+	const div16 = divs[17];
 	div16.style.display = 'none';
 	const div8 = divs[8];
 	div8.style.borderRadius = '8px';
