@@ -23,10 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	if (inputCode && btnLogin) {
         if ((errorSpan && errorSpan.offsetHeight > 0) || (emptyError  && emptyError .offsetHeight > 0) ) {
 			inputCode.style.border = '1px solid red';
-			btnLogin.style.marginTop = '80px';
         } else {
 			inputCode.style.border = '1px solid #C9C9C9';
-			btnLogin.style.marginTop = '60px';
         }
     }
 	const checkbox = document.querySelector('input[type="checkbox"]');
