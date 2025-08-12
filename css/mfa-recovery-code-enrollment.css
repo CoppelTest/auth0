@@ -73,10 +73,6 @@ padding: 40px 30px 24px !important;
 .custom-checkbox-container span {
   user-select: none;
 }
-.c074eacd2>span {
-  color: #081754;
-  top: 0px;
-}
 .custom-checkbox-container input[type="checkbox"]:checked {
   background-color: #0052cc; /* Fondo azul al hacer check */
   border-color: #0052cc;
