@@ -11,6 +11,8 @@ try {
 	btnLogin.className ='button-normal';
 	btnLogin.style.marginTop = '20px';
 	const divs = document.querySelectorAll('main div');
+	const div16 = divs[17];
+	div16.style.display = 'none';
 
 	const divCodeInput = mainElement.querySelector('div[data-action-text=""]');
 	const labelCode = document.querySelector('div[data-action-text][data-alternate-action-text]');
