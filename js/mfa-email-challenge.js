@@ -29,8 +29,12 @@ document.addEventListener('DOMContentLoaded', function () {
 			btnLogin.style.marginTop = '60px';
         }
     }
+	const checkbox = document.querySelector('input[type="checkbox"]');
+    const checkBoxContainer = checkbox?.closest('div');
+    checkbox.className ='';
+    checkBoxContainer.classList.add('custom-checkbox-container');
 	const divs = document.querySelectorAll('main div');
-	const div16 = divs[16];
+	const div16 = divs[17];
 	div16.style.display = 'none';
 	const div8 = divs[8];
 	div8.style.borderRadius = '8px';
