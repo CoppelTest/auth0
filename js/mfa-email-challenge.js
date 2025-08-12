@@ -16,7 +16,6 @@ try {
 	const labelCode = document.querySelector('div[data-action-text][data-alternate-action-text]');
 	const inputCode = divCodeInput ? divCodeInput.querySelector('input[name="code"]') : null;
 	const label = mainElement.querySelector('#code-label'); 
-	const errorSpan = document.getElementById('error-element-code');
 	inputCode.className = 'email-input';
     labelCode.className = '';
     btnLogin.className ='button-normal';
