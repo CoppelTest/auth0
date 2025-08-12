@@ -20,19 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     btnLogin.className ='button-normal';
     label.style.color = '#081754';
     label.style.lineHeight = '24px';
-	const emptyError = document.getElementById('error-cs-code-required');
-	if (inputCode && btnLogin) {
-        if ((errorSpan && errorSpan.offsetHeight > 0) || (emptyError  && emptyError .offsetHeight > 0) ) {
-			inputCode.style.border = '1px solid red';
-			const div16 = divs[15];
-			div16.style.display = 'none';
-		//	document.querySelector('.custom-checkbox-container').style.paddingTop = '20px';
-        } else {
-			inputCode.style.border = '1px solid #C9C9C9';
-        }
-    }
-	const checkbox = document.querySelector('input[type="checkbox"]');
-    const checkBoxContainer = checkbox?.closest('div');
+	const checkBoxContainer = checkbox?.closest('div');
     checkbox.className ='';
     checkBoxContainer.classList.add('custom-checkbox-container');
 	const div16 = divs[17];
@@ -55,6 +43,19 @@ document.addEventListener('DOMContentLoaded', function () {
 	if (button) {
 		button.classList.add('link');
 	}
+	const emptyError = document.getElementById('error-cs-code-required');
+	if (inputCode && btnLogin) {
+        if ((errorSpan && errorSpan.offsetHeight > 0) || (emptyError  && emptyError .offsetHeight > 0) ) {
+			inputCode.style.border = '1px solid red';
+			const div16 = divs[15];
+			div16.style.display = 'none';
+		    document.querySelector('.custom-checkbox-container').style.paddingTop = '20px';
+        } else {
+			inputCode.style.border = '1px solid #C9C9C9';
+        }
+    }
+	const checkbox = document.querySelector('input[type="checkbox"]');
+    
 	const footer = document.querySelector('footer');
 	footer.style.marginTop = 'auto';
 });
