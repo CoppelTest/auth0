@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const auth0Wrapper = document.getElementById('auth0-hidden-wrapper');
     
     try {
+		console.log("linea 5");
         const mainElement = document.querySelector('main');
         const divs = document.querySelectorAll('main div');
         const promptAlertDiv = document.getElementById('prompt-alert');
@@ -64,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const hasGeneralError = (errorSpan && errorSpan.offsetHeight > 0) || (emptyError && emptyError.offsetHeight > 0);
 
         if (hasPromptAlertError) {
+			console.log("linea hasPromptAlertError");
             // Caso 1: Error en el div "prompt-alert" (sin borde rojo)
             if (btnLogin) btnLogin.style.marginTop = '70px'; // <-- ¡NUEVA REGLA AQUÍ!
             if (inputCode) inputCode.style.border = '';
@@ -72,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (div17) div17.style.display = 'none';
             
         } else if (hasGeneralError) {
+			console.log("linea hasGeneralError");
             // Caso 2: Error general (con borde rojo)
             if (btnLogin) btnLogin.style.marginTop = '20px';
             if (inputCode) inputCode.style.border = '1px solid red';
@@ -80,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (div17) div17.style.display = 'none';
             
         } else {
+			console.log("linea else");
             // Caso 3: No hay errores
             if (btnLogin) btnLogin.style.marginTop = '20px';
             if (inputCode) inputCode.style.border = '';
@@ -87,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (checkBoxContainer) checkBoxContainer.style.paddingTop = '15px';
             if (div17) div17.style.display = 'none';
         }
+		console.log("linea 90");
         if (auth0Wrapper) {
             auth0Wrapper.style.removeProperty('display');
         }
