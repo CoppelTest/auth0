@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			inputCode.style.border = '1px solid red';
 			const div16 = divs[15];
 			div16.style.display = 'none';
-			document.querySelector('.custom-checkbox-container').style.paddingTop = '20px';
+		//	document.querySelector('.custom-checkbox-container').style.paddingTop = '20px';
         } else {
 			inputCode.style.border = '1px solid #C9C9C9';
         }
