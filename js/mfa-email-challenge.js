@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const mainElement = document.querySelector('main');
+    const mainElement = document.querySelector('main');
 	mainElement.classList.remove('_widget', 'c7f43d5ad');
 	const title = mainElement.querySelector('h1');
 	title.className = 'title-container';
