@@ -39,6 +39,7 @@ try {
 		button.classList.add('link');
 	}
 	const emptyError = document.getElementById('error-cs-code-required');
+	const errorSpan = document.getElementById('error-element-code');
 	if (inputCode && btnLogin) {
         if ((errorSpan && errorSpan.offsetHeight > 0) || (emptyError  && emptyError .offsetHeight > 0) ) {
 			inputCode.style.border = '1px solid red';
