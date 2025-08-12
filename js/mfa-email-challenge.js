@@ -20,9 +20,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const button = document.querySelector('button[name="action"][value="pick-authenticator"]');
         const footer = document.querySelector('footer');
 
-
 		console.log("errorSpan " + errorSpan );
 		console.log("emptyError " + emptyError );
+
+		console.log("condicion " + (errorSpan!= null && errorSpan.offsetHeight > 0));
         const indexOffset = promptAlertDiv!= null ? 1 : 0;
         
         const div8 = divs[8 + indexOffset];
