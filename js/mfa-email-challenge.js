@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const button = document.querySelector('button[name="action"][value="pick-authenticator"]');
         const footer = document.querySelector('footer');
         
-        const indexOffset = promptAlertDiv ? 1 : 0;
+        const indexOffset = promptAlertDiv!= null ? 1 : 0;
         
         const div8 = divs[8 + indexOffset];
         const div15 = divs[15 + indexOffset];
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 		
         const hasPromptAlertError = promptAlertDiv != null && promptAlertDiv.offsetHeight > 0;
-        const hasGeneralError = (errorSpan && errorSpan.offsetHeight > 0) || (emptyError && emptyError.offsetHeight > 0);
+        const hasGeneralError = (errorSpan!= null && errorSpan.offsetHeight > 0) || (emptyError!= null && emptyError.offsetHeight > 0);
 		console.log("hasGeneralError ", hasGeneralError);
 		console.log("hasPromptAlertError ", hasPromptAlertError);
         if (hasGeneralError) {
