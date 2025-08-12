@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		console.log("errorSpan " + errorSpan );
 		console.log("emptyError " + emptyError );
 
-		console.log("condicion " + (errorSpan!= null && errorSpan.offsetHeight > 0));
+		console.log("condicion " + (errorSpan.offsetHeight > 0);
         const indexOffset = promptAlertDiv!= null ? 1 : 0;
         
         const div8 = divs[8 + indexOffset];
