@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
     btnLogin.className ='button-normal';
     label.style.color = '#081754';
     label.style.lineHeight = '24px';
-	const checkBoxContainer = checkbox?.closest('div');
 	const checkbox = document.querySelector('input[type="checkbox"]');
+	const checkBoxContainer = checkbox?.closest('div');
     checkbox.className ='';
     checkBoxContainer.classList.add('custom-checkbox-container');
 	const div16 = divs[17];
