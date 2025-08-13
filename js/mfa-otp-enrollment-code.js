@@ -30,15 +30,33 @@ document.addEventListener('DOMContentLoaded', function () {
 		label.style.color = '#081754';
 		label.style.lineHeight = '24px';
 
-		if (inputCode && btnLogin) {
-			if (errorSpan && errorSpan.offsetHeight > 0) {
-				inputCode.style.border = '1px solid red';
-				btnLogin.style.marginTop = '80px';
-			} else {
-				inputCode.style.border = '1px solid #C9C9C9';
-				btnLogin.style.marginTop = '55px';
-			}
-		}
+		if (errorSpan) {
+      inputCode.style.border = "1px solid red";
+      btnContinue.style.setProperty("margin-top", "22%", "important");
+    } else {
+      console.log("errorSpan:", errorSpan);
+      inputCode.style.border = "1px solid #C9C9C9";
+    }
+
+    const observer = new MutationObserver(function (mutationsList) {
+      for (const mutation of mutationsList) {
+        if (
+          mutation.type === "attributes" &&
+          mutation.attributeName === "class" &&
+          errorSpancs.classList.contains("ulp-validator-error")
+        ) {
+          inputCode.style.border = "1px solid red";
+          btnContinue.style.setProperty("margin-top", "22%", "important");
+        }
+      }
+    });
+
+    if (errorSpancs) {
+      observer.observe(errorSpancs, {
+        attributes: true,
+        attributeFilter: ["class"],
+      });
+    }
 		if (auth0Wrapper) {
 			auth0Wrapper.style.removeProperty('display');
 		}
