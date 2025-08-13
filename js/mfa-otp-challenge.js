@@ -16,17 +16,16 @@ document.addEventListener("DOMContentLoaded", function () {
     title.className = "title-container";
     subTitle.className = "subtitle-container";
     btnContinue.className = "button-normal";
+    btnContinue.style.setProperty("margin-top", "22%", "important");
     inputEnterCode.className = "";
     labelCode.className = "text";
     inputCode.className = "email-input";
     btnChangeMethod.classList.add("link");
-    console.log("prueba3");
 
     const errorSpan = document.getElementById("error-element-code");
     const errorSpancs = document.getElementById("error-cs-code-required");
 
     if (errorSpan) {
-      console.log("errorSpan:", errorSpan);
       inputCode.style.border = "1px solid red";
       btnContinue.style.setProperty("margin-top", "22%", "important");
     } else {
@@ -36,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const observer = new MutationObserver(function (mutationsList) {
       for (const mutation of mutationsList) {
-        console.log("entra a observer:");
         if (
           mutation.type === "attributes" &&
           mutation.attributeName === "class" &&
@@ -61,6 +59,8 @@ document.addEventListener("DOMContentLoaded", function () {
         parentDiv.style.display = "none";
       }
     }
+    const footer = document.querySelector('footer');
+	  footer.style.marginTop = 'auto';
     if (auth0Wrapper) {
       auth0Wrapper.style.removeProperty("display");
     }
