@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		const btnContinue = mainElement?.querySelector('button[value="default"]')
 		const label = mainElement.querySelector('#code-label');
 		const errorSpan = document.getElementById('error-element-code');
+		const errorSpancs = document.getElementById("error-cs-code-required");
 
 		mainElement.classList.remove('_widget', 'c7f43d5ad');
 		title.className = 'title-container';
