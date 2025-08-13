@@ -63,49 +63,68 @@ document.addEventListener('DOMContentLoaded', function () {
         if (footer) footer.style.marginTop = 'auto';
 
         // --- SECCIÓN 3: Lógica de errores (función separada) ---
-        function applyErrorStyles() {
-            const errorSpan = document.getElementById('error-element-code');
-            const emptyError = document.getElementById('error-cs-code-required');
-            const promptAlertDiv = document.getElementById('prompt-alert');
+       // La función que aplica los estilos
+function applyErrorStyles() {
+    const errorSpan = document.getElementById('error-element-code');
+    const emptyError = document.getElementById('error-cs-code-required');
+    const promptAlertDiv = document.getElementById('prompt-alert');
 
-            // La condición de error general se mantiene, ahora se llama dinámicamente
-            const hasPromptAlertError = promptAlertDiv?.offsetHeight > 0;
-            const hasGeneralError = (errorSpan?.offsetHeight > 0) || (emptyError?.offsetHeight > 0);
+    // Nueva lógica: el error general (con borde rojo) ahora excluye el emptyError
+    const hasGeneralError = errorSpan?.offsetHeight > 0; 
+    
+    // Nueva lógica: si hay un error de campo vacío visible, el botón debe quedarse abajo
+    const hasEmptyError = emptyError?.offsetHeight > 0; 
+    
+    const hasPromptAlertError = promptAlertDiv?.offsetHeight > 0;
 
-            let errorType = 'noError';
-            if (hasGeneralError) {
-                errorType = 'generalError';
-            } else if (hasPromptAlertError) {
-                errorType = 'promptAlertError';
-            }
-            
-            console.log(`-> 4. Evaluando el estado de errores. Tipo: ${errorType}`);
+    let errorType = 'noError';
+    if (hasGeneralError) {
+        errorType = 'generalError';
+    } else if (hasPromptAlertError) {
+        errorType = 'promptAlertError';
+    } else if (hasEmptyError) {
+        // Nuevo caso para el error de campo vacío
+        errorType = 'emptyError'; 
+    }
+    
+    console.log(`-> 4. Evaluando el estado de errores. Tipo: ${errorType}`);
 
-            switch (errorType) {
-                case 'generalError':
-                    if (btnLogin) btnLogin.style.marginTop = '20px';
-                    if (inputCode) inputCode.style.border = '1px solid red';
-                    if (div15) div15.style.display = 'none';
-                    if (document.querySelector('.custom-checkbox-container')) document.querySelector('.custom-checkbox-container').style.paddingTop = '20px';
-                    if (div17) div17.style.display = 'none';
-                    break;
-                case 'promptAlertError':
-                    if (btnLogin) btnLogin.style.marginTop = '70px';
-                    if (inputCode) inputCode.style.border = '';
-                    if (div15) div15.style.display = 'none';
-                    if (document.querySelector('.custom-checkbox-container')) document.querySelector('.custom-checkbox-container').style.paddingTop = '20px';
-                    if (div17) div17.style.display = 'none';
-                    break;
-                case 'noError':
-                default:
-                    if (btnLogin) btnLogin.style.marginTop = '20px';
-                    if (inputCode) inputCode.style.border = '';
-                    if (div15) div15.style.display = '';
-                    if (document.querySelector('.custom-checkbox-container')) document.querySelector('.custom-checkbox-container').style.paddingTop = '15px';
-                    if (div17) div17.style.display = 'none';
-                    break;
-            }
-        }
+    switch (errorType) {
+        case 'generalError':
+            if (btnLogin) btnLogin.style.marginTop = '20px'; // Aquí se mueve
+            if (inputCode) inputCode.style.border = '1px solid red';
+            if (div15) div15.style.display = 'none';
+            if (document.querySelector('.custom-checkbox-container')) document.querySelector('.custom-checkbox-container').style.paddingTop = '20px';
+            if (div17) div17.style.display = 'none';
+            break;
+
+        case 'promptAlertError':
+            if (btnLogin) btnLogin.style.marginTop = '70px'; // Aquí se mueve
+            if (inputCode) inputCode.style.border = '';
+            if (div15) div15.style.display = 'none';
+            if (document.querySelector('.custom-checkbox-container')) document.querySelector('.custom-checkbox-container').style.paddingTop = '20px';
+            if (div17) div17.style.display = 'none';
+            break;
+
+        case 'emptyError':
+            console.log("-> 4d. Aplicando estilos para 'Campo Vacío'. El botón se queda abajo.");
+            if (btnLogin) btnLogin.style.marginTop = ''; // El botón se queda en su lugar
+            if (inputCode) inputCode.style.border = '1px solid red';
+            if (div15) div15.style.display = '';
+            if (document.querySelector('.custom-checkbox-container')) document.querySelector('.custom-checkbox-container').style.paddingTop = '15px';
+            if (div17) div17.style.display = 'none';
+            break;
+
+        case 'noError':
+        default:
+            if (btnLogin) btnLogin.style.marginTop = ''; // El botón se queda en su lugar
+            if (inputCode) inputCode.style.border = '';
+            if (div15) div15.style.display = '';
+            if (document.querySelector('.custom-checkbox-container')) document.querySelector('.custom-checkbox-container').style.paddingTop = '15px';
+            if (div17) div17.style.display = 'none';
+            break;
+    }
+}
         
         // Llamada inicial para establecer los estilos por defecto
         applyErrorStyles();
