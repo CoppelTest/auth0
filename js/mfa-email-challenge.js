@@ -108,7 +108,7 @@ function applyErrorStyles() {
 
         case 'emptyError':
             console.log("-> 4d. Aplicando estilos para 'Campo Vacío'. El botón se queda abajo.");
-            if (btnLogin) btnLogin.style.marginTop = ''; // El botón se queda en su lugar
+            if (btnLogin) btnLogin.style.marginTop = '20px'; // El botón se queda en su lugar
             if (inputCode) inputCode.style.border = '1px solid red';
             if (div15) div15.style.display = '';
             if (document.querySelector('.custom-checkbox-container')) document.querySelector('.custom-checkbox-container').style.paddingTop = '15px';
@@ -117,7 +117,7 @@ function applyErrorStyles() {
 
         case 'noError':
         default:
-            if (btnLogin) btnLogin.style.marginTop = ''; // El botón se queda en su lugar
+            if (btnLogin) btnLogin.style.marginTop = '20px'; // El botón se queda en su lugar
             if (inputCode) inputCode.style.border = '';
             if (div15) div15.style.display = '';
             if (document.querySelector('.custom-checkbox-container')) document.querySelector('.custom-checkbox-container').style.paddingTop = '15px';
