@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		console.log("errorSpan " + errorSpan );
 		console.log("emptyError " + emptyError );
-		console.log("vacio " + (errorSpan!= null);
+		console.log("vacio " + (errorSpan!= null));
 		console.log("condicion " + (errorSpan.offsetHeight > 0);
         const indexOffset = promptAlertDiv!= null ? 1 : 0;
         
