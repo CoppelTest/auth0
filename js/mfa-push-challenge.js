@@ -3,11 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	try {
 		const mainElement = document.querySelector('main');
-		if (!mainElement) {
-			throw new Error("No se pudo encontrar el elemento 'main'. El script se detiene.");
-		}
-		
-		// Quitar clases por defecto
 		mainElement.classList.remove('_widget', 'c7f43d5ad');
 
 		// Estilos para el título y subtítulo
