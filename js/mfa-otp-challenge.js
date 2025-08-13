@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const main = auth0Wrapper.querySelector("main");
     const title = auth0Wrapper.querySelector("h1");
     const subTitle = main?.querySelector("p");
+	subTitle.style.paddingTop = '25px';
     const btnContinue = main?.querySelector('button[value="default"]');
     const inputEnterCode = document.querySelector("div[data-action-text]");
     const labelCode = inputEnterCode?.querySelector("label");
@@ -59,6 +60,14 @@ document.addEventListener("DOMContentLoaded", function () {
         parentDiv.style.display = "none";
       }
     }
+	  const linkStyle = document.createElement('style');
+		linkStyle.innerHTML = `
+		.link {
+		color: #1c42e8 !important;
+		font-size: 16px !important;
+		} `;
+		document.head.appendChild(linkStyle);
+		const button = document.querySelector('button[name="action"][value="pick-authenticator"]');
     const footer = document.querySelector('footer');
 	  footer.style.marginTop = 'auto';
     if (auth0Wrapper) {
