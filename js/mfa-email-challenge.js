@@ -68,12 +68,13 @@ document.addEventListener('DOMContentLoaded', function () {
         if (button) button.classList.add('link');
         if (footer) footer.style.marginTop = 'auto';
 
-        // --- SECCIÓN 3: Lógica condicional de errores con SWITCH ---
+        // --- SECCIÓN 3: Lógica condicional de errores ---
         console.log("-> 4. Evaluando el estado de los errores...");
         
+        // La lógica se ha ajustado aquí para que 'hasGeneralError' sea true si cualquiera de los dos errores es visible.
         const hasPromptAlertError = promptAlertDiv?.offsetHeight > 0;
         const hasGeneralError = (errorSpan?.offsetHeight > 0) || (emptyError?.offsetHeight > 0);
-
+        
         console.log(`- ¿Hay un error general? ${hasGeneralError}`);
         console.log(`- ¿Hay un error de alerta? ${hasPromptAlertError}`);
         
@@ -86,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         switch (errorType) {
             case 'generalError':
-                console.log("-> 4a. Aplicando estilos para 'Error General'.");
+                console.log("-> 4a. Aplicando estilos para 'Error General' (borde rojo).");
                 if (btnLogin) btnLogin.style.marginTop = '20px';
                 if (inputCode) inputCode.style.border = '1px solid red';
                 if (div15) div15.style.display = 'none';
@@ -95,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 break;
 
             case 'promptAlertError':
-                console.log("-> 4b. Aplicando estilos para 'Error de Alerta'.");
+                console.log("-> 4b. Aplicando estilos para 'Error de Alerta' (sin borde rojo).");
                 if (btnLogin) btnLogin.style.marginTop = '70px';
                 if (inputCode) inputCode.style.border = '';
                 if (div15) div15.style.display = 'none';
