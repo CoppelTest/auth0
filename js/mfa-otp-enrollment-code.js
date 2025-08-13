@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		const divCodeInput = mainElement.querySelector('div[data-action-text=""]');
 		const labelCode = document.querySelector('div[data-action-text][data-alternate-action-text]');
 		const inputCode = divCodeInput ? divCodeInput.querySelector('input[name="code"]') : null;
-		const btnLogin = mainElement?.querySelector('button[value="default"]');
+		const btnContinue = mainElement?.querySelector('button[value="default"]')
 		const label = mainElement.querySelector('#code-label');
 		const errorSpan = document.getElementById('error-element-code');
 
@@ -26,7 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		btnChangeMethod.classList.add('link');
 		inputCode.className = 'email-input';
 		labelCode.className = '';
-		btnLogin.className = 'button-normal';
+		btnContinue.className = 'button-normal';
+		btnContinue.style.setProperty("margin-top", "22%", "important");
 		label.style.color = '#081754';
 		label.style.lineHeight = '24px';
 
