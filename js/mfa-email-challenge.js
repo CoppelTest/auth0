@@ -128,10 +128,6 @@ document.addEventListener("DOMContentLoaded", function () {
           if (btnLogin) btnLogin.style.marginTop = "20px";
           if (inputCode) inputCode.style.border = "";
           if (div15) div15.style.display = "";
-          if (document.querySelector(".custom-checkbox-container"))
-            document.querySelector(
-              ".custom-checkbox-container"
-            ).style.paddingTop = "15px";
           if (div17) div17.style.display = "none";
           break;
       }
