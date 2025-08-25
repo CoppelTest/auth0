@@ -21,7 +21,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (mainElement.querySelector("p"))
       mainElement.querySelector("p").className = "subtitle-container";
     if (btnLogin) btnLogin.className = "button-normal";
-    if (inputCode) inputCode.className = "email-input";
+    if (inputCode) {
+      inputCode.className = "email-input";
+      const codeInputWrapper = inputCode.closest('.input-wrapper');
+      codeInputWrapper.style.setProperty('height', 'unset');
+    }
     if (
       mainElement.querySelector(
         "div[data-action-text][data-alternate-action-text]"
