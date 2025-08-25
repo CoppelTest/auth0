@@ -18,7 +18,7 @@
     line-height: 150%;
 }
 .custom-checkbox-container {
-  display: flex; margin-top: 50px !important;
+  display: flex;
   align-items: center;
   gap: 0.5rem;
   font-family: inherit;
