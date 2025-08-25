@@ -99,3 +99,6 @@ footer {
   display: block;
   margin-top: var(--spacing-3) !important;
 }
+body{
+  font-family: Poppins, sans-serif;
+}
