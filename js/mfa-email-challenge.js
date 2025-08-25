@@ -127,9 +127,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
     applyErrorStyles();
-    const observer = new MutationObserver(applyErrorStyles);
-    const config = { childList: true, subtree: true, attributes: true };
-    observer.observe(mainElement, config);
+    //const observer = new MutationObserver(applyErrorStyles);
+    //const config = { childList: true, subtree: true, attributes: true };
+    //observer.observe(mainElement, config);
   } catch (error) {
     console.error(" Hubo un error en la ejecución del script:");
   } finally {
