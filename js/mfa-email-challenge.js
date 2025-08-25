@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (label) {
       label.style.color = "#081754";
       label.style.lineHeight = "24px";
+      label.style.setProperty('font-family', 'Poppins, sans-serif;');
     }
     if (document.querySelector('input[type="checkbox"]')) {
       document.querySelector('input[type="checkbox"]').className = "";
@@ -63,6 +64,11 @@ document.addEventListener("DOMContentLoaded", function () {
       document
         .querySelector('button[name="action"][value="pick-authenticator"]')
         .classList.add("link");
+    }
+    const resendButton = auth0Wrapper.querySelector('[value="resend-code"]');
+    if (resendButton) {
+      resendButton.classList.add("link");
+      resendButton.closest("div").classList.add('div-after-button-continue');
     }
     if (footer) footer.style.marginTop = "auto";
     function applyErrorStyles() {
