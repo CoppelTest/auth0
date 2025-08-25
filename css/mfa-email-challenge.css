@@ -91,3 +91,11 @@ footer {
   padding-left: 32px;
   background-size: 24px;
 }
+.div-after-button-continue {
+  color: #081754;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  margin-bottom: 8px;
+  display: block;
+  margin-top: var(--spacing-3) !important;
+}
