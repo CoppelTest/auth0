@@ -22,9 +22,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if (inputCode) inputCode.className = "email-input";
     const errorSpan = document.getElementById("error-element-code");
     const errorSpancs = document.getElementById("error-cs-code-required");
-    
+    const isDomVisible = (el) => !!(el && (el.offsetParent !== null || el.getClientRects().length > 0));
+
+    const getIsErrorVisible = () => {
+      const spanVisible = isDomVisible(errorSpan);
+      const csVisible   = !!(errorSpancs && errorSpancs.classList.contains("ulp-validator-error"));
+      return spanVisible || csVisible;
+    };
     const updateErrorStyles = () => {
-      const isErrorVisible =((errorSpan && errorSpan.offsetParent !== null) || (errorSpancs && errorSpancs.classList.contains("ulp-validator-error")));
+      const isErrorVisible =getIsErrorVisible();
       if (inputCode) {
         inputCode.style.border = isErrorVisible ? "1px solid red" : "1px solid #C9C9C9";
       }
@@ -42,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const checkboxDiv = rememberBrowserInput.closest("div");
       if (checkboxDiv) {
         const adjustCheckboxMargin = () => {
-          const isErrorVisible = ((errorSpan && errorSpan.offsetParent !== null) || (errorSpancs && errorSpancs.classList.contains("ulp-validator-error")));
+          const isErrorVisible = getIsErrorVisible();
           if (isErrorVisible) {
             checkboxDiv.style.setProperty('margin-top', '18%', 'important');
           } else {
@@ -63,11 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
         btnContinue.style.setProperty("margin-top", "17%", "important");
       }
     }
-    const isErrorVisible = (errorSpan && errorSpan.offsetParent !== null) || (errorSpancs && errorSpancs.classList.contains("ulp-validator-error"));
-          if (isErrorVisible) {
-            checkboxDiv.style.setProperty('margin-top', '20%', 'important');
-            inputCode.style.border = isErrorVisible ? "1px solid red" : "1px solid #C9C9C9";
-          }
     const linkStyle = document.createElement('style');
     linkStyle.innerHTML = `.link { color: #1c42e8 !important; font-size: 16px !important; }`;
     document.head.appendChild(linkStyle);
