@@ -40,11 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const rememberBrowserInput = document.getElementById("rememberBrowser");
     if (rememberBrowserInput) {
       const checkboxDiv = rememberBrowserInput.closest("div");
-      const isErrorVisible = (errorSpan && errorSpan.offsetParent !== null) || (errorSpancs && errorSpancs.classList.contains("ulp-validator-error"));
-          if (isErrorVisible) {
-            checkboxDiv.style.setProperty('margin-top', '20%', 'important');
-            inputCode.style.border = isErrorVisible ? "1px solid red" : "1px solid #C9C9C9";
-          }
       if (checkboxDiv) {
         const adjustCheckboxMargin = () => {
           const isErrorVisible = (errorSpan && errorSpan.offsetParent !== null) || (errorSpancs && errorSpancs.classList.contains("ulp-validator-error"));
@@ -68,6 +63,11 @@ document.addEventListener("DOMContentLoaded", function () {
         btnContinue.style.setProperty("margin-top", "17%", "important");
       }
     }
+    const isErrorVisible = (errorSpan && errorSpan.offsetParent !== null) || (errorSpancs && errorSpancs.classList.contains("ulp-validator-error"));
+          if (isErrorVisible) {
+            checkboxDiv.style.setProperty('margin-top', '20%', 'important');
+            inputCode.style.border = isErrorVisible ? "1px solid red" : "1px solid #C9C9C9";
+          }
     const linkStyle = document.createElement('style');
     linkStyle.innerHTML = `.link { color: #1c42e8 !important; font-size: 16px !important; }`;
     document.head.appendChild(linkStyle);
