@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
           } else {
             checkboxDiv.style.setProperty('margin-top', '13%', 'important');
             console.log("entro al else");
+            console.log("isErrorVisible " + isErrorVisible);
           }
         };
         adjustCheckboxMargin();
