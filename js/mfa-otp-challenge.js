@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
             checkboxDiv.style.setProperty('margin-top', '18%', 'important');
           } else {
             checkboxDiv.style.setProperty('margin-top', '13%', 'important');
+            console.log("entro al else");
           }
         };
         adjustCheckboxMargin();
@@ -63,10 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
         btnContinue.style.setProperty("margin-top", "17%", "important");
       }
     }
-     const isErrorVisible = (errorSpan && errorSpan.offsetParent !== null) || (errorSpancs && errorSpancs.classList.contains("ulp-validator-error"));
-          if (isErrorVisible) {
-            checkboxDiv.style.setProperty('margin-top', '20%', 'important');
-          }
     const linkStyle = document.createElement('style');
     linkStyle.innerHTML = `.link { color: #1c42e8 !important; font-size: 16px !important; }`;
     document.head.appendChild(linkStyle);
