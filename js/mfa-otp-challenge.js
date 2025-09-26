@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (inputCode) inputCode.className = "email-input";
     const errorSpan = document.getElementById("error-element-code");
     const errorSpancs = document.getElementById("error-cs-code-required");
-
+    console.log("errorSpan " + errorSpan + ", errorSpancs" +  errorSpancs );
     const updateErrorStyles = () => {
       const isErrorVisible = (errorSpan && errorSpan.offsetParent !== null) || (errorSpancs && errorSpancs.classList.contains("ulp-validator-error"));
       if (inputCode) {
