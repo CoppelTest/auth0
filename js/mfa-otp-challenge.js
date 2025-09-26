@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const errorSpancs = document.getElementById("error-cs-code-required");
     
     const updateErrorStyles = () => {
-      const isErrorVisible = (errorSpan && errorSpan.offsetParent !== null) || (errorSpancs && errorSpancs.classList.contains("ulp-validator-error"));
+      const isErrorVisible =((errorSpan && errorSpan.offsetParent !== null) || (errorSpancs && errorSpancs.classList.contains("ulp-validator-error")));
       if (inputCode) {
         inputCode.style.border = isErrorVisible ? "1px solid red" : "1px solid #C9C9C9";
       }
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const checkboxDiv = rememberBrowserInput.closest("div");
       if (checkboxDiv) {
         const adjustCheckboxMargin = () => {
-          const isErrorVisible = (errorSpan && errorSpan.offsetParent !== null) || (errorSpancs && errorSpancs.classList.contains("ulp-validator-error"));
+          const isErrorVisible = ((errorSpan && errorSpan.offsetParent !== null) || (errorSpancs && errorSpancs.classList.contains("ulp-validator-error")));
           if (isErrorVisible) {
             checkboxDiv.style.setProperty('margin-top', '18%', 'important');
           } else {
