@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const rememberBrowserInput = document.getElementById("rememberBrowser");
     if (rememberBrowserInput) {
       const checkboxDiv = rememberBrowserInput.closest("div");
+      console.log("dentro funcion remember rowser errorSpan " + errorSpan + ", errorSpancs" +  errorSpancs );
       if (checkboxDiv) {
         const adjustCheckboxMargin = () => {
           const isErrorVisible = (errorSpan && errorSpan.offsetParent !== null) || (errorSpancs && errorSpancs.classList.contains("ulp-validator-error"));
