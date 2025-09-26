@@ -50,7 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const adjustCheckboxMargin = () => {
           const isErrorVisible = getIsErrorVisible();
           console.log("isErrorVisible " + isErrorVisible);
-          console.log("span " + errorSpancs);
+          console.log("spancs " + errorSpancs);
+          console.log("span " +errorSpan);
+          console.log("span sin la variable, directo dom "+ document.getElementById("error-element-code"))
           if (isErrorVisible) {
             checkboxDiv.style.setProperty('margin-top', '18%', 'important');
           } else {
