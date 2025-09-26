@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         btnContinue.style.setProperty("margin-top", "17%", "important");
       }
     }
+    adjustCheckboxMargin();
     const linkStyle = document.createElement('style');
     linkStyle.innerHTML = `.link { color: #1c42e8 !important; font-size: 16px !important; }`;
     document.head.appendChild(linkStyle);
