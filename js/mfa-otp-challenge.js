@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (inputCode) inputCode.className = "email-input";
     const errorSpan = document.getElementById("error-element-code");
     const errorSpancs = document.getElementById("error-cs-code-required");
-    console.log("errorSpan " + errorSpan + ", errorSpancs" +  errorSpancs );
+    
     const updateErrorStyles = () => {
       const isErrorVisible = (errorSpan && errorSpan.offsetParent !== null) || (errorSpancs && errorSpancs.classList.contains("ulp-validator-error"));
       if (inputCode) {
@@ -40,7 +40,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const rememberBrowserInput = document.getElementById("rememberBrowser");
     if (rememberBrowserInput) {
       const checkboxDiv = rememberBrowserInput.closest("div");
-      console.log("dentro funcion remember rowser errorSpan " + errorSpan + ", errorSpancs" +  errorSpancs );
+      const isErrorVisible = (errorSpan && errorSpan.offsetParent !== null) || (errorSpancs && errorSpancs.classList.contains("ulp-validator-error"));
+          if (isErrorVisible) {
+            checkboxDiv.style.setProperty('margin-top', '20%', 'important');
+            inputCode.style.border = isErrorVisible ? "1px solid red" : "1px solid #C9C9C9";
+          }
       if (checkboxDiv) {
         const adjustCheckboxMargin = () => {
           const isErrorVisible = (errorSpan && errorSpan.offsetParent !== null) || (errorSpancs && errorSpancs.classList.contains("ulp-validator-error"));
@@ -48,8 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
             checkboxDiv.style.setProperty('margin-top', '18%', 'important');
           } else {
             checkboxDiv.style.setProperty('margin-top', '13%', 'important');
-            console.log("entro al else");
-            console.log("isErrorVisible " + isErrorVisible);
           }
         };
         adjustCheckboxMargin();
