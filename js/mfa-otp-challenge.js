@@ -22,17 +22,21 @@ document.addEventListener("DOMContentLoaded", function () {
     if (inputCode) inputCode.className = "email-input";
     const errorSpan = document.getElementById("error-element-code");
     const errorSpancs = document.getElementById("error-cs-code-required");
-    const isDomVisible = (el) => !!(el && (el.offsetParent !== null || el.getClientRects().length > 0));
-
     const getIsErrorVisible = () => {
-      const spanVisible = isDomVisible(errorSpan);
-      const csVisible   = !!(errorSpancs && errorSpancs.classList.contains("ulp-validator-error"));
-      return spanVisible || csVisible;
+      const spanVisible = !!(
+        errorSpan &&
+        (errorSpan.offsetParent !== null || errorSpan.getClientRects().length > 0)
+      );
+        const csVisible = !!(
+          errorSpancs &&
+          errorSpancs.classList.contains("ulp-validator-error")
+        );
+        return spanVisible || csVisible; 
     };
     const updateErrorStyles = () => {
       const isErrorVisible =getIsErrorVisible();
       if (inputCode) {
-        inputCode.style.border = isErrorVisible ? "1px solid red" : "1px solid #C9C9C9";
+        inputCode.style.border = getIsErrorVisible() ? "1px solid red" : "1px solid #C9C9C9";
       }
     };
     updateErrorStyles();
