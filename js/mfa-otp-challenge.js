@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         attributeFilter: ["class"],
       });
     }
+    adjustCheckboxMargin();
     const rememberBrowserInput = document.getElementById("rememberBrowser");
     if (rememberBrowserInput) {
       const checkboxDiv = rememberBrowserInput.closest("div");
