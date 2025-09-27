@@ -51,8 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
     const rememberBrowserInput = document.getElementById("rememberBrowser");
+    const checkboxDiv = rememberBrowserInput.closest("div");
     if (rememberBrowserInput) {
-      const checkboxDiv = rememberBrowserInput.closest("div");
       if (checkboxDiv) {
         const adjustCheckboxMargin = () => {
           const isErrorVisible = getIsErrorVisible();
@@ -86,6 +86,10 @@ document.addEventListener("DOMContentLoaded", function () {
     document.head.appendChild(linkStyle);
     if (btnChangeMethod) {
       btnChangeMethod.classList.add("link");
+    }
+    if(errorSpan !== null){
+      inputCode.style.border = getIsErrorVisible() ? "1px solid red" : "1px solid #C9C9C9";
+      checkboxDiv.style.setProperty('margin-top', '18%', 'important');
     }
     const footer = document.querySelector('footer');
     footer.style.setProperty('margin-top', 'auto', 'important');
