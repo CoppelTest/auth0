@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
       btnChangeMethod.classList.add("link");
     }
     if(errorSpan !== null){
-      inputCode.style.border = getIsErrorVisible() ? "1px solid red" : "1px solid #C9C9C9";
+      inputCode.style.border = "1px solid red";
       checkboxDiv.style.setProperty('margin-top', '18%', 'important');
     }
     const footer = document.querySelector('footer');
