@@ -16,7 +16,13 @@ document.addEventListener('DOMContentLoaded', function () {
     divContainer.style.setProperty('padding', '50px 0px 5px', 'important');
 
     if (divContainer) {
-      const containerChild = divContainer.querySelector('div');
+    	const containerChild = divContainer.querySelector('div');
+		if (containerChild) {
+        const newDiv = document.createElement('div');
+        newDiv.className = 'subtitle-container';
+        newDiv.textContent = 'Para verificar tu identidad';    
+        containerChild.insertAdjacentElement('afterend', newDiv);
+       }
     }
     main.classList.remove(...main.classList);
     const spaceDiv = header.nextElementSibling;
