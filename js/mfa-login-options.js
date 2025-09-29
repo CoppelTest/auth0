@@ -7,20 +7,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const ulSection = auth0Wrapper.querySelector('ul');
     const header = auth0Wrapper.querySelector('header');
     const divContainer = auth0Wrapper.querySelector('header > div');
-    console.log('divContainer2:', divContainer);
+    const firstH1 = auth0Wrapper.querySelector('header > div h1');
+	const secondH1 = auth0Wrapper.querySelector('header > h1');
+	secondH1.style.display = 'none';
+	firstH1.className = '';
+    firstH1.classList.add('title-container');
+
     divContainer.style.setProperty('padding', '50px 0px 5px', 'important');
 
     if (divContainer) {
       const containerChild = divContainer.querySelector('div');
-
-      if (containerChild) {
-        const newDiv = document.createElement('div');
-        newDiv.className = 'subtitle-container';
-        newDiv.textContent = 'Para verificar tu identidad';    
-        containerChild.insertAdjacentElement('afterend', newDiv);
-       }
     }
-    
     main.classList.remove(...main.classList);
     const spaceDiv = header.nextElementSibling;
     spaceDiv.style.setProperty('padding', '0px 0px', 'important');
