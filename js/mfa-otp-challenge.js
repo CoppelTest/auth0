@@ -102,13 +102,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if(errorSpan !== null){
       inputCode.style.border = "1px solid red";
-      const isMultiLine = isTextMultiline(errorSpan);
-      console.log("Es multiline " + isMultiLine);
-      if (isMultiLine) {
-           checkboxDiv.style.setProperty('margin-top', '25px', 'important');
-      } else {
-           checkboxDiv.style.setProperty('margin-top', '19%', 'important');
-      }
+      setTimeout(() => {
+        const isMultiLine = isTextMultiline(errorSpan);
+        console.log("Es multiline " + isMultiLine);
+        if (isMultiLine) {
+             checkboxDiv.style.setProperty('margin-top', '25px', 'important');
+        } else {
+             checkboxDiv.style.setProperty('margin-top', '19%', 'important');
+        }
+      }, 50);
     }
     const footer = document.querySelector('footer');
     footer.style.setProperty('margin-top', 'auto', 'important');
