@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const isMultiLine = isTextMultiline(errorSpan);
         console.log("Es multiline " + isMultiLine);
         if (isMultiLine) {
-             checkboxDiv.style.setProperty('margin-top', '25px', 'important');
+             checkboxDiv.style.setProperty('margin-top', '25%', 'important');
         } else {
              checkboxDiv.style.setProperty('margin-top', '19%', 'important');
         }
