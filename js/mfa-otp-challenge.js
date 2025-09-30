@@ -87,9 +87,27 @@ document.addEventListener("DOMContentLoaded", function () {
     if (btnChangeMethod) {
       btnChangeMethod.classList.add("link");
     }
+    function isTextMultiline(element) {
+        if (!element) {
+            return false;
+        }
+        const computedStyle = window.getComputedStyle(element);
+        let lineHeight = parseFloat(computedStyle.lineHeight);
+        if (isNaN(lineHeight)) {
+            const fontSize = parseFloat(computedStyle.fontSize);
+            lineHeight = fontSize * 1.2; 
+        }
+        const elementHeight = element.clientHeight;
+        return elementHeight > (lineHeight + 2);
+    }
     if(errorSpan !== null){
       inputCode.style.border = "1px solid red";
-      checkboxDiv.style.setProperty('margin-top', '18%', 'important');
+      const isMultiLine = isTextMultiline(errorSpan);
+      if (isMultiLine) {
+           checkboxDiv.style.setProperty('margin-top', '25px', 'important');
+      } else {
+           checkboxDiv.style.setProperty('margin-top', '19%', 'important');
+      }
     }
     const footer = document.querySelector('footer');
     footer.style.setProperty('margin-top', 'auto', 'important');
