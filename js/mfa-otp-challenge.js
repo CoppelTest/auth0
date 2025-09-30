@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if(errorSpan !== null){
       inputCode.style.border = "1px solid red";
       const isMultiLine = isTextMultiline(errorSpan);
-      console.log("Es multiline " + isMultiline);
+      console.log("Es multiline " + isMultiLine);
       if (isMultiLine) {
            checkboxDiv.style.setProperty('margin-top', '25px', 'important');
       } else {
