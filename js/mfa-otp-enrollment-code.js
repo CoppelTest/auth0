@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 		if (errorSpan) {
 	      inputCode.style.border = "1px solid red";
-	      btnContinue.style.setProperty("margin-top", "22%", "important");
+	      btnContinue.style.setProperty("margin-top", "25%", "important");
 	    } else {
 	      inputCode.style.border = "1px solid #C9C9C9";
 	    }
